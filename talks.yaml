@@ -1,0 +1,10 @@
+# Newer entries on top
+# Frequent fontawesome expressions
+# {{< fa display >}}
+# {{< fa file-lines >}}
+
+- title: "Archived Item 1"
+  author: "[Gustavo Diaz](gustavodiaz.org), Lucia Tiscornia"
+  Venue: "APSA 2023"
+  date: 2020-01-01
+  Links: "[{{< fa tv >}}](archived/archived-item-.html) [{{< fa file-lines >}}](archived/archived-item-.html)"

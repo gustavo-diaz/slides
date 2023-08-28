@@ -1,0 +1,14 @@
+---
+title: "Recent and Upcoming Talks"
+listing:
+  id: sample-listings
+  contents: 
+    - talks.yaml
+  sort: "date desc"
+  type: table
+page-layout: full
+---
+
+
+:::{#sample-listings}
+:::

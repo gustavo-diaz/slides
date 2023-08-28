@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Sans+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/*-- scss:defaults --*/
+//
+// Variables
+// --------------------------------------------------
+
+//== Navbar
+//
+// Basics of a navbar
+$navbar-bg: #FDBF57;
+
+$font-family-sans-serif:      Fira Sans Condensed, sans-serif !default;
+$font-family-serif:           Barlow, serif !default;  /* Not actually a serif font but whatever */
+
+$font-size-base:              1.25rem !default;
+$headings-font-weight:        700 !default;
+
+$h1-font-size: $font-size-base * 2.45;
+$h2-font-size: $font-size-base * 1.85;
+$h3-font-size: $font-size-base * 1.5;
+$h4-font-size: $font-size-base * 1.2;
+$h5-font-size: $font-size-base * 1;
+$h6-font-size: $font-size-base * 0.8;
+
+$toc-font-size: 1.1rem;
+$sidebar-font-size: 1.1rem;
+$sidebar-font-size-section: 0.9rem;
+
+
+

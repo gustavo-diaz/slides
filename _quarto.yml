@@ -1,0 +1,48 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+  # resources:
+  #   - "files/"
+  
+# freezing seems to bork font size
+execute:
+  freeze: auto  # Re-render only when source changes
+
+website:
+  title: "Slides"
+  search: false
+  navbar:
+    pinned: true
+    collapse: true
+    left:
+    - text: "Home"
+      href: https://gustavodiaz.org/
+    - text: "Research"
+      href: https://gustavodiaz.org/research.html
+    - text: "Teaching"
+      href: https://gustavodiaz.org/teaching.html
+    - text: "CV"
+      href: https://gustavodiaz.org/files/diaz_cv.pdf
+    right:
+    - icon: envelope
+      href: mailto:diazg2@mcmaster.ca
+    - icon: twitter
+      href: https://twitter.com/gusvalo
+    - icon: github
+      href: https://github.com/gustavo-diaz
+    - icon: google
+      href: https://scholar.google.com/citations?user=TVXK8-8AAAAJ
+    
+  page-footer:
+      border: false
+      left: © 2023 Gustavo Diaz
+      right: Powered by [{{< fa brands r-project >}}](https://cran.r-project.org/) and [Quarto](https://quarto.org/)
+  
+format:
+  html:
+    theme: 
+      - litera
+      - custom.scss
+
