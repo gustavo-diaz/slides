@@ -1,7 +1,7 @@
 ---
 title: "Recent and Upcoming Talks"
 listing:
-  id: sample-listings
+  id: listings
   contents: 
     - talks.yaml
   sort: "date desc"
@@ -10,5 +10,5 @@ page-layout: full
 ---
 
 
-:::{#sample-listings}
+:::{listings}
 :::

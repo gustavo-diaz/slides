@@ -1,9 +1,107 @@
 [
   {
+    "objectID": "audit_spending_apsa23.html#mayors-reduce-spending-in-response-to-increased-monitoring-to-minimize-electoral-backlash",
+    "href": "audit_spending_apsa23.html#mayors-reduce-spending-in-response-to-increased-monitoring-to-minimize-electoral-backlash",
+    "title": "Gustavo Diaz",
+    "section": "Mayors Reduce Spending in Response to Increased Monitoring to Minimize Electoral Backlash",
+    "text": "Mayors Reduce Spending in Response to Increased Monitoring to Minimize Electoral Backlash\n \nGustavo Diaz\nMcMaster University\ngustavodiaz.org\ndiazg2@mcmaster.ca\n \nSlides and paper: talks.gustavodiaz.org"
+  },
+  {
+    "objectID": "audit_spending_apsa23.html#why-does-monitoring-improve-performance",
+    "href": "audit_spending_apsa23.html#why-does-monitoring-improve-performance",
+    "title": "Gustavo Diaz",
+    "section": "Why does monitoring improve performance?",
+    "text": "Why does monitoring improve performance?\n\n\n1. Top-down enforcement\n\n\nMonitoring alone reduces inefficiency\nEx-post sanctions, legal investigations\n\n\n\n2. Bottom-up accountability\n\n\nInformation helps voters hold politicians accountable\nThose found underperforming are voted out of office"
+  },
+  {
+    "objectID": "audit_spending_apsa23.html#bottom-up-accountability",
+    "href": "audit_spending_apsa23.html#bottom-up-accountability",
+    "title": "Gustavo Diaz",
+    "section": "Bottom-up accountability?",
+    "text": "Bottom-up accountability?\n\n\n\n\n\n\n\nSource: Incerti (2020)"
+  },
+  {
+    "objectID": "audit_spending_apsa23.html#lack-of-sanctions-does-not-imply-lack-of-accountability",
+    "href": "audit_spending_apsa23.html#lack-of-sanctions-does-not-imply-lack-of-accountability",
+    "title": "Gustavo Diaz",
+    "section": "Lack of sanctions does not imply lack of accountability",
+    "text": "Lack of sanctions does not imply lack of accountability\n\n\n\n\n\n\n Politicians learn about monitoring efforts before they occur and adjust behavior accordingly"
+  },
+  {
+    "objectID": "audit_spending_apsa23.html#argument",
+    "href": "audit_spending_apsa23.html#argument",
+    "title": "Gustavo Diaz",
+    "section": "Argument:",
+    "text": "Argument:\nIncumbents anticipate bottom-up accountability\n\n\nPoliticians selected for auditing expect increased scrutiny on their performance\nThis is true even if monitoring does not uncover irregularities\nNews of monitoring alone attracts voter attention to performance in office\nThose seeking reelection have incentives to take action before news are public\n\n\n \n. . .\n\nMonitoring  Update performance in office"
+  },
+  {
+    "objectID": "audit_spending_apsa23.html#why-spending",
+    "href": "audit_spending_apsa23.html#why-spending",
+    "title": "Gustavo Diaz",
+    "section": "Why spending?",
+    "text": "Why spending?\nI will make my pretty triangles here"
+  },
+  {
+    "objectID": "audit_spending_apsa23.html#why-reducing-spending",
+    "href": "audit_spending_apsa23.html#why-reducing-spending",
+    "title": "Gustavo Diaz",
+    "section": "Why reducing spending?",
+    "text": "Why reducing spending?\nMore triangles!"
+  },
+  {
+    "objectID": "audit_spending_apsa23.html#data-anti-corruption-audits-in-brazil",
+    "href": "audit_spending_apsa23.html#data-anti-corruption-audits-in-brazil",
+    "title": "Gustavo Diaz",
+    "section": "Data: Anti-corruption audits in Brazil",
+    "text": "Data: Anti-corruption audits in Brazil\n\n\n\n\n\n\nControladoria Geral da União (CGU)\n2003-2015\nLottery selects municipalities to audit use of federal funds\nMake results public\n40 lotteries, 2,187 audits\n\n\n\n\n\n\nPicture: Jorge Hage, head of CGU ca. 2010, announces municipalities selected for auditing"
+  },
+  {
+    "objectID": "audit_spending_apsa23.html#distribution-of-audits-over-time",
+    "href": "audit_spending_apsa23.html#distribution-of-audits-over-time",
+    "title": "Gustavo Diaz",
+    "section": "Distribution of audits over time",
+    "text": "Distribution of audits over time\nHere maybe redo figure for slide transitions"
+  },
+  {
+    "objectID": "audit_spending_apsa23.html#research-design",
+    "href": "audit_spending_apsa23.html#research-design",
+    "title": "Gustavo Diaz",
+    "section": "Research design",
+    "text": "Research design\n\n\nMayoral elections in 2004, 2008, 2012, 2016\nTreatment: Municipality selected for auditing (binary)\nOutcome: Spending per capita (logged)\n\n \n\nQOI: Average treatment effect of audit selection on spending outcomes\nDistinguish between reelection-eligible vs. term-limited"
+  },
+  {
+    "objectID": "audit_spending_apsa23.html#results-election-year-outcomes",
+    "href": "audit_spending_apsa23.html#results-election-year-outcomes",
+    "title": "Gustavo Diaz",
+    "section": "Results: Election-year outcomes",
+    "text": "Results: Election-year outcomes\nHere redo figure"
+  },
+  {
+    "objectID": "audit_spending_apsa23.html#results-audit-timing",
+    "href": "audit_spending_apsa23.html#results-audit-timing",
+    "title": "Gustavo Diaz",
+    "section": "Results: Audit timing",
+    "text": "Results: Audit timing\nHere redo figure"
+  },
+  {
+    "objectID": "audit_spending_apsa23.html#also-in-the-paper",
+    "href": "audit_spending_apsa23.html#also-in-the-paper",
+    "title": "Gustavo Diaz",
+    "section": "Also in the paper",
+    "text": "Also in the paper\nHere summarize other findings"
+  },
+  {
+    "objectID": "audit_spending_apsa23.html#conclusion",
+    "href": "audit_spending_apsa23.html#conclusion",
+    "title": "Gustavo Diaz",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nMayors decrease spending in reaction to audit selection\nMore pronounced under reelection incentives\n\n\nImplications\n\nBottom-up accountability still matters\nPoliticians learn to navigate monitoring efforts over time\nLong-term monitoring still helpful\nBut at the expense of improving service provision?\n\n\n\n\n\n\n\n\nLearn more: talks.gustavodiaz.org"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Recent and Upcoming Talks",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n         \n          Venue\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Links\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nAuthor\n\n\nVenue\n\n\nDate\n\n\nLinks\n\n\n\n\n\n\nArchived Item 1\n\n\nGustavo Diaz, Lucia Tiscornia\n\n\nAPSA 2023\n\n\nJan 1, 2020\n\n\n \n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Venue\n        \n         \n          Links\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nVenue\n\n\nLinks\n\n\n\n\n\n\nAug 31, 2023\n\n\nMayors Reduce Spending in Response to Increased Monitoring to Minimize Electoral Backlash\n\n\nAPSA 2023\n\n\n \n\n\n\n\n\n\nNo matching items"
   }
 ]

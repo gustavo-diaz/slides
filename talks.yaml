@@ -3,8 +3,7 @@
 # {{< fa display >}}
 # {{< fa file-lines >}}
 
-- title: "Archived Item 1"
-  author: "[Gustavo Diaz](gustavodiaz.org), Lucia Tiscornia"
+- date: 2023-08-31
+  title: "Mayors Reduce Spending in Response to Increased Monitoring to Minimize Electoral Backlash"
   Venue: "APSA 2023"
-  date: 2020-01-01
-  Links: "[{{< fa tv >}}](archived/archived-item-.html) [{{< fa file-lines >}}](archived/archived-item-.html)"
+  Links: "[{{< fa tv >}}](./audit_spending_apsa23.qmd) [{{< fa file-lines >}}](https://gustavodiaz.org/files/research/audit_spending.pdf)"

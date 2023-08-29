@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Slides - Recent and Upcoming Talks</title>
+<title>Gustavo Diaz - Recent and Upcoming Talks</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,20 +54,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-sample-listings .list');
+    const listingTargetEl = window.document.querySelector('#listing-listings .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-Venue','listing-date','listing-Links',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] },{ data: ['listing-date-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-Venue','listing-Links',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-Venue","listing-date","listing-Links"],
+      searchColumns: ["listing-date","listing-title","listing-Venue","listing-Links"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-sample-listings'] = new List('listing-sample-listings', options);
+    window['quarto-listings']['listing-listings'] = new List('listing-listings', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -94,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Slides</span>
+    <span class="navbar-title">Gustavo Diaz</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -172,27 +172,31 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div id="listing-sample-listings" class="quarto-listing quarto-listing-container-table">
+<div class="{listings}">
+
+</div>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-table" id="listing-listings">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
      <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-sample-listings-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-sample-listings'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+     <select id="listing-listings-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listings'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
        <option value="" disabled="" selected="" hidden="">Order By</option>
        <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title-sort" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-         <option value="listing-Venue" data-direction="asc">
-          Venue
-        </option>
          <option value="listing-date-sort" data-direction="asc">
           Date - Oldest
         </option>
          <option value="listing-date-sort" data-direction="desc">
           Date - Newest
+        </option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-Venue" data-direction="asc">
+          Venue
         </option>
          <option value="listing-Links" data-direction="asc">
           Links
@@ -209,16 +213,13 @@ ul.task-list li input[type="checkbox"] {
 <thead>
 <tr>
 <th>
+<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
+</th>
+<th>
 <a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
 </th>
 <th>
-<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
-</th>
-<th>
 <a class="sort" data-sort="listing-Venue" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Venue</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
 </th>
 <th>
 <a class="sort" data-sort="listing-Links" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Links</a>
@@ -226,21 +227,18 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1577854800000" data-listing-title-sort="Archived Item 1">
+<tr data-index="0" data-listing-date-sort="1693454400000" data-listing-title-sort="Mayors Reduce Spending in Response to Increased Monitoring to Minimize Electoral Backlash">
 <td>
-<span class="listing-title">Archived Item 1</span>
+<span class="listing-date">Aug 31, 2023</span>
 </td>
 <td>
-<span class="listing-author"><a href="gustavodiaz.org">Gustavo Diaz</a>, Lucia Tiscornia</span>
+<span class="listing-title">Mayors Reduce Spending in Response to Increased Monitoring to Minimize Electoral Backlash</span>
 </td>
 <td>
 <span class="listing-Venue">APSA 2023</span>
 </td>
 <td>
-<span class="listing-date">Jan 1, 2020</span>
-</td>
-<td>
-<span class="listing-Links"><a href="archived/archived-item-.html"><i class="fa-solid fa-tv" aria-hidden="true"></i></a> <a href="archived/archived-item-.html"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></a></span>
+<span class="listing-Links"><a href="./audit_spending_apsa23.html"><i class="fa-solid fa-tv" aria-hidden="true"></i></a> <a href="https://gustavodiaz.org/files/research/audit_spending.pdf"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></a></span>
 </td>
 </tr>
 </tbody>
@@ -249,12 +247,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div>
-
-
-
-
-</main> <!-- /main -->
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

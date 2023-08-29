@@ -1,0 +1,165 @@
+---
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: true
+---
+
+::: {style="text-align: center"}
+## Mayors Reduce Spending in Response to Increased Monitoring to Minimize Electoral Backlash {.center .smaller}
+
+&nbsp;
+
+
+**Gustavo Diaz**  
+McMaster University  
+[gustavodiaz.org](https://gustavodiaz.org/)  
+<diazg2@mcmaster.ca>
+
+&nbsp;
+
+Slides and paper: [talks.gustavodiaz.org](https://talks.gustavodiaz.org/)
+
+:::
+
+## Why does monitoring improve performance?
+
+::: columns
+
+::: {.column width="50%"}
+**1. Top-down enforcement**
+
+::: incremental
+- Monitoring alone reduces inefficiency
+- Ex-post sanctions, legal investigations
+:::
+:::
+
+::: {.column width="50%"}
+**2. Bottom-up accountability**
+
+::: incremental
+- Information helps voters hold politicians accountable
+- Those found underperforming are voted out of office
+:::
+:::
+:::
+
+## Bottom-up accountability?
+
+![](audit_spending/incerti_2020_fig1.png){fig-align="center" width="80%" height="80%"}
+
+::: aside
+**Source:** [Incerti (2020)](https://doi.org/10.1017/S000305542000012X)
+:::
+
+## Lack of sanctions does not imply lack of accountability
+
+![](audit_spending/fisman_golden_2017.png){fig-align="center" width="80%" height="80%"}
+
+. . .
+
+{{< fa arrow-right >}} Politicians learn about monitoring efforts before they occur and adjust behavior accordingly
+
+## Argument: 
+### Incumbents anticipate bottom-up accountability
+
+::: incremental
+- Politicians selected for auditing expect increased scrutiny on their performance
+- This is true even if monitoring does not uncover irregularities
+- News of monitoring alone attracts voter attention to performance in office
+- Those seeking reelection have incentives to take action before news are public
+:::
+
+&nbsp;
+
+. . .
+
+::: {style="text-align: center"}
+**Monitoring** {{< fa arrow-right >}} **Update performance in office** 
+:::
+
+## Why spending?
+
+I will make my pretty triangles here
+
+## Why *reducing* spending?
+
+More triangles!
+
+## Data: Anti-corruption audits in Brazil
+
+::: columns
+::: {.column width="50%"}
+![](audit_spending/sorteio.png)
+:::
+
+::: {.column width="50%"}
+:::incremental
+
+- *Controladoria Geral da União (CGU)*
+
+- 2003-2015
+
+- Lottery selects municipalities to audit use of federal funds
+
+- Make results public
+
+- 40 lotteries, 2,187 audits
+
+:::
+:::
+:::
+
+::: aside
+**Picture:** Jorge Hage, head of CGU ca. 2010, announces municipalities selected for auditing
+:::
+
+## Distribution of audits over time
+
+Here maybe redo figure for slide transitions
+
+## Research design
+
+::: incremental
+- Mayoral elections in 2004, 2008, 2012, 2016
+- **Treatment:** Municipality selected for auditing (binary)
+- **Outcome:** Spending per capita (logged)
+
+    
+&nbsp;
+
+- **QOI:** Average treatment effect of audit selection on spending outcomes
+- Distinguish between **reelection-eligible vs. term-limited**
+:::
+
+## Results: Election-year outcomes
+
+Here redo figure
+
+## Results: Audit timing
+
+Here redo figure
+
+## Also in the paper
+
+Here summarize other findings
+
+## Conclusion
+
+- Mayors decrease spending in reaction to audit selection
+
+- More pronounced under reelection incentives
+
+. . .
+
+### Implications
+
+- Bottom-up accountability still matters
+- Politicians learn to navigate monitoring efforts over time
+- Long-term monitoring still helpful
+- But at the expense of improving service provision?
+
+::: aside
+**Learn more:** [talks.gustavodiaz.org](https://talks.gustavodiaz.org/)
+:::
