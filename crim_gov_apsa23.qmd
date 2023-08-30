@@ -1,0 +1,348 @@
+---
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: true
+---
+
+::: {style="text-align: center"}
+##  Criminal Governance in Contexts of High State Presence and Low Violence {.center .smaller}
+
+::: columns
+
+::: {.column width="50%"}
+**Lucía Tiscornia**  
+University College Dublin  
+<lucia.tiscornia@ucd.ie>  
+
+
+**Ines Fynn**  
+Universidad Católica del Uruguay 
+<ines.fynn@ucu.edu.uy>  
+
+
+:::
+
+::: {.column width="50%"}
+**Verónica Pérez Bentancur**  
+Universidad de la República
+<veronica.perez@cienciassociales.edu.uy>  
+
+**Gustavo Diaz**  
+McMaster University  
+<diazg2@mcmaster.ca>  
+
+
+:::
+
+:::
+
+&nbsp;
+
+Slides and paper: [talks.gustavodiaz.org](https://talks.gustavodiaz.org/)
+
+:::
+
+
+
+```{r include=FALSE}
+library(knitr)
+
+opts_chunk$set(fig.pos = "center", echo = FALSE, 
+               message = FALSE, warning = FALSE)
+```
+
+```{r setup}
+# Packages
+library(tidyverse)
+library(DeclareDesign)
+library(kableExtra)
+
+
+# ggplot global options
+theme_set(theme_gray(base_size = 20))
+ggdodge = position_dodge(width = 0.5)
+```
+
+## Motivation
+
+```{r}
+lapop = read.csv("crim_gov/coup.csv") %>% 
+  rename(coup = Weight.Average) %>% 
+  select(country, coup) %>% 
+  mutate(country = ifelse(country == "Dominican Republic",
+                          "D. Republic", country)) %>% 
+  filter(country != "Canada" &
+           country != "United States")
+
+ggplot(lapop) +
+  aes(x = reorder(country, coup), y = coup) +
+  geom_col() +
+  coord_flip() +
+  labs(y = "% Agree coup is justified when crime high", x = "Country") 
+```
+
+::: aside
+**Source:** LAPOP 2018
+:::
+
+## Criminal governance
+
+
+::: aside
+See [Arias (2017)](https://doi.org/10.1017/9781316650073), [Lessing (2021)](https://doi.org/10.1017/S1537592720001243), [Trejo and Ley (2021)](https://doi.org/10.1017/9781108894807)
+:::
+
+## Criminal governance {visibility="uncounted"}
+
+Informal tools 
+
+::: aside
+See [Arias (2017)](https://doi.org/10.1017/9781316650073), [Lessing (2021)](https://doi.org/10.1017/S1537592720001243), [Trejo and Ley (2021)](https://doi.org/10.1017/9781108894807)
+:::
+
+## Criminal governance {visibility="uncounted"}
+
+Informal tools to **control community behaviors** 
+
+::: aside
+See [Arias (2017)](https://doi.org/10.1017/9781316650073), [Lessing (2021)](https://doi.org/10.1017/S1537592720001243), [Trejo and Ley (2021)](https://doi.org/10.1017/9781108894807)
+:::
+
+## Criminal governance {visibility="uncounted"}
+
+Informal tools to **control community behaviors** that involve **political, economic, or social aspects**
+
+::: aside
+See [Arias (2017)](https://doi.org/10.1017/9781316650073), [Lessing (2021)](https://doi.org/10.1017/S1537592720001243), [Trejo and Ley (2021)](https://doi.org/10.1017/9781108894807)
+:::
+
+## Criminal governance {visibility="uncounted"}
+
+Informal tools to **control community behaviors** that involve **political, economic, or social aspects** with the **goal of profiting from illicit markets**.
+
+::: aside
+See [Arias (2017)](https://doi.org/10.1017/9781316650073), [Lessing (2021)](https://doi.org/10.1017/S1537592720001243), [Trejo and Ley (2021)](https://doi.org/10.1017/9781108894807)
+:::
+
+## What we know so far
+
+::: incremental
+- Mix of violent and nonviolent strategies
+- Emergence depends on criminal control and competition
+- Where the state is absent
+- But also alongside the state
+:::
+
+. . .
+
+
+{{< fa arrow-right >}} Mostly from high violence, low state presence countries
+
+## Questions
+
+. . .
+
+**Why** do we observe *criminal governance* mechanisms in contexts of **low violence** and **high state presence**?
+
+. . .
+
+&nbsp;
+
+**How** does *criminal governance* operate in thexe contexts?
+
+## A theory of criminal governance under low violence and high state presence
+
+![](crim_gov/theory.png)
+
+
+## Research Design
+### Case selection: Montevideo, Uruguay
+
+- Low violence and crime
+- Extensive social protection
+- **Crucial least likely case**
+
+## Research Design {visibility="uncounted"}
+### Qualitative fieldwork (2021-2022)
+
+- 76 in depth interviews
+- Review of press and documents (2012-2022)
+- **Criminal governance is a sensitive topic**
+
+## Research Design {visibility="uncounted"}
+### Online survey (2022)
+
+- N = 2,688
+- Network scale-up questions (NSUM)
+- ~~Double list experiment~~
+- **Estimate extent of criminal governance tools**
+
+## Survey: Direct question
+
+**During the last six months, in your neighborhood, have you seen criminal organizations...**
+
+. . .
+
+&nbsp;
+
+::: columns
+
+::: {.column width="48%"}
+#### Violent
+- Threaten neighbors
+- Evict neighbors
+:::
+
+::: {.column width="52%"}
+#### Nonviolent
+- Make donations to neighbors
+- Offer jobs to neighbors
+
+
+:::
+
+:::
+
+## Survey: NSUM questions
+
+. . .
+
+**How many X do you know,**
+
+## Survey: NSUM questions {visibility="uncounted"}
+
+**How many X do you know, who also know you,**
+
+## Survey: NSUM questions {visibility="uncounted"}
+
+**How many X do you know, who also know you, with whom you have interacted in the last year**
+
+## Survey: NSUM questions {visibility="uncounted"}
+
+**How many X do you know, who also know you, with whom you have interacted in the last year in person, by phone, or any other channel?**
+
+. . .
+
+::: columns
+
+::: {.column width="45%"}
+From *Las Piedras*  
+Male 25-29  
+Police officers  
+University students  
+Had a kid last year  
+Passed away last year  
+Married last year  
+Female 45-49
+:::
+
+::: {.column width="55%"}
+Public employees  
+Welfare card holders  
+Registered with party  
+With kids in public school  
+Did not vote in last election  
+Currently in jail  
+Recently unemployed  
+*[CRIMINAL GOVERNANCE TOOL]*
+:::
+
+:::
+
+## Survey: Results
+
+```{r}
+results = read.csv("crim_gov/crevice_results.csv")
+
+estimates = results %>% 
+  filter(is.na(block))
+
+estimates$list_treatment = fct_relevel(estimates$list_treatment,
+                                       "Threaten neighbors",
+                                       "Evict neighbors",
+                                       "Make donations",
+                                       "Offer work")
+
+ggplot(estimates) +
+  aes(x = list_treatment, y = estimate, shape = estimator) +
+  # ylim(0,0.5) +
+  geom_point(size = 3, position = ggdodge, alpha = 0) +
+  geom_errorbar(aes(x = list_treatment,
+                    ymin = ci84.low,
+                    ymax = ci84.high),
+                linewidth = 1, width = 0.2,
+                position = ggdodge,
+                alpha = 0) +
+  geom_linerange(aes(x = list_treatment,
+                     ymin = conf.low,
+                     ymax = conf.high),
+                 linewidth = 1,
+                 position = ggdodge,
+                 alpha = 0) +
+  theme(legend.position = "bottom") +
+  labs(x = "Have you seen criminal groups...",
+       y = "Proportion",
+       shape = "Question")
+```
+
+::: aside
+Vertical lines are 95% CI, horizontal ticks are 84% CI
+:::
+
+## Survey: Results {visibility="uncounted"}
+
+```{r}
+ggplot(estimates) +
+  aes(x = list_treatment, y = estimate, shape = estimator) +
+  # ylim(0,0.5) +
+  geom_point(size = 3, position = ggdodge) +
+  geom_errorbar(aes(x = list_treatment,
+                     ymin = ci84.low,
+                     ymax = ci84.high),
+                 linewidth = 1, width = 0.2,
+                 position = ggdodge) +
+  geom_linerange(aes(x = list_treatment,
+                     ymin = conf.low,
+                     ymax = conf.high),
+                 linewidth = 1,
+                 position = ggdodge) +
+  theme(legend.position = "bottom") +
+  labs(x = "Have you seen criminal groups...",
+       y = "Proportion",
+       shape = "Question")
+```
+
+::: aside
+Vertical lines are 95% CI, horizontal ticks are 84% CI
+:::
+
+## Interviews: Limited to economic mechanisms
+
+. . .
+
+*Politics for them does not exist, they are in the business [of selling drugs]. Politics is the business of other people, they are interested in having economic means quickly, but politics is not their strong suit*
+
+. . .
+
+&nbsp;
+
+*They are not well-organized enough to be involved in other things*
+
+## Conclusion
+
+- Criminal governance can persist under low crime, high state presence
+- But no attempt to *replace* the state
+
+. . .
+
+### Implications
+
+- Current explanations may be biased towards high violence cases
+- Rethinking theoretical scope conditions
+
+::: aside
+**Learn more:** [talks.gustavodiaz.org](https://talks.gustavodiaz.org/)
+:::
+
+
