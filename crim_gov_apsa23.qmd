@@ -332,7 +332,7 @@ Vertical lines are 95% CI, horizontal ticks are 84% CI
 ## Conclusion
 
 - Criminal governance can persist under low crime, high state presence
-- But no attempt to *replace* the state
+- But no attempt at social/political control
 
 . . .
 
