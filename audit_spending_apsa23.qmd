@@ -335,11 +335,11 @@ ggplot(audit_count) +
     
 &nbsp;
 
-- **QOI:** Average treatment effect of audit selection on spending outcomes
+- **QOI:** Average treatment effect of audit selection on spending
 - Distinguish between **reelection-eligible vs. term-limited**
 :::
 
-## Results: Election-year outcomes
+## Results: Election-year spending
 
 ```{r}
 load("audit_spending/lm_main.RData")
@@ -360,7 +360,7 @@ ggplot(lm_main_df) +
 Clustered standard errors by municipality and state-term fixed effects
 :::
 
-## Results: Election-year outcomes {visibility="uncounted"}
+## Results: Election-year spending {visibility="uncounted"}
 
 ```{r}
 ggplot(lm_main_df) +
@@ -419,7 +419,7 @@ Clustered standard errors by municipality and state-term fixed effects
 
 ## Also in the paper
 
-- No effect for other years in term
+- No effect on spending in other years
 - Not an artifice of top-down enforcement
 - Not an artifice of targeted spending
 - Effect more pronounced with higher uncovered corruption

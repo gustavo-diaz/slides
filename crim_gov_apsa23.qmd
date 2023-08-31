@@ -149,7 +149,7 @@ See [Arias (2017)](https://doi.org/10.1017/9781316650073), [Lessing (2021)](http
 
 &nbsp;
 
-**How** does *criminal governance* operate in thexe contexts?
+**How** does *criminal governance* operate in these contexts?
 
 ## A theory of criminal governance under low violence and high state presence
 
@@ -173,10 +173,10 @@ See [Arias (2017)](https://doi.org/10.1017/9781316650073), [Lessing (2021)](http
 ## Research Design {visibility="uncounted"}
 ### Online survey (2022)
 
+- **Estimate extent of criminal governance tools**
 - N = 2,688
 - Network scale-up questions (NSUM)
 - ~~Double list experiment~~
-- **Estimate extent of criminal governance tools**
 
 ## Survey: Direct question
 

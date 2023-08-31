@@ -67,7 +67,7 @@
     "href": "audit_spending_apsa23.html#research-design",
     "title": "Gustavo Diaz",
     "section": "Research design",
-    "text": "Research design\n\n\nMayoral elections in 2004, 2008, 2012, 2016\nTreatment: Municipality selected for auditing (binary)\nOutcome: Spending per capita (logged)\n\n \n\nQOI: Average treatment effect of audit selection on spending outcomes\nDistinguish between reelection-eligible vs. term-limited"
+    "text": "Research design\n\n\nMayoral elections in 2004, 2008, 2012, 2016\nTreatment: Municipality selected for auditing (binary)\nOutcome: Spending per capita (logged)\n\n \n\nQOI: Average treatment effect of audit selection on spending\nDistinguish between reelection-eligible vs. term-limited"
   },
   {
     "objectID": "audit_spending_apsa23.html#results-election-year-outcomes",
@@ -88,7 +88,7 @@
     "href": "audit_spending_apsa23.html#also-in-the-paper",
     "title": "Gustavo Diaz",
     "section": "Also in the paper",
-    "text": "Also in the paper\n\nNo effect for other years in term\nNot an artifice of top-down enforcement\nNot an artifice of targeted spending\nEffect more pronounced with higher uncovered corruption"
+    "text": "Also in the paper\n\nNo effect on spending in other years\nNot an artifice of top-down enforcement\nNot an artifice of targeted spending\nEffect more pronounced with higher uncovered corruption"
   },
   {
     "objectID": "audit_spending_apsa23.html#conclusion",
@@ -221,7 +221,7 @@
     "href": "crim_gov_apsa23.html#questions",
     "title": "Gustavo Diaz",
     "section": "Questions",
-    "text": "Questions\n\nWhy do we observe criminal governance mechanisms in contexts of low violence and high state presence?\n\n\n \nHow does criminal governance operate in thexe contexts?"
+    "text": "Questions\n\nWhy do we observe criminal governance mechanisms in contexts of low violence and high state presence?\n\n\n \nHow does criminal governance operate in these contexts?"
   },
   {
     "objectID": "crim_gov_apsa23.html#a-theory-of-criminal-governance-under-low-violence-and-high-state-presence",
@@ -249,7 +249,7 @@
     "href": "crim_gov_apsa23.html#research-design-2",
     "title": "Gustavo Diaz",
     "section": "Research Design",
-    "text": "Research Design\nOnline survey (2022)\n\nN = 2,688\nNetwork scale-up questions (NSUM)\nDouble list experiment\nEstimate extent of criminal governance tools"
+    "text": "Research Design\nOnline survey (2022)\n\nEstimate extent of criminal governance tools\nN = 2,688\nNetwork scale-up questions (NSUM)\nDouble list experiment"
   },
   {
     "objectID": "crim_gov_apsa23.html#research-design-3",
@@ -376,5 +376,19 @@
     "title": "Gustavo Diaz",
     "section": "Conclusion",
     "text": "Conclusion\n\nCriminal governance can persist under low crime, high state presence\nBut no attempt at social/political control\n\n\nImplications\n\nCurrent explanations may be biased towards high violence cases\nRethinking theoretical scope conditions\n\n\n\n\n\n\n\n\nLearn more: talks.gustavodiaz.org"
+  },
+  {
+    "objectID": "audit_spending_apsa23.html#results-election-year-spending",
+    "href": "audit_spending_apsa23.html#results-election-year-spending",
+    "title": "Gustavo Diaz",
+    "section": "Results: Election-year spending",
+    "text": "Results: Election-year spending\n\n\n\n\n\n\n\n\n\n\n\nClustered standard errors by municipality and state-term fixed effects"
+  },
+  {
+    "objectID": "audit_spending_apsa23.html#results-election-year-spending-1",
+    "href": "audit_spending_apsa23.html#results-election-year-spending-1",
+    "title": "Gustavo Diaz",
+    "section": "Results: Election-year spending",
+    "text": "Results: Election-year spending\n\n\n\n\n\n\n\n\n\n\n\nClustered standard errors by municipality and state-term fixed effects"
   }
 ]
