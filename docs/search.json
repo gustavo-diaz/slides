@@ -390,5 +390,138 @@
     "title": "Gustavo Diaz",
     "section": "Results: Election-year spending",
     "text": "Results: Election-year spending\n\n\n\n\n\n\n\n\n\n\n\nClustered standard errors by municipality and state-term fixed effects"
+  },
+  {
+    "objectID": "tec.html#improving-list-experiments",
+    "href": "tec.html#improving-list-experiments",
+    "title": "Gustavo Diaz",
+    "section": "Improving List Experiments",
+    "text": "Improving List Experiments\n \nGustavo Diaz\nMcMaster University\ngustavodiaz.org\ndiazg2@mcmaster.ca\n \nSlides: talks.gustavodiaz.org/tec"
+  },
+  {
+    "objectID": "tec.html#bias-variance-tradeoff-as-darts",
+    "href": "tec.html#bias-variance-tradeoff-as-darts",
+    "title": "Gustavo Diaz",
+    "section": "Bias-variance tradeoff as darts",
+    "text": "Bias-variance tradeoff as darts"
+  },
+  {
+    "objectID": "tec.html#research-agenda",
+    "href": "tec.html#research-agenda",
+    "title": "Gustavo Diaz",
+    "section": "Research agenda",
+    "text": "Research agenda\nNavigating two types of tradeoffs\n\n\nExplicit: Is a little bias worth the increase in precision?\nImplicit: Improve precision without sacrificing unbiasedness?"
+  },
+  {
+    "objectID": "tec.html#research-agenda-1",
+    "href": "tec.html#research-agenda-1",
+    "title": "Gustavo Diaz",
+    "section": "Research agenda",
+    "text": "Research agenda\nNavigating two types of tradeoffs:\n\nExplicit: Is a little bias worth the increase in precision?\nImplicit: Improve precision without sacrificing unbiasedness?"
+  },
+  {
+    "objectID": "tec.html#research-agenda-2",
+    "href": "tec.html#research-agenda-2",
+    "title": "Gustavo Diaz",
+    "section": "Research agenda",
+    "text": "Research agenda\nNavigating two types of tradeoffs\n\nExplicit: Is a little bias worth the increase in precision?\nImplicit: Improve precision without sacrificing unbiasedness?"
+  },
+  {
+    "objectID": "tec.html#but-the-game-of-darts-is-more-complicated",
+    "href": "tec.html#but-the-game-of-darts-is-more-complicated",
+    "title": "Gustavo Diaz",
+    "section": "But the game of darts is more complicated",
+    "text": "But the game of darts is more complicated"
+  },
+  {
+    "objectID": "tec.html#two-types-of-tradeoffs",
+    "href": "tec.html#two-types-of-tradeoffs",
+    "title": "Gustavo Diaz",
+    "section": "Two types of tradeoffs",
+    "text": "Two types of tradeoffs\n\n\nExplicit: Is a little bias worth the increase in precision?\nImplicit: Improve precision without sacrificing unbiasedness?"
+  },
+  {
+    "objectID": "tec.html#two-types-of-tradeoffs-1",
+    "href": "tec.html#two-types-of-tradeoffs-1",
+    "title": "Gustavo Diaz",
+    "section": "Two types of tradeoffs",
+    "text": "Two types of tradeoffs\n\nExplicit: Is a little bias worth the increase in precision?\nImplicit: Improve precision without sacrificing unbiasedness?"
+  },
+  {
+    "objectID": "tec.html#example",
+    "href": "tec.html#example",
+    "title": "Gustavo Diaz",
+    "section": "Example",
+    "text": "Example\n\n\n\n\n\n\nSource: NPR"
+  },
+  {
+    "objectID": "tec.html#list-experiment",
+    "href": "tec.html#list-experiment",
+    "title": "Gustavo Diaz",
+    "section": "List experiment",
+    "text": "List experiment\nHere is a list of things that some people have done.\n\n\nSource: Rosenfeld et al (2016)"
+  },
+  {
+    "objectID": "tec.html#list-experiment-1",
+    "href": "tec.html#list-experiment-1",
+    "title": "Gustavo Diaz",
+    "section": "List experiment",
+    "text": "List experiment\nPlease listen to them and then tell me HOW MANY of them you have done in the past two years.\n\n\nSource: Rosenfeld et al (2016)"
+  },
+  {
+    "objectID": "tec.html#list-experiment-2",
+    "href": "tec.html#list-experiment-2",
+    "title": "Gustavo Diaz",
+    "section": "List experiment",
+    "text": "List experiment\nDo not tell me which ones. Just tell me HOW MANY:\n\n\n \nControl group\n\nDiscussed politics with family or friends\nCast a ballot for governor Phil Bryant\nPaid dues to a union\nGiven money to a Tea Party candidate\n\n\n\nSource: Rosenfeld et al (2016)"
+  },
+  {
+    "objectID": "tec.html#list-experiment-3",
+    "href": "tec.html#list-experiment-3",
+    "title": "Gustavo Diaz",
+    "section": "List experiment",
+    "text": "List experiment\nDo not tell me which ones. Just tell me HOW MANY:\n\n \nTreatment group\n\nDiscussed politics with family or friends\nCast a ballot for governor Phil Bryant\nPaid dues to a union\nGiven money to a Tea Party candidate\nVoted “YES” on the Personhood Initiative\n\n\nSource: Rosenfeld et al (2016)"
+  },
+  {
+    "objectID": "tec.html#prevalence-rate",
+    "href": "tec.html#prevalence-rate",
+    "title": "Gustavo Diaz",
+    "section": "Prevalence rate",
+    "text": "Prevalence rate\n\\[\n\\text{Proportion(Voted yes)} =\\\\ \\text{Mean(List with sensitive item)} -\\\\ \\text{Mean(List without sensitive item)}\n\\]\n\n\nBut we do not know how individual respondents voted!"
+  },
+  {
+    "objectID": "tec.html#compare-with-direct-question",
+    "href": "tec.html#compare-with-direct-question",
+    "title": "Gustavo Diaz",
+    "section": "Compare with direct question",
+    "text": "Compare with direct question\nDid you vote YES or NO on the Personhood Initiative, which appeared on the November 2011 Mississippi General Election Ballot?\n\n\\[\n\\text{Proportion(Voted yes)} =\\\\ \\text{Mean(Voted yes)}\n\\]"
+  },
+  {
+    "objectID": "tec.html#validation",
+    "href": "tec.html#validation",
+    "title": "Gustavo Diaz",
+    "section": "Validation",
+    "text": "Validation\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Rosenfeld et al (2016)"
+  },
+  {
+    "objectID": "tec.html#validation-1",
+    "href": "tec.html#validation-1",
+    "title": "Gustavo Diaz",
+    "section": "Validation",
+    "text": "Validation\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Rosenfeld et al (2016)"
+  },
+  {
+    "objectID": "tec.html#validation-2",
+    "href": "tec.html#validation-2",
+    "title": "Gustavo Diaz",
+    "section": "Validation",
+    "text": "Validation\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Rosenfeld et al (2016)"
+  },
+  {
+    "objectID": "tec.html#validation-3",
+    "href": "tec.html#validation-3",
+    "title": "Gustavo Diaz",
+    "section": "Validation",
+    "text": "Validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Rosenfeld et al (2016)"
   }
 ]

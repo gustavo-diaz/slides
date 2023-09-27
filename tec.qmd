@@ -1,0 +1,336 @@
+---
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: true
+---
+
+::: {style="text-align: center"}
+## Improving List Experiments {.center .smaller}
+
+&nbsp;
+
+
+**Gustavo Diaz**  
+McMaster University  
+[gustavodiaz.org](https://gustavodiaz.org/)  
+<diazg2@mcmaster.ca>
+
+&nbsp;
+
+Slides: [talks.gustavodiaz.org/tec](https://talks.gustavodiaz.org/tec.html)
+
+:::
+
+
+```{r include=FALSE}
+library(knitr)
+
+opts_chunk$set(fig.pos = "center", echo = FALSE, 
+               message = FALSE, warning = FALSE)
+```
+
+```{r setup}
+# Packages
+library(tidyverse)
+library(DeclareDesign)
+library(kableExtra)
+
+
+# ggplot global options
+theme_set(theme_gray(base_size = 20))
+```
+
+# Research Agenda
+
+## Bias-variance tradeoff as darts
+
+![](list/darts.png){fig-align="center"}
+
+## But the game of darts is more complicated
+
+::: columns
+::: {.column width="50%"}
+![](list/darts_board.png)
+:::
+
+::: {.column width="50%"}
+![](list/darts_scoring.png){fig-align="center" width="72%" height="72%"}
+:::
+:::
+
+
+## Two types of tradeoffs
+
+::: incremental
+
+1. **Explicit:** Is a little bias worth the increase in precision?
+
+2. **Implicit:** Improve precision without sacrificing unbiasedness? 
+:::
+
+## Two types of tradeoffs {visibility="uncounted"}
+
+1. [**Explicit:** Is a little bias worth the increase in precision?]{style="color: gray;"}
+
+2. [**Implicit:** Improve precision without sacrificing unbiasedness?]{style="color: red;"}
+
+# List Experiments
+
+## Example
+
+![](list/personhood_0.png){.absolute top=60 left=0 height="80%"}
+
+. . .
+
+![](list/personhood_1.png){.absolute top=150 left=200}
+
+::: aside
+Source: [NPR](https://www.npr.org/sections/itsallpolitics/2011/11/08/142159280/mississippi-voters-reject-personhood-amendment)
+:::
+
+## List experiment
+
+Here is a list of things that some people have done. 
+
+::: aside
+Source: [Rosenfeld et al (2016)](https://doi.org/10.1111/ajps.12205)
+:::
+
+## List experiment {visibility="uncounted"}
+
+Please listen to them and then tell me HOW MANY of them you have done in the past two years. 
+
+::: aside
+Source: [Rosenfeld et al (2016)](https://doi.org/10.1111/ajps.12205)
+:::
+
+## List experiment {visibility="uncounted"}
+
+Do not tell me which ones. Just tell me HOW MANY:
+
+::: aside
+Source: [Rosenfeld et al (2016)](https://doi.org/10.1111/ajps.12205)
+:::
+
+. . .
+
+&nbsp;
+
+### Control group
+
+1. Discussed politics with family or friends
+2. Cast a ballot for governor Phil Bryant
+3. Paid dues to a union
+4. Given money to a Tea Party candidate
+
+
+## List experiment {visibility="uncounted"}
+
+Do not tell me which ones. Just tell me HOW MANY:
+
+::: aside
+Source: [Rosenfeld et al (2016)](https://doi.org/10.1111/ajps.12205)
+:::
+
+&nbsp;
+
+### Treatment group
+
+1. Discussed politics with family or friends
+2. Cast a ballot for governor Phil Bryant
+3. Paid dues to a union
+4. Given money to a Tea Party candidate
+5. **Voted "YES" on the Personhood Initiative**
+
+
+## Prevalence rate
+
+$$
+\text{Proportion(Voted yes)} =\\ \text{Mean(List with sensitive item)} -\\ \text{Mean(List without sensitive item)}
+$$
+
+. . .
+
+- We get a **prevalence rate estimate**
+
+. . .
+
+- But we **do not know** how individual respondents voted!
+
+## Compare with direct question
+
+Did you vote YES or NO on the Personhood Initiative, which appeared on the November 2011 Mississippi General Election Ballot?
+
+. . .
+
+
+$$
+\text{Proportion(Voted yes)} =\\ \text{Mean(Voted yes)}
+$$
+
+
+## Validation
+
+```{r}
+# got this through
+# https://automeris.io/WebPlotDigitizer/
+# And by reverse engineering table 1
+# Because replication data was not available
+# So this has some human error
+validation = data.frame(
+  technique = c("Direct question", "List experiment"),
+  estimate = c(0.396, 0.487),
+  upper = c(0.419, 0.562),
+  lower = c(0.376, 0.417)
+)
+
+actual_vote = 0.65
+
+ggplot(validation) +
+  aes(x = technique, y = estimate) +
+  geom_point(size = 4, alpha = 0) + 
+  geom_linerange(aes(x = technique, ymin = lower, ymax = upper),
+                 linewidth = 1, alpha = 0) +
+  ylim(0.2, 0.8) +
+  labs(x = "Technique", 
+       y = "Estimated proportion of 'No' votes")
+```
+
+::: aside
+Adapted from [Rosenfeld et al (2016)](https://doi.org/10.1111/ajps.12205)
+:::
+
+## Validation {visibility="uncounted"}
+
+```{r}
+ggplot(validation) +
+  aes(x = technique, y = estimate) +
+  geom_hline(yintercept = actual_vote, 
+             linetype = "dashed",
+             linewidth = 1) +
+  geom_point(size = 4, alpha = 0) + 
+  geom_linerange(aes(x = technique, ymin = lower, ymax = upper),
+                 linewidth = 1, alpha = 0) +
+  annotate("text", x = 0.7, y = 0.7, size = 5, 
+           label = "Actual vote share") +
+  ylim(0.2, 0.8) +
+  labs(x = "Technique", 
+       y = "Estimated proportion of 'No' votes")
+```
+
+::: aside
+Adapted from [Rosenfeld et al (2016)](https://doi.org/10.1111/ajps.12205)
+:::
+
+
+## Validation {visibility="uncounted"}
+
+```{r}
+ggplot(validation) +
+  aes(x = technique, y = estimate) +
+  geom_hline(yintercept = actual_vote, 
+             linetype = "dashed",
+             linewidth = 1) +
+  geom_point(size = 4) + 
+  geom_linerange(aes(x = technique, ymin = lower, ymax = upper),
+                 linewidth = 1, alpha = 0) +
+  annotate("text", x = 0.7, y = 0.7, size = 5, 
+           label = "Actual vote share") +
+  ylim(0.2, 0.8) +
+  labs(x = "Technique", 
+       y = "Estimated proportion of 'No' votes")
+```
+
+::: aside
+Adapted from [Rosenfeld et al (2016)](https://doi.org/10.1111/ajps.12205)
+:::
+
+
+## Validation {visibility="uncounted"}
+
+```{r}
+ggplot(validation) +
+  aes(x = technique, y = estimate) +
+  geom_hline(yintercept = actual_vote, 
+             linetype = "dashed",
+             linewidth = 1) +
+  geom_point(size = 4) + 
+  geom_linerange(aes(x = technique, ymin = lower, ymax = upper),
+                 linewidth = 1) +
+  annotate("text", x = 0.7, y = 0.7, size = 5, 
+           label = "Actual vote share") +
+  ylim(0.2, 0.8) +
+  labs(x = "Technique", 
+       y = "Estimated proportion of 'No' votes")
+```
+
+::: aside
+Adapted from [Rosenfeld et al (2016)](https://doi.org/10.1111/ajps.12205)
+:::
+
+::: {style="text-align: center"}
+## List experiments are not always an improvement {.center background-color="#00b176"}
+:::
+
+::: {style="text-align: center"}
+## Can we do better? {.center background-color="#00b176"}
+:::
+
+## Double list experiment {.smaller}
+
+**List A**
+
+- Californians for Disability (advocating for people with disabilities)
+- California National Organization for Women (advocating for women's equality and empowerment)
+- American Family Association (advocating for pro-family values)
+- American Red Cross (humanitarian organization)
+
+**List B**
+
+- American Legion (veterans service organization)
+- Equality California (gay and lesbian advocacy organization)
+- Tea Party Patriots (conservative group supporting lower taxes and limited government)
+- Salvation Army (charitable organization)
+
+::: aside
+Source: [Alvarez et al (2019)](https://doi.org/10.1017/pan.2018.57)
+:::
+
+## Sensitive item
+
+**Organization X (advocating for immigration reduction and measures against undocumented immigration)**
+
+::: incremental
+- Randomly appears in list A or B
+
+- **Single list:** Half of the respondents see sensitive item
+
+- **Double list:** Everyone sees it
+
+- Equivalent to making two parallel list experiments
+
+:::
+
+## Three prevalence estimators
+
+$$
+\text{Proportion(Support)}_A = \text{Mean}(A_t) - \text{Mean}(A_c)
+$$
+
+. . .
+
+$$
+\text{Proportion(Support)}_B = \text{Mean}(B_t) - \text{Mean}(B_c)
+$$
+
+. . .
+
+
+$$
+\text{Proportion(Support)}_{Pooled} = [\text{Proportion(Support)}_A + \text{Proportion(Support)}_B)]/2
+$$ 
+
+## DLE yields more precise estimates
+
+[CONTINUE HERE WILL NEED TO LOAD DATA]
