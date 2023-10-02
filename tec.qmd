@@ -66,14 +66,14 @@ theme_set(theme_gray(base_size = 20))
 
 1. **Explicit:** Is a little bias worth the increase in precision?
 
-2. **Implicit:** Improve precision without sacrificing unbiasedness? 
+2. **Implicit:** Improving precision without sacrificing unbiasedness? 
 :::
 
 ## Two types of tradeoffs {visibility="uncounted"}
 
 1. [**Explicit:** Is a little bias worth the increase in precision?]{style="color: gray;"}
 
-2. [**Implicit:** Improve precision without sacrificing unbiasedness?]{style="color: red;"}
+2. [**Implicit:** Improving precision without sacrificing unbiasedness?]{style="color: red;"}
 
 # List Experiments
 
@@ -270,14 +270,16 @@ Adapted from [Rosenfeld et al (2016)](https://doi.org/10.1111/ajps.12205)
 :::
 
 ::: {style="text-align: center"}
-## List experiments are not always an improvement {.center background-color="#00b176"}
+## Sensitivity bias reduction not always worth the increased variance {.center background-color="#00b176"}
 :::
 
 ::: {style="text-align: center"}
 ## Can we do better? {.center background-color="#00b176"}
 :::
 
-## Double list experiment {.smaller}
+# Double list experiments
+
+## Example {.smaller}
 
 **List A**
 
@@ -308,29 +310,430 @@ Source: [Alvarez et al (2019)](https://doi.org/10.1017/pan.2018.57)
 
 - **Double list:** Everyone sees it
 
-- Equivalent to making two parallel list experiments
+- Equivalent to two parallel list experiments
 
 :::
 
 ## Three prevalence estimators
 
 $$
-\text{Proportion(Support)}_A = \text{Mean}(A_t) - \text{Mean}(A_c)
+\hat{\tau}_A = \text{Mean}(A_t) - \text{Mean}(A_c)
 $$
 
 . . .
 
 $$
-\text{Proportion(Support)}_B = \text{Mean}(B_t) - \text{Mean}(B_c)
+\hat{\tau}_B = \text{Mean}(B_t) - \text{Mean}(B_c)
 $$
 
 . . .
 
 
 $$
-\text{Proportion(Support)}_{Pooled} = [\text{Proportion(Support)}_A + \text{Proportion(Support)}_B)]/2
+\hat{\tau}_{Pooled} = (\hat{\tau}_A + \hat{\tau}_B)/2
 $$ 
+
+::: aside
+See [Diaz (2023)](https://doi.org/10.1017/XPS.2023.24) and [Miller (1984)](https://www.proquest.com/docview/303296717) for details
+:::
 
 ## DLE yields more precise estimates
 
-[CONTINUE HERE WILL NEED TO LOAD DATA]
+```{r}
+# Data prep
+load("list/attn_rep.RData")
+
+cali = dle
+
+remove(dle)
+
+# Analysis
+a = cali %>% 
+  split(.$experiment) %>% 
+  map(~difference_in_means(listA ~ trt_A, data = .)) %>% 
+  map(tidy) %>% 
+  bind_rows(.id = "experiment")
+
+b = cali %>% 
+  split(.$experiment) %>% 
+  map(~difference_in_means(listB ~ trt_B, data = .)) %>% 
+  map(tidy) %>% 
+  bind_rows(.id = "experiment")
+
+pool = cali %>% 
+  mutate(id = row_number()) %>% 
+  pivot_longer(cols = c(listA, listB)) %>% 
+  rename(list = name, count = value) %>% 
+  mutate(Z = ifelse(trt_A == 1 & list == "listA" | trt_B == 1 & list == "listB",
+                    1, 0)) %>% 
+  split(.$experiment) %>% 
+  map(~ lm_robust(count ~ Z + list, clusters = id, se_type = "stata", data = .)) %>% 
+  map(tidy) %>% 
+  bind_rows(.id = "experiment") %>% 
+  filter(term == "Z")
+  
+est_df = rbind(a, b, pool)
+
+est_df$term = fct_relevel(est_df$term, "trt_A", "trt_B", "Z")
+```
+
+```{r}
+ggplot(est_df %>% filter(experiment == "X")) +
+  aes(x = term, y = estimate, shape = term) +
+  geom_hline(yintercept = 0, linetype = "dashed") + 
+  geom_point(size = 4, position = position_dodge(width = 0.5), alpha = 0) +
+  geom_linerange(aes(x = term, ymin = conf.low, ymax = conf.high), 
+                 size = 1, position = position_dodge(width = 0.5), alpha = 0) +
+  theme(legend.position = "none") +
+  labs(subtitle = "Organization X (immigration reduction)",
+       x = "Estimator", 
+       y = "Proportion support") +
+  scale_x_discrete(labels = c("List A", "List B", "Pooled"))
+```
+
+::: aside
+Adapted from [Diaz (2023)](https://doi.org/10.1017/XPS.2023.24)
+:::
+
+## DLE yields more precise estimates {visibility="uncounted"}
+
+```{r}
+ggplot(est_df %>% filter(experiment == "X")) +
+  aes(x = term, y = estimate, shape = term) +
+  geom_hline(yintercept = 0, linetype = "dashed") + 
+  geom_point(size = 4, position = position_dodge(width = 0.5)) +
+  geom_linerange(aes(x = term, ymin = conf.low, ymax = conf.high), 
+                 size = 1, position = position_dodge(width = 0.5)) +
+  theme(legend.position = "none") +
+  labs(subtitle = "Organization X (immigration reduction)", 
+       x = "Estimator", 
+       y = "Proportion support") +
+  scale_x_discrete(labels = c("List A", "List B", "Pooled"))
+```
+
+::: aside
+Adapted from [Diaz (2023)](https://doi.org/10.1017/XPS.2023.24)
+:::
+
+## But variance reduction is not free
+
+::: incremental
+- Baseline lists need to be comparable
+
+- Easiest way is to use *paired items* 
+
+- American Family Association (A) $\approx$ Tea Party Patriots (B)
+
+- **BUT** that makes it easier to spot the *sensitive item*
+:::
+
+## Different baseline estimates
+
+```{r}
+ggplot(est_df %>% filter(experiment == "Y")) +
+  aes(x = term, y = estimate, shape = term) +
+  geom_hline(yintercept = 0, linetype = "dashed") + 
+  geom_point(size = 4, position = position_dodge(width = 0.5), alpha = 0) +
+  geom_linerange(aes(x = term, ymin = conf.low, ymax = conf.high), 
+                 size = 1, position = position_dodge(width = 0.5), alpha = 0) +
+  theme(legend.position = "none") +
+  labs(subtitle = "Organization Y (citizen border patrol)", 
+       x = "Estimator", 
+       y = "Proportion support") +
+  scale_x_discrete(labels = c("List A", "List B", "Pooled"))
+```
+
+::: aside
+Adapted from [Diaz (2023)](https://doi.org/10.1017/XPS.2023.24)
+:::
+
+
+## Different baseline estimates {visibility="uncounted"}
+
+```{r}
+ggplot(est_df %>% filter(experiment == "Y")) +
+  aes(x = term, y = estimate, shape = term) +
+  geom_hline(yintercept = 0, linetype = "dashed") + 
+  geom_point(size = 4, position = position_dodge(width = 0.5)) +
+  geom_linerange(aes(x = term, ymin = conf.low, ymax = conf.high), 
+                 size = 1, position = position_dodge(width = 0.5)) +
+  theme(legend.position = "none") +
+  labs(subtitle = "Organization Y (citizen border patrol)", 
+       x = "Estimator", 
+       y = "Proportion support") +
+  scale_x_discrete(labels = c("List A", "List B", "Pooled"))
+```
+
+::: aside
+Adapted from [Diaz (2023)](https://doi.org/10.1017/XPS.2023.24)
+:::
+
+## DLE variants
+
+. . .
+
+```{r}
+designs = data.frame(
+  expand.grid(
+    Lists = c("Fixed", "Randomized"),
+    Sensitive_item = c("Fixed", "Randomized")
+  )
+)
+
+colnames(designs) = c("List order", "Sensitive item location")
+
+designs %>% 
+  kbl(escape = FALSE,
+      align = "cc")
+```
+
+## DLE variants {visibility="uncounted"}
+
+```{r}
+designs = data.frame(
+  expand.grid(
+    Lists = c("Fixed", "Randomized"),
+    Sensitive_item = c("Fixed", "Randomized")
+  )
+)
+
+colnames(designs) = c("List order", "Sensitive item location")
+
+designs %>% 
+  kbl(escape = FALSE,
+      align = "cc") %>% 
+  row_spec(1, strikeout = TRUE, color = "gray")
+```
+
+- **Fixed-fixed** is *not* an admissible design
+
+## DLE variants {visibility="uncounted"}
+
+```{r}
+designs = data.frame(
+  expand.grid(
+    Lists = c("Fixed", "Randomized"),
+    Sensitive_item = c("Fixed", "Randomized")
+  )
+)
+
+colnames(designs) = c("List order", "Sensitive item location")
+
+designs %>% 
+  kbl(escape = FALSE,
+      align = "cc") %>% 
+  row_spec(1, strikeout = TRUE, color = "gray") %>% 
+  row_spec(2, bold = TRUE)
+```
+
+- **Fixed-fixed** is *not* an admissible design
+- **Randomized-fixed** keeps sensitive item in second list
+
+## DLE variants {visibility="uncounted"}
+
+```{r}
+designs = data.frame(
+  expand.grid(
+    Lists = c("Fixed", "Randomized"),
+    Sensitive_item = c("Fixed", "Randomized")
+  )
+)
+
+colnames(designs) = c("List order", "Sensitive item location")
+
+designs %>% 
+  kbl(escape = FALSE,
+      align = "cc") %>% 
+  row_spec(1, strikeout = TRUE, color = "gray") %>% 
+  row_spec(2, strikeout = TRUE, color = "gray")
+```
+
+- **Fixed-fixed** is *not* an admissible design
+- **Randomized-fixed** keeps sensitive item in second list
+
+## DLE variants {visibility="uncounted"}
+
+```{r}
+designs = data.frame(
+  expand.grid(
+    Lists = c("Fixed", "Randomized"),
+    Sensitive_item = c("Fixed", "Randomized")
+  )
+)
+
+colnames(designs) = c("List order", "Sensitive item location")
+
+designs %>% 
+  kbl(escape = FALSE,
+      align = "cc") %>% 
+  row_spec(1, strikeout = TRUE, color = "gray") %>% 
+  row_spec(2, strikeout = TRUE, color = "gray") %>% 
+  row_spec(3:4, bold = TRUE)
+```
+
+- **Fixed-fixed** is *not* an admissible design
+- **Randomized-fixed** keeps sensitive item in second list
+- **Fixed-randomized** and **randomized-randomized** *shuffle sensitive item order*
+
+## Carryover design effects
+
+::: {.callout-note}
+## Design effect[(Blair and Imai 2012)](https://doi.org/10.1093/pan/mpr048)
+
+The inclusion of a sensitive item affects how survey participants respond to the baseline items **within the list**.
+
+:::
+
+. . .
+
+::: {.callout-tip}
+## Carryover design
+
+The inclusion of a sensitive item **in one list** affects how participants respond to the baseline items in **the other list**.
+:::
+
+## Toy example
+
+```{r}
+# Four cases
+# Baseline (only once)
+# Deflation
+# Inflation
+# Sensitive item
+
+toy = data.frame(
+  pot = c("Baseline", rep(c("Sensitive first", "Sensitive second"), 2)),
+  Ya = c(2, 1, 2, 3, 2),
+  Yb = c(2, 1, 1, 3, 3),
+  zz = c(0, 0, 1, 0, -1)
+)
+
+colnames(toy) = c("Observed response",
+                  "List 1",
+                  "List 2",
+                  "Difference")
+
+toy %>% 
+  kbl(escape = FALSE,
+      align = "lcccc") %>% 
+  pack_rows("Deflation", 2, 3, color = "white") %>% 
+  pack_rows("Inflation", 4, 5, color = "white") %>%  
+  column_spec(1, bold = c(T, F, F, F, F)) %>% 
+  row_spec(1:5, color = "white")
+```
+
+## Toy example {visibility="uncounted"}
+
+```{r}
+toy %>% 
+  kbl(escape = FALSE,
+      align = "lcccc") %>% 
+  pack_rows("Deflation", 2, 3, color = "white") %>% 
+  pack_rows("Inflation", 4, 5, color = "white") %>%  
+  column_spec(1, bold = c(T, F, F, F, F)) %>% 
+  row_spec(2:5, color = "white")
+```
+
+## Toy example {visibility="uncounted"}
+
+```{r}
+toy %>% 
+  kbl(escape = FALSE,
+      align = "lcccc") %>% 
+  pack_rows("Deflation", 2, 3) %>% 
+  pack_rows("Inflation", 4, 5, color = "white") %>%  
+  column_spec(1, bold = c(T, F, F, F, F)) %>% 
+  row_spec(2:5, color = "white")
+```
+
+## Toy example {visibility="uncounted"}
+
+```{r}
+toy %>% 
+  kbl(escape = FALSE,
+      align = "lcccc") %>% 
+  pack_rows("Deflation", 2, 3) %>% 
+  pack_rows("Inflation", 4, 5, color = "white") %>%  
+  column_spec(1, bold = c(T, F, F, F, F)) %>% 
+  row_spec(3:5, color = "white")
+```
+
+## Toy example {visibility="uncounted"}
+
+```{r}
+toy %>% 
+  kbl(escape = FALSE,
+      align = "lcccc") %>% 
+  pack_rows("Deflation", 2, 3) %>% 
+  pack_rows("Inflation", 4, 5, color = "white") %>%  
+  column_spec(1, bold = c(T, F, F, F, F)) %>% 
+  row_spec(4:5, color = "white")
+```
+
+## Toy example {visibility="uncounted"}
+
+```{r}
+toy %>% 
+  kbl(escape = FALSE,
+      align = "lcccc") %>% 
+  pack_rows("Deflation", 2, 3) %>% 
+  pack_rows("Inflation", 4, 5) %>%  
+  column_spec(1, bold = c(T, F, F, F, F)) %>% 
+  row_spec(4:5, color = "white")
+```
+
+## Toy example {visibility="uncounted"}
+
+```{r}
+toy %>% 
+  kbl(escape = FALSE,
+      align = "lcccc") %>% 
+  pack_rows("Deflation", 2, 3) %>% 
+  pack_rows("Inflation", 4, 5) %>%  
+  column_spec(1, bold = c(T, F, F, F, F)) %>% 
+  row_spec(5, color = "white")
+```
+
+## Toy example {visibility="uncounted"}
+
+```{r}
+toy %>% 
+  kbl(escape = FALSE,
+      align = "lcccc") %>% 
+  pack_rows("Deflation", 2, 3) %>% 
+  pack_rows("Inflation", 4, 5) %>%  
+  column_spec(1, bold = c(T, F, F, F, F))
+```
+
+## Why does this happen?
+
+::: incremental
+- List experiment question format
+- Lists usually appear close to each other
+- Positively correlation across lists [(Glynn 2013)](https://doi.org/10.1093/poq/nfs070)
+:::
+
+## Statistical tests
+
+::: incremental
+- **Goal:** Detect *asymmetric shift* across *treatment schedules*
+
+- Two tests: 
+
+1. **Difference-in-differences** (stacked responses)
+
+2. **Signed-rank test** (paired responses)
+
+:::
+
+## Statistical tests {visibility="uncounted"}
+
+<!-- Keep signed rank for appendix -->
+
+- **Goal:** Detect *asymmetric shift* across *treatment schedules*
+
+- Two tests: 
+
+1. [**Difference-in-differences** (clustered responses)]{style="color: red;"}
+
+2. [**Signed-rank test** (paired responses)]{style="color: gray;"}
