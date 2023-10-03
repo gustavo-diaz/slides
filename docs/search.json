@@ -480,7 +480,7 @@
     "href": "tec.html#list-experiment-3",
     "title": "Gustavo Diaz",
     "section": "List experiment",
-    "text": "List experiment\nDo not tell me which ones. Just tell me HOW MANY:\n\n \nTreatment group\n\nDiscussed politics with family or friends\nCast a ballot for governor Phil Bryant\nPaid dues to a union\nGiven money to a Tea Party candidate\nVoted “YES” on the Personhood Initiative\n\n\nSource: Rosenfeld et al (2016)"
+    "text": "List experiment\nDo not tell me which ones. Just tell me HOW MANY:\n\n \nTreatment group\n\nDiscussed politics with family or friends\nCast a ballot for governor Phil Bryant\nPaid dues to a union\nGiven money to a Tea Party candidate\n\n\nSource: Rosenfeld et al (2016)"
   },
   {
     "objectID": "tec.html#prevalence-rate",
@@ -606,7 +606,7 @@
     "href": "tec.html#why-does-this-happen",
     "title": "Gustavo Diaz",
     "section": "Why does this happen?",
-    "text": "Why does this happen?\n\n\nList experiment question format\nLists usually appear close to each other\nPositively correlation across lists (Glynn 2013)"
+    "text": "Why does this happen?\n\n\nUnique question format\nLists usually appear close to each other\nPositively correlation across lists (Glynn 2013)"
   },
   {
     "objectID": "tec.html#dle-variants",
@@ -676,7 +676,7 @@
     "href": "tec.html#carryover-design-effects",
     "title": "Gustavo Diaz",
     "section": "Carryover design effects",
-    "text": "Carryover design effects\n\n\n\n\n\n\nDesign effect(Blair and Imai 2012)\n\n\nThe inclusion of a sensitive item affects how survey participants respond to the baseline items within the list.\n\n\n\n\n\n\n\n\n\n\nCarryover design\n\n\nThe inclusion of a sensitive item in one list affects how participants respond to the baseline items in the other list."
+    "text": "Carryover design effects\n\n\n\n\n\n\nDesign effect (Blair and Imai 2012)\n\n\nThe inclusion of a sensitive item affects how survey participants respond to the baseline items within the list.\n\n\n\n\n\n\n\n\n\n\nCarryover design effect\n\n\nThe inclusion of a sensitive item in one list affects how participants respond to the baseline items in the other list."
   },
   {
     "objectID": "tec.html#example-1",
@@ -746,13 +746,279 @@
     "href": "tec.html#statistical-tests",
     "title": "Gustavo Diaz",
     "section": "Statistical tests",
-    "text": "Statistical tests\n\n\nGoal: Detect asymmetric shift across treatment schedules\nTwo tests:\n\n\nDifference-in-differences (stacked responses)\nSigned-rank test (paired responses)"
+    "text": "Statistical tests\n\n\nGoal: Detect asymmetric shift across treatment schedules\nTwo tests:\n\n\nDifference-in-differences (clustered responses)\nSigned-rank test (paired responses)"
   },
   {
     "objectID": "tec.html#statistical-tests-1",
     "href": "tec.html#statistical-tests-1",
     "title": "Gustavo Diaz",
     "section": "Statistical tests",
-    "text": "Statistical tests\n\nGoal: Detect asymmetric shift across treatment schedules\nTwo tests:\n\n\nDifference-in-differences (stacked responses)\nSigned-rank test (paired responses)"
+    "text": "Statistical tests\n\n\nGoal: Detect asymmetric shift across treatment schedules\nTwo tests:\n\n\nDifference-in-differences (clustered responses)\nSigned-rank test (paired responses)"
+  },
+  {
+    "objectID": "tec.html#difference-in-differences-test",
+    "href": "tec.html#difference-in-differences-test",
+    "title": "Gustavo Diaz",
+    "section": "Difference-in-differences test",
+    "text": "Difference-in-differences test\n\\[\n\\hat{\\tau}_1 = \\text{Mean}(\\text{First list}_t) - \\text{Mean}(\\text{First list}_c)\n\\]\n\\[\n\\hat{\\tau}_2 = \\text{Mean}(\\text{Second list}_t) - \\text{Mean}(\\text{Second list}_c)\n\\]\n\n\n\\(H_0: \\hat{\\tau}_1 - \\hat{\\tau}_2 = 0\\)\nDeflation: \\(\\hat{\\tau}_1 - \\hat{\\tau}_2 &lt; 0\\)\nInflation: \\(\\hat{\\tau}_1 - \\hat{\\tau}_2 &gt; 0\\)\nCalculate via regression or randomization inference"
+  },
+  {
+    "objectID": "tec.html#application-to-alvarez-et-al-2019",
+    "href": "tec.html#application-to-alvarez-et-al-2019",
+    "title": "Gustavo Diaz",
+    "section": "Application to Alvarez et al (2019)",
+    "text": "Application to Alvarez et al (2019)\n\n\n\n\n\nExperiment\nStatistic\np-value\n\n\n\n\nOrganization X (advocacy group)\n0.079\n0.623\n\n\nOrganization Y (border patrol)\n-0.268\n0.082"
+  },
+  {
+    "objectID": "tec.html#application-to-alvarez-et-al-2019-1",
+    "href": "tec.html#application-to-alvarez-et-al-2019-1",
+    "title": "Gustavo Diaz",
+    "section": "Application to Alvarez et al (2019)",
+    "text": "Application to Alvarez et al (2019)\n\n\n\n\n\nExperiment\nStatistic\np-value\n\n\n\n\nOrganization X (advocacy group)\n0.079\n0.623\n\n\nOrganization Y (border patrol)\n-0.268\n0.082"
+  },
+  {
+    "objectID": "tec.html#application-to-alvarez-et-al-2019-2",
+    "href": "tec.html#application-to-alvarez-et-al-2019-2",
+    "title": "Gustavo Diaz",
+    "section": "Application to Alvarez et al (2019)",
+    "text": "Application to Alvarez et al (2019)\n\n\n\n\n\nExperiment\nStatistic\np-value\n\n\n\n\nOrganization X (advocacy group)\n0.079\n0.623\n\n\nOrganization Y (border patrol)\n-0.268\n0.082"
+  },
+  {
+    "objectID": "tec.html#tests-improve-our-ability-to-choose-baseline-items-for-a-dle",
+    "href": "tec.html#tests-improve-our-ability-to-choose-baseline-items-for-a-dle",
+    "title": "Gustavo Diaz",
+    "section": "Tests improve our ability to choose baseline items for a DLE",
+    "text": "Tests improve our ability to choose baseline items for a DLE"
+  },
+  {
+    "objectID": "tec.html#they-also-help-when-other-things-go-wrong",
+    "href": "tec.html#they-also-help-when-other-things-go-wrong",
+    "title": "Gustavo Diaz",
+    "section": "They also help when other things go wrong",
+    "text": "They also help when other things go wrong"
+  },
+  {
+    "objectID": "tec.html#list-experiment-4",
+    "href": "tec.html#list-experiment-4",
+    "title": "Gustavo Diaz",
+    "section": "List experiment",
+    "text": "List experiment\nDo not tell me which ones. Just tell me HOW MANY:\n\n \nTreatment group\n\nDiscussed politics with family or friends\nCast a ballot for governor Phil Bryant\nPaid dues to a union\nGiven money to a Tea Party candidate\nVoted “YES” on the Personhood Initiative\n\n\nSource: Rosenfeld et al (2016)"
+  },
+  {
+    "objectID": "tec.html#criminal-governance-tools-in-uruguay",
+    "href": "tec.html#criminal-governance-tools-in-uruguay",
+    "title": "Gustavo Diaz",
+    "section": "Criminal governance tools in Uruguay",
+    "text": "Criminal governance tools in Uruguay\n\n\n\n\n\n\nThis is work in progres with Ines Fynn, Verónica Pérez Bentancur, and Lucía Tiscornia"
+  },
+  {
+    "objectID": "tec.html#background",
+    "href": "tec.html#background",
+    "title": "Gustavo Diaz",
+    "section": "Background",
+    "text": "Background\n\n\n\n\n\n\n\nCriminal governance\n\n\nInformal tools to control community behaviors that involve political, economic, or social aspects with the goal of profiting from illicit markets.\n\n\n\n\n\nMore common in contexts of high violence and low state presence\nWhy do we see them in Uruguay?\nGoal: Estimate extent of criminal governance tools\n\n\n\n\n\nThis is work in progres with Ines Fynn, Verónica Pérez Bentancur, and Lucía Tiscornia"
+  },
+  {
+    "objectID": "tec.html#survey",
+    "href": "tec.html#survey",
+    "title": "Gustavo Diaz",
+    "section": "Survey",
+    "text": "Survey\n\nFacebook sample of Montevideo residents (N = 2688)\nFour criminal governance strategies\n\n\n\n\nNegative\n\nThreaten neighbors\nEvict neighbors\n\n\nPositive\n\nMake donations to neighbors\nOffer work to neighbors\n\n\n\n\n\n\nTreatments based on qualitative evidence from fieldwork (Pérez Bentancur and Tiscornia 2022)"
+  },
+  {
+    "objectID": "tec.html#survey-1",
+    "href": "tec.html#survey-1",
+    "title": "Gustavo Diaz",
+    "section": "Survey",
+    "text": "Survey\n\nFacebook sample of Montevideo residents (N = 2688)\nFour criminal governance strategies\n\n\n\nNegative\n\nThreaten neighbors\nEvict neighbors\n\n\nPositive\n\nMake donations to neighbors\nOffer work to neighbors\n\n\n\n\n\nTreatments based on qualitative evidence from fieldwork (Pérez Bentancur and Tiscornia 2022)"
+  },
+  {
+    "objectID": "tec.html#dle-with-placebo-item",
+    "href": "tec.html#dle-with-placebo-item",
+    "title": "Gustavo Diaz",
+    "section": "DLE with placebo item",
+    "text": "DLE with placebo item\nThings people have experienced in the last six months:\n\n\n\n\n\nList A\nList B\n\n\n\n\nSaw people doing sports\nSaw people playing soccer\n\n\nVisited friends\nChatted with friends\n\n\nActivities by feminist groups\nActivities by LGBTQ groups\n\n\nWent to church\nWent to charity events"
+  },
+  {
+    "objectID": "tec.html#dle-with-placebo-item-1",
+    "href": "tec.html#dle-with-placebo-item-1",
+    "title": "Gustavo Diaz",
+    "section": "DLE with placebo item",
+    "text": "DLE with placebo item\nThings people have experienced in the last six months:\n\n\n\n\n\nList A\nList B\n\n\n\n\nSaw people doing sports\nSaw people playing soccer\n\n\nVisited friends\nChatted with friends\n\n\nActivities by feminist groups\nActivities by LGBTQ groups\n\n\nWent to church\nWent to charity events\n\n\nGangs threatening neighbors\nDid not drink mate"
+  },
+  {
+    "objectID": "tec.html#dle-with-placebo-item-2",
+    "href": "tec.html#dle-with-placebo-item-2",
+    "title": "Gustavo Diaz",
+    "section": "DLE with placebo item",
+    "text": "DLE with placebo item\nThings people have experienced in the last six months:\n\n\n\n\n\nList A\nList B\n\n\n\n\nSaw people doing sports\nSaw people playing soccer\n\n\nVisited friends\nChatted with friends\n\n\nActivities by feminist groups\nActivities by LGBTQ groups\n\n\nWent to church\nWent to charity events\n\n\nDid not drink mate\nGangs threatening neighbors"
+  },
+  {
+    "objectID": "tec.html#prevalence-estimates",
+    "href": "tec.html#prevalence-estimates",
+    "title": "Gustavo Diaz",
+    "section": "Prevalence estimates",
+    "text": "Prevalence estimates"
+  },
+  {
+    "objectID": "tec.html#prevalence-estimates-1",
+    "href": "tec.html#prevalence-estimates-1",
+    "title": "Gustavo Diaz",
+    "section": "Prevalence estimates",
+    "text": "Prevalence estimates"
+  },
+  {
+    "objectID": "tec.html#prevalence-estimates-2",
+    "href": "tec.html#prevalence-estimates-2",
+    "title": "Gustavo Diaz",
+    "section": "Prevalence estimates",
+    "text": "Prevalence estimates"
+  },
+  {
+    "objectID": "tec.html#same-for-the-other-sensitive-items",
+    "href": "tec.html#same-for-the-other-sensitive-items",
+    "title": "Gustavo Diaz",
+    "section": "Same for the other sensitive items!",
+    "text": "Same for the other sensitive items!"
+  },
+  {
+    "objectID": "tec.html#what-went-wrong",
+    "href": "tec.html#what-went-wrong",
+    "title": "Gustavo Diaz",
+    "section": "What went wrong?",
+    "text": "What went wrong?\n\n\nPlacebo item more frequent than we anticipated\nOffsets prevalence rates we would have observed\nSolution: Reconstruct estimate bounds without placebo item\n\n\n\nProblem: Respondents may have noticed sensitive item and altered responses in unintended ways\nGoal: Rule out strategic errors"
+  },
+  {
+    "objectID": "tec.html#applying-difference-in-differences-test",
+    "href": "tec.html#applying-difference-in-differences-test",
+    "title": "Gustavo Diaz",
+    "section": "Applying difference-in-differences test",
+    "text": "Applying difference-in-differences test\n\n\n\n\n\n\nSensitive item\nStatistic\np-value\n\n\n\n\nThreaten neighbors\n0.12\n0.41\n\n\nEvict neighbors\n0.08\n0.58\n\n\nMake donations\n-0.24\n0.16\n\n\nOffer work\n-0.11\n0.47"
+  },
+  {
+    "objectID": "tec.html#applying-difference-in-differences-test-1",
+    "href": "tec.html#applying-difference-in-differences-test-1",
+    "title": "Gustavo Diaz",
+    "section": "Applying difference-in-differences test",
+    "text": "Applying difference-in-differences test\n\n\n\n\n\nSensitive item\nStatistic\np-value\n\n\n\n\nThreaten neighbors\n0.12\n0.41\n\n\nEvict neighbors\n0.08\n0.58\n\n\nMake donations\n-0.24\n0.16\n\n\nOffer work\n-0.11\n0.47"
+  },
+  {
+    "objectID": "tec.html#assumptions",
+    "href": "tec.html#assumptions",
+    "title": "Gustavo Diaz",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nStandard (Blair and Imai 2012):\n\nNo liars (one-sided lying)\nNo design effects"
+  },
+  {
+    "objectID": "tec.html#assumptions-1",
+    "href": "tec.html#assumptions-1",
+    "title": "Gustavo Diaz",
+    "section": "Assumptions",
+    "text": "Assumptions\nStandard (Blair and Imai 2012):\n\nNo liars (one-sided lying)\nNo design effects"
+  },
+  {
+    "objectID": "tec.html#assumptions-2",
+    "href": "tec.html#assumptions-2",
+    "title": "Gustavo Diaz",
+    "section": "Assumptions",
+    "text": "Assumptions\nStandard (Blair and Imai 2012):\n\nNo liars (one-sided lying) \nNo design effects"
+  },
+  {
+    "objectID": "tec.html#estimate-bounds",
+    "href": "tec.html#estimate-bounds",
+    "title": "Gustavo Diaz",
+    "section": "Estimate bounds",
+    "text": "Estimate bounds"
+  },
+  {
+    "objectID": "tec.html#assumptions-3",
+    "href": "tec.html#assumptions-3",
+    "title": "Gustavo Diaz",
+    "section": "Assumptions",
+    "text": "Assumptions\nStandard (Blair and Imai 2012):\n\nNo liars (one-sided lying) \nNo design effects"
+  },
+  {
+    "objectID": "tec.html#assumptions-4",
+    "href": "tec.html#assumptions-4",
+    "title": "Gustavo Diaz",
+    "section": "Assumptions",
+    "text": "Assumptions\nStandard (Blair and Imai 2012):\n\nNo liars (one-sided lying) \nNo design effects \n\n\n\nImplications:\n\nControl responses never increase\nControl response = 5  always decrease by one\nControl response = 0  never change"
+  },
+  {
+    "objectID": "tec.html#assumptions-5",
+    "href": "tec.html#assumptions-5",
+    "title": "Gustavo Diaz",
+    "section": "Assumptions",
+    "text": "Assumptions\nStandard (Blair and Imai 2012):\n\nNo liars (one-sided lying) \nNo design effects \n\n\nAdditional:\n\n\n\nKnown placebo proportion"
+  },
+  {
+    "objectID": "tec.html#assumptions-6",
+    "href": "tec.html#assumptions-6",
+    "title": "Gustavo Diaz",
+    "section": "Assumptions",
+    "text": "Assumptions\nStandard (Blair and Imai 2012):\n\nNo liars (one-sided lying) \nNo design effects \n\nAdditional:\n\nKnown placebo proportion\n\nNo survey question"
+  },
+  {
+    "objectID": "tec.html#assumptions-7",
+    "href": "tec.html#assumptions-7",
+    "title": "Gustavo Diaz",
+    "section": "Assumptions",
+    "text": "Assumptions\nStandard (Blair and Imai 2012):\n\nNo liars (one-sided lying) \nNo design effects \n\nAdditional:\n\nKnown placebo proportion\n\nNo survey question \nNo auxiliary information"
+  },
+  {
+    "objectID": "tec.html#assumptions-8",
+    "href": "tec.html#assumptions-8",
+    "title": "Gustavo Diaz",
+    "section": "Assumptions",
+    "text": "Assumptions\nStandard (Blair and Imai 2012):\n\nNo liars (one-sided lying) \nNo design effects \n\nAdditional:\n\nKnown placebo proportion\n\nNo survey question \nNo auxiliary information \nBut we can construct bounds at different hypothetical values"
+  },
+  {
+    "objectID": "tec.html#estimate-bounds-1",
+    "href": "tec.html#estimate-bounds-1",
+    "title": "Gustavo Diaz",
+    "section": "Estimate bounds",
+    "text": "Estimate bounds"
+  },
+  {
+    "objectID": "tec.html#estimate-bounds-2",
+    "href": "tec.html#estimate-bounds-2",
+    "title": "Gustavo Diaz",
+    "section": "Estimate bounds",
+    "text": "Estimate bounds"
+  },
+  {
+    "objectID": "tec.html#conclusion",
+    "href": "tec.html#conclusion",
+    "title": "Gustavo Diaz",
+    "section": "Conclusion",
+    "text": "Conclusion\nTBD"
+  },
+  {
+    "objectID": "tec.html#appendix",
+    "href": "tec.html#appendix",
+    "title": "Gustavo Diaz",
+    "section": "Appendix",
+    "text": "Appendix\n\nMake a list!"
+  },
+  {
+    "objectID": "tec.html#dle-estimate-bounds",
+    "href": "tec.html#dle-estimate-bounds",
+    "title": "Gustavo Diaz",
+    "section": "DLE Estimate bounds",
+    "text": "DLE Estimate bounds"
+  },
+  {
+    "objectID": "tec.html#dle-estimate-bounds-1",
+    "href": "tec.html#dle-estimate-bounds-1",
+    "title": "Gustavo Diaz",
+    "section": "DLE Estimate bounds",
+    "text": "DLE Estimate bounds"
+  },
+  {
+    "objectID": "tec.html#dle-estimate-bounds-2",
+    "href": "tec.html#dle-estimate-bounds-2",
+    "title": "Gustavo Diaz",
+    "section": "DLE Estimate bounds",
+    "text": "DLE Estimate bounds"
   }
 ]
