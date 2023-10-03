@@ -1275,11 +1275,10 @@ bounds = sims %>%
 
 ggplot(bounds) +
   aes(x = pi, y = hi) +
-  geom_ribbon(aes(ymin = lo, ymax = hi), fill = "#00b176", alpha = 0) +
-  geom_line(linetype = "dashed", linewidth = 1, alpha = 0) +
-  geom_line(aes(y = lo), linetype = "dashed", linewidth = 1, alpha = 0) +
-  geom_hline(yintercept = direct, linetype = "dotted", alpha = 0) +
-  geom_vline(xintercept = 0.5, linetype = "dotted", alpha = 0) +
+  geom_line(linewidth = 1, alpha = 0) +
+  geom_line(aes(y = lo), linewidth = 1, alpha = 0) +
+  geom_hline(yintercept = direct, linetype = "dashed", alpha = 0) +
+  geom_vline(xintercept = 0.5, linetype = "dashed", alpha = 0) +
   annotate("text", x = 0.018, y = direct + 0.03, label = "Direct question", alpha = 0) +
   annotate("text", x = 0.58, y = 0.9, label = "Unrealistic", alpha = 0) +
   labs(x = "Proportion holding placebo",
@@ -1292,11 +1291,10 @@ ggplot(bounds) +
 ```{r}
 ggplot(bounds) +
   aes(x = pi, y = hi) +
-  geom_ribbon(aes(ymin = lo, ymax = hi), fill = "#00b176", alpha = 0) +
-  geom_line(linetype = "dashed", linewidth = 1, alpha = 0) +
-  geom_line(aes(y = lo), linetype = "dashed", linewidth = 1, alpha = 0) +
-  geom_hline(yintercept = direct, linetype = "dotted") +
-  geom_vline(xintercept = 0.5, linetype = "dotted") +
+  geom_line(linewidth = 1, alpha = 0) +
+  geom_line(aes(y = lo), linewidth = 1, alpha = 0) +
+  geom_hline(yintercept = direct, linetype = "dashed") +
+  geom_vline(xintercept = 0.5, linetype = "dashed") +
   annotate("text", x = 0.018, y = direct + 0.03, label = "Direct question") +
   annotate("text", x = 0.56, y = 0.9, label = "Unrealistic") +
   labs(x = "Proportion holding placebo",
@@ -1308,11 +1306,10 @@ ggplot(bounds) +
 ```{r}
 ggplot(bounds) +
   aes(x = pi, y = hi) +
-  geom_ribbon(aes(ymin = lo, ymax = hi), fill = "#00b176") +
-  geom_line(linetype = "dashed", linewidth = 1) +
-  geom_line(aes(y = lo), linetype = "dashed", linewidth = 1) +
-  geom_hline(yintercept = direct, linetype = "dotted") +
-  geom_vline(xintercept = 0.5, linetype = "dotted") +
+  geom_line(linewidth = 1) +
+  geom_line(aes(y = lo), linewidth = 1) +
+  geom_hline(yintercept = direct, linetype = "dashed") +
+  geom_vline(xintercept = 0.5, linetype = "dashed") +
   annotate("text", x = 0.018, y = direct + 0.03, label = "Direct question") +
   annotate("text", x = 0.56, y = 0.9, label = "Unrealistic") +
   labs(x = "Proportion holding placebo",
@@ -1322,7 +1319,68 @@ ggplot(bounds) +
 ## Conclusion
 TBD
 
-## Appendix {visibility="uncounted"}
+## Appendix {#appendix background-color="#1d428a" visibility="uncounted"}
 <!-- Show some of the network scale up stuff in case they question bounds -->
 
-Make a list!
+- [Alvarez et al (2019) details](#alvarez)
+- [Montevideo survey details](#mvd)
+- [Signed rank test](#steph)
+- Cost simulations
+- Performance simulations
+- Placebo tests
+- More bounds
+- Network scale-up
+
+## [Alvarez et al (2019)](https://doi.org/10.1017/pan.2018.57) details {#alvarez visibility="uncounted"}
+
+```{r}
+load("list/attn_design_tab.RData")
+
+design_tab %>% 
+  kbl() %>% 
+  add_header_above(c("", "Placement" = 2)) %>% 
+  pack_rows("Sensitive item", 1, 2)
+```
+
+::: aside
+[{{< fa rotate-left >}}](#appendix)
+:::
+
+## Mean supported organizations {visibility="uncounted"}
+
+![](list/attn_means.png)
+
+::: aside
+[{{< fa rotate-left >}}](#appendix)
+:::
+
+## Control list distributions {visibility="uncounted"}
+
+![](list/attn_control.png){fig-align="center" width="60%" height="60%"}
+
+
+::: aside
+[{{< fa rotate-left >}}](#appendix)
+:::
+
+## Montevideo survey {#mvd visibility="uncounted"}
+
+::: aside
+[{{< fa rotate-left >}}](#appendix)
+:::
+
+## Stephenson's signed rank test {#steph visibility="uncounted"}
+
+$$
+\underbrace{\widetilde{T} = \sum_{i=1}^N \text{sgn} \{(z_i - (1-z_i)) (Y_{i1} - Y_{i2})\} \times \tilde{q}_i}_{\text{Sum of signed ranks } \tilde{q}_i}
+$$
+
+. . .
+
+$$
+\tilde{q}_i = {q_i-1 \choose m-1} \text{ for } q_i \geq m\text{; } \tilde{q}_i = 0 \text{ for } q_i < m 
+$$
+
+::: aside
+[{{< fa rotate-left >}}](#appendix)
+:::

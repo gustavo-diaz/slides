@@ -970,7 +970,7 @@
     "href": "tec.html#assumptions-8",
     "title": "Gustavo Diaz",
     "section": "Assumptions",
-    "text": "Assumptions\nStandard (Blair and Imai 2012):\n\nNo liars (one-sided lying) \nNo design effects \n\nAdditional:\n\nKnown placebo proportion\n\nNo survey question \nNo auxiliary information \nBut we can construct bounds at different hypothetical values"
+    "text": "Assumptions\nStandard (Blair and Imai 2012):\n\nNo liars (one-sided lying) \nNo design effects \n\nAdditional:\n\nKnown placebo proportion\n\nNo survey question \nNo auxiliary information \nConstruct bounds at different hypothetical values"
   },
   {
     "objectID": "tec.html#estimate-bounds-1",
@@ -998,7 +998,7 @@
     "href": "tec.html#appendix",
     "title": "Gustavo Diaz",
     "section": "Appendix",
-    "text": "Appendix\n\nMake a list!"
+    "text": "Appendix\n\n\nAlvarez et al (2019) details\nMontevideo survey details\nSigned rank test\nCost simulations\nPerformance simulations\nPlacebo tests\nMore bounds\nNetwork scale-up"
   },
   {
     "objectID": "tec.html#dle-estimate-bounds",
@@ -1020,5 +1020,40 @@
     "title": "Gustavo Diaz",
     "section": "DLE Estimate bounds",
     "text": "DLE Estimate bounds"
+  },
+  {
+    "objectID": "tec.html#alvarez",
+    "href": "tec.html#alvarez",
+    "title": "Gustavo Diaz",
+    "section": "Alvarez et al (2019) details",
+    "text": "Alvarez et al (2019) details\n\n\n\n\n\n\n\n\n\n\n\n\nPlacement\n\n\n\n\nList A\nList B\n\n\n\n\nSensitive item\n\n\nOrganization X\n545\n525\n\n\nOrganization Y\n537\n543"
+  },
+  {
+    "objectID": "tec.html#mean-supported-organizations",
+    "href": "tec.html#mean-supported-organizations",
+    "title": "Gustavo Diaz",
+    "section": "Mean supported organizations",
+    "text": "Mean supported organizations"
+  },
+  {
+    "objectID": "tec.html#control-list-distributions",
+    "href": "tec.html#control-list-distributions",
+    "title": "Gustavo Diaz",
+    "section": "Control list distributions",
+    "text": "Control list distributions"
+  },
+  {
+    "objectID": "tec.html#mvd",
+    "href": "tec.html#mvd",
+    "title": "Gustavo Diaz",
+    "section": "Montevideo survey",
+    "text": "Montevideo survey"
+  },
+  {
+    "objectID": "tec.html#steph",
+    "href": "tec.html#steph",
+    "title": "Gustavo Diaz",
+    "section": "Stephenson’s signed rank test",
+    "text": "Stephenson’s signed rank test\n\\[\n\\underbrace{\\widetilde{T} = \\sum_{i=1}^N \\text{sgn} \\{(z_i - (1-z_i)) (Y_{i1} - Y_{i2})\\} \\times \\tilde{q}_i}_{\\text{Sum of signed ranks } \\tilde{q}_i}\n\\]\n\n\\[\n\\tilde{q}_i = {q_i-1 \\choose m-1} \\text{ for } q_i \\geq m\\text{; } \\tilde{q}_i = 0 \\text{ for } q_i &lt; m\n\\]"
   }
 ]
