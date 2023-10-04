@@ -998,7 +998,7 @@
     "href": "tec.html#appendix",
     "title": "Gustavo Diaz",
     "section": "Appendix",
-    "text": "Appendix\n\n\nAlvarez et al (2019) details\nMontevideo survey details\nSigned rank test\nCost simulations\nPerformance simulations\nPlacebo tests\nMore bounds\nNetwork scale-up"
+    "text": "Appendix\n\n\nAlvarez et al (2019) details\nMontevideo survey responses\nSigned rank test\nCost simulations\nPerformance simulations\nPlacebo tests\nMore bounds\nNetwork scale-up"
   },
   {
     "objectID": "tec.html#dle-estimate-bounds",
@@ -1054,6 +1054,34 @@
     "href": "tec.html#steph",
     "title": "Gustavo Diaz",
     "section": "Stephenson’s signed rank test",
-    "text": "Stephenson’s signed rank test\n\\[\n\\underbrace{\\widetilde{T} = \\sum_{i=1}^N \\text{sgn} \\{(z_i - (1-z_i)) (Y_{i1} - Y_{i2})\\} \\times \\tilde{q}_i}_{\\text{Sum of signed ranks } \\tilde{q}_i}\n\\]\n\n\\[\n\\tilde{q}_i = {q_i-1 \\choose m-1} \\text{ for } q_i \\geq m\\text{; } \\tilde{q}_i = 0 \\text{ for } q_i &lt; m\n\\]"
+    "text": "Stephenson’s signed rank test\n\\[\n\\widetilde{T} = \\sum_{i=1}^N \\text{sgn} \\{(z_i - (1-z_i)) (Y_{i1} - Y_{i2})\\} \\times \\tilde{q}_i\n\\]\n\\[\n\\tilde{q}_i = {q_i-1 \\choose m-1} \\text{ for } q_i \\geq m\n\\]\n\\[\n\\tilde{q}_i = 0 \\text{ for } q_i &lt; m\n\\]\n\\[\n\\text{with } 1 \\leq m \\leq N\n\\]\n\n\n See Stephenson (1981) and Rosenbaum (2020) for details"
+  },
+  {
+    "objectID": "tec.html#applied-to-alvarez-et-al-2019",
+    "href": "tec.html#applied-to-alvarez-et-al-2019",
+    "title": "Gustavo Diaz",
+    "section": "Applied to Alvarez et al (2019)",
+    "text": "Applied to Alvarez et al (2019)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOrganization X\n\n\nOrganization Y\n\n\n\nm\nStatistic\np-value\nStatistic\np-value\n\n\n\n\n2\n8.356400e+04\n1\n3.571300e+04\n1\n\n\n5\n3.809258e+12\n1\n3.323093e+12\n1\n\n\n10\n1.791638e+23\n1\n1.825804e+23\n1\n\n\n50\n1.439408e+86\n1\n2.533938e+86\n1"
+  },
+  {
+    "objectID": "tec.html#montevideo-survey",
+    "href": "tec.html#montevideo-survey",
+    "title": "Gustavo Diaz",
+    "section": "Montevideo survey",
+    "text": "Montevideo survey"
+  },
+  {
+    "objectID": "tec.html#montevideo-survey-1",
+    "href": "tec.html#montevideo-survey-1",
+    "title": "Gustavo Diaz",
+    "section": "Montevideo survey",
+    "text": "Montevideo survey"
+  },
+  {
+    "objectID": "tec.html#montevideo-survey-2",
+    "href": "tec.html#montevideo-survey-2",
+    "title": "Gustavo Diaz",
+    "section": "Montevideo survey",
+    "text": "Montevideo survey"
   }
 ]

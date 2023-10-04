@@ -35,7 +35,7 @@ opts_chunk$set(fig.pos = "center", echo = FALSE,
 library(tidyverse)
 library(DeclareDesign)
 library(kableExtra)
-library(docxtools) # scientific notation
+library(ggh4x) # nested facets
 
 
 # ggplot global options
@@ -1323,7 +1323,7 @@ TBD
 <!-- Show some of the network scale up stuff in case they question bounds -->
 
 - [Alvarez et al (2019) details](#alvarez)
-- [Montevideo survey details](#mvd)
+- [Montevideo survey responses](#mvd)
 - [Signed rank test](#steph)
 - Cost simulations
 - Performance simulations
@@ -1365,6 +1365,80 @@ design_tab %>%
 
 ## Montevideo survey {#mvd visibility="uncounted"}
 
+```{r}
+all_df = cu %>% 
+  select(id, list_treatment, list_location, list_order, count_a, count_b) %>% 
+  pivot_longer(cols = c(count_a, count_b)) %>% 
+  rename(list = name, count = value) %>% 
+  mutate(
+    Z = ifelse(
+      list_location == "A" & list == "count_a" |
+        list_location == "B" & list == "count_b", 
+      1, 0
+    )) %>% 
+  group_by(list_treatment, list, Z, count) %>%
+  tally() %>% 
+  mutate(
+    list = ifelse(list == "count_a", "List A", "List B"),
+    Z = ifelse(Z == 0, "Control", "Treatment"),
+    tool = ifelse(list_treatment == "Threaten" | list_treatment == "Evict",
+                  "negative", "positive")
+  )
+
+
+all_df$list_treatment = fct_relevel(all_df$list_treatment,
+                                    "Threaten", "Evict", "Donate", "Offer work")
+
+# visualize
+ggplot(all_df %>% filter(list_treatment == "Threaten")) +
+  aes(x = as.factor(count), y = n) +
+  geom_col() +
+  facet_nested_wrap(~ list_treatment + list + Z, nrow = 1) +
+  labs(x = "Response", y = "Count")
+```
+
+::: aside
+[{{< fa rotate-left >}}](#appendix)
+:::
+
+## Montevideo survey {visibility="uncounted"}
+
+```{r}
+ggplot(all_df %>% filter(list_treatment == "Evict")) +
+  aes(x = as.factor(count), y = n) +
+  geom_col() +
+  facet_nested_wrap(~ list_treatment + list + Z, nrow = 1) +
+  labs(x = "Response", y = "Count")
+```
+
+::: aside
+[{{< fa rotate-left >}}](#appendix)
+:::
+
+## Montevideo survey {visibility="uncounted"}
+
+```{r}
+ggplot(all_df %>% filter(list_treatment == "Donate")) +
+  aes(x = as.factor(count), y = n) +
+  geom_col() +
+  facet_nested_wrap(~ list_treatment + list + Z, nrow = 1) +
+  labs(x = "Response", y = "Count")
+```
+
+::: aside
+[{{< fa rotate-left >}}](#appendix)
+:::
+
+## Montevideo survey {visibility="uncounted"}
+
+```{r}
+ggplot(all_df %>% filter(list_treatment == "Offer work")) +
+  aes(x = as.factor(count), y = n) +
+  geom_col() +
+  facet_nested_wrap(~ list_treatment + list + Z, nrow = 1) +
+  labs(x = "Response", y = "Count")
+```
+
 ::: aside
 [{{< fa rotate-left >}}](#appendix)
 :::
@@ -1372,14 +1446,48 @@ design_tab %>%
 ## Stephenson's signed rank test {#steph visibility="uncounted"}
 
 $$
-\underbrace{\widetilde{T} = \sum_{i=1}^N \text{sgn} \{(z_i - (1-z_i)) (Y_{i1} - Y_{i2})\} \times \tilde{q}_i}_{\text{Sum of signed ranks } \tilde{q}_i}
+\widetilde{T} = \sum_{i=1}^N \text{sgn} \{(z_i - (1-z_i)) (Y_{i1} - Y_{i2})\} \times \tilde{q}_i
 $$
 
-. . .
 
 $$
-\tilde{q}_i = {q_i-1 \choose m-1} \text{ for } q_i \geq m\text{; } \tilde{q}_i = 0 \text{ for } q_i < m 
+\tilde{q}_i = {q_i-1 \choose m-1} \text{ for } q_i \geq m 
 $$
+
+$$
+\tilde{q}_i = 0 \text{ for } q_i < m 
+$$
+
+$$
+\text{with } 1 \leq m \leq N
+$$
+
+::: aside
+[{{< fa rotate-left >}}](#appendix) See [Stephenson (1981)](https://doi.org/10.1080/01621459.1981.10477749) and [Rosenbaum (2020)](https://mitpressbookstore.mit.edu/book/9783030464042) for details
+:::
+
+## Applied to [Alvarez et al (2019)](https://doi.org/10.1017/pan.2018.57)
+
+```{r}
+st = attn_tests %>% 
+  filter(!is.na(m)) %>% 
+  arrange(by = experiment) %>% 
+  select(experiment, m, statistic, p.value)
+
+st_tab = merge(
+  st %>% filter(experiment == "X") %>% select(!experiment),
+  st %>% filter(experiment == "Y") %>% select(!experiment),
+  by = "m"
+)
+
+colnames(st_tab) = c("m", "Statistic", "p-value", "Statistic", "p-value")
+
+st_tab %>% 
+  kbl(digits = 2,
+      escape = FALSE) %>% 
+  add_header_above(c(" ", "Organization X" = 2, "Organization Y" = 2))
+```
+
 
 ::: aside
 [{{< fa rotate-left >}}](#appendix)
