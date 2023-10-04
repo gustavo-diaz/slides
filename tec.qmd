@@ -1325,7 +1325,7 @@ TBD
 - [Alvarez et al (2019) details](#alvarez)
 - [Montevideo survey responses](#mvd)
 - [Signed rank test](#steph)
-- Cost simulations
+- DLE cost simulations
 - Performance simulations
 - Placebo tests
 - More bounds
