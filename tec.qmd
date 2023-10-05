@@ -1317,21 +1317,49 @@ ggplot(bounds) +
 ```
 
 ## Conclusion
-TBD
+
+### Summary
+
+::: incremental
+- DLEs improve along bias-variance frontier
+- But bring additional questions about validity
+- New tools to address validity
+- Applications: Justify research design and recover estimates
+:::
+
+::: aside
+**Learn more:** [gustavodiaz.org](https://gustavodiaz.org/)
+:::
+
+## Conclusion {visibility="uncounted"}
+
+### Lessons
+
+::: incremental
+- Pilot, pilot, pilot!
+- Ask the same question in multiple ways
+- Combine different questions to improve estimates
+- Make adaptive rules before looking at results
+:::
+
+::: aside
+**Learn more:** [gustavodiaz.org](https://gustavodiaz.org/)
+:::
+
+
 
 ## Appendix {#appendix background-color="#1d428a" visibility="uncounted"}
 <!-- Show some of the network scale up stuff in case they question bounds -->
 
-- [Alvarez et al (2019) details](#alvarez)
+- [Alvarez et al (2019) details](#cali)
 - [Montevideo survey responses](#mvd)
 - [Signed rank test](#steph)
-- DLE cost simulations
-- Performance simulations
-- Placebo tests
-- More bounds
-- Network scale-up
+- [DLE cost simulations](#cost)
+- [Performance simulations](#performance)
+- [Placebo tests](#placebo)
+- [Network scale-up](#nsum)
 
-## [Alvarez et al (2019)](https://doi.org/10.1017/pan.2018.57) details {#alvarez visibility="uncounted"}
+## [Alvarez et al (2019)](https://doi.org/10.1017/pan.2018.57) details {#cali visibility="uncounted"}
 
 ```{r}
 load("list/attn_design_tab.RData")
@@ -1466,7 +1494,7 @@ $$
 [{{< fa rotate-left >}}](#appendix) See [Stephenson (1981)](https://doi.org/10.1080/01621459.1981.10477749) and [Rosenbaum (2020)](https://mitpressbookstore.mit.edu/book/9783030464042) for details
 :::
 
-## Applied to [Alvarez et al (2019)](https://doi.org/10.1017/pan.2018.57)
+## Applied to [Alvarez et al (2019)](https://doi.org/10.1017/pan.2018.57) {visibility="uncounted"}
 
 ```{r}
 st = attn_tests %>% 
@@ -1492,3 +1520,146 @@ st_tab %>%
 ::: aside
 [{{< fa rotate-left >}}](#appendix)
 :::
+
+## DLEs are costly to implement {#cost visibility="uncounted"}
+
+![](list/dle_cost.png){fig-align="center" width="90%" height="90%"}
+
+::: aside
+[{{< fa rotate-left >}}](#appendix)
+:::
+
+## Test performance {#performance visibility="uncounted"}
+
+![](list/dle_power.png){fig-align="center" width="90%" height="90%"}
+
+::: aside
+[{{< fa rotate-left >}}](#appendix)
+:::
+
+## Signed rank performance {visibility="uncounted"}
+
+![](list/dle_power_steph.png){fig-align="center" width="90%" height="90%"}
+
+::: aside
+[{{< fa rotate-left >}}](#appendix)
+:::
+
+## Placebo tests {#placebo visibility="uncounted"}
+
+```{r}
+## PLACEBO I
+# Beta: Treatment effect among those admitting to direct question
+# I think because we have a placebo item the bar is now
+# beta = 0
+## PLACEBO II
+## Delta:  Effect of list experiment assignment on direct question
+placebo = read.csv("list/placebo_tests.csv")
+
+placebo = placebo %>% 
+  filter(test == "beta" & list == "double" | test == "delta" & list == "count_a") %>% 
+  mutate(test = ifelse(test == "beta", "Placebo I", "Placebo II"),
+         list_treatment = recode(list_treatment,
+                                 "amenazar" = "Threaten",
+                                 "desalojar" = "Evict",
+                                 "donar" = "Donate",
+                                 "trabajo" = "Work")) %>% 
+  select(test, list_treatment, estimate, p.value, n) 
+
+  
+placebo_tab = merge(
+  placebo %>% filter(test == "Placebo I") %>% select(!test),
+  placebo %>% filter(test == "Placebo II") %>% select(!test),
+  by = "list_treatment"
+)
+  
+placebo_tab %>% 
+  kbl(digits = 2,
+      col.names = c("Item", "Estimate", "p", "n",
+                    "Estimate", "p", "n")) %>% 
+  add_header_above(c("", "Placebo I" = 3, "Placebo II" = 3))
+```
+
+
+::: aside
+[{{< fa rotate-left >}}](#appendix) See [Aronow et al (2015)](https://doi.org/10.1093/jssam/smu023) for details
+:::
+
+## Network scale-up method {#nsum visibility="uncounted"}
+
+. . .
+
+**How many X do you know,**
+
+::: aside
+[{{< fa rotate-left >}}](#appendix)
+:::
+
+## Network scale-up method {visibility="uncounted"}
+
+**How many X do you know, who also know you,**
+
+::: aside
+[{{< fa rotate-left >}}](#appendix)
+:::
+
+## Network scale-up method {visibility="uncounted"}
+
+**How many X do you know, who also know you, with whom you have interacted in the last year**
+
+::: aside
+[{{< fa rotate-left >}}](#appendix)
+:::
+
+## Network scale-up method {visibility="uncounted"}
+
+**How many X do you know, who also know you, with whom you have interacted in the last year in person, by phone, or any other channel?**
+
+::: aside
+[{{< fa rotate-left >}}](#appendix)
+:::
+
+## Network scale-up method {visibility="uncounted"}
+
+**How many X do you know... **
+
+. . .
+
+::: columns
+
+::: {.column width="45%"}
+From *Las Piedras*  
+Male 25-29  
+Police officers  
+University students  
+Had a kid last year  
+Passed away last year  
+Married last year  
+Female 45-49
+:::
+
+::: {.column width="55%"}
+Public employees  
+Welfare card holders  
+Registered with party  
+With kids in public school  
+Did not vote in last election  
+Currently in jail  
+Recently unemployed  
+*[ SENSITIVE ITEM ]*
+:::
+
+:::
+
+::: aside
+[{{< fa rotate-left >}}](#appendix)
+:::
+
+## NSUM results {visibility="uncounted"}
+
+![](list/nsum_results.png){fig-align="center" width="90%" height="90%"}
+
+::: aside
+[{{< fa rotate-left >}}](#appendix)
+:::
+

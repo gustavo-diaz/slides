@@ -991,14 +991,14 @@
     "href": "tec.html#conclusion",
     "title": "Gustavo Diaz",
     "section": "Conclusion",
-    "text": "Conclusion\nTBD"
+    "text": "Conclusion\nSummary\n\n\nDLEs improve along bias-variance frontier\nBut bring additional questions about validity\nNew tools to address validity\nApplications: Justify research design and recover estimates\n\n\n\n\nLearn more: gustavodiaz.org"
   },
   {
     "objectID": "tec.html#appendix",
     "href": "tec.html#appendix",
     "title": "Gustavo Diaz",
     "section": "Appendix",
-    "text": "Appendix\n\n\nAlvarez et al (2019) details\nMontevideo survey responses\nSigned rank test\nCost simulations\nPerformance simulations\nPlacebo tests\nMore bounds\nNetwork scale-up"
+    "text": "Appendix\n\n\nAlvarez et al (2019) details\nMontevideo survey responses\nSigned rank test\nDLE cost simulations\nPerformance simulations\nPlacebo tests\nNetwork scale-up"
   },
   {
     "objectID": "tec.html#dle-estimate-bounds",
@@ -1083,5 +1083,103 @@
     "title": "Gustavo Diaz",
     "section": "Montevideo survey",
     "text": "Montevideo survey"
+  },
+  {
+    "objectID": "tec.html#dles-are-costly-to-implement",
+    "href": "tec.html#dles-are-costly-to-implement",
+    "title": "Gustavo Diaz",
+    "section": "DLEs are costly to implement",
+    "text": "DLEs are costly to implement"
+  },
+  {
+    "objectID": "tec.html#cost",
+    "href": "tec.html#cost",
+    "title": "Gustavo Diaz",
+    "section": "DLEs are costly to implement",
+    "text": "DLEs are costly to implement"
+  },
+  {
+    "objectID": "tec.html#cali",
+    "href": "tec.html#cali",
+    "title": "Gustavo Diaz",
+    "section": "Alvarez et al (2019) details",
+    "text": "Alvarez et al (2019) details\n\n\n\n\n\n\n\n\n\n\n\n\nPlacement\n\n\n\n\nList A\nList B\n\n\n\n\nSensitive item\n\n\nOrganization X\n545\n525\n\n\nOrganization Y\n537\n543"
+  },
+  {
+    "objectID": "tec.html#performance",
+    "href": "tec.html#performance",
+    "title": "Gustavo Diaz",
+    "section": "Test performance",
+    "text": "Test performance"
+  },
+  {
+    "objectID": "tec.html#signed-rank-performance",
+    "href": "tec.html#signed-rank-performance",
+    "title": "Gustavo Diaz",
+    "section": "Signed rank performance",
+    "text": "Signed rank performance"
+  },
+  {
+    "objectID": "tec.html#bounds",
+    "href": "tec.html#bounds",
+    "title": "Gustavo Diaz",
+    "section": "More bounds",
+    "text": "More bounds"
+  },
+  {
+    "objectID": "tec.html#nsum",
+    "href": "tec.html#nsum",
+    "title": "Gustavo Diaz",
+    "section": "Network scale-up method",
+    "text": "Network scale-up method\n\nHow many X do you know,"
+  },
+  {
+    "objectID": "tec.html#network-scale-up-method",
+    "href": "tec.html#network-scale-up-method",
+    "title": "Gustavo Diaz",
+    "section": "Network scale-up method",
+    "text": "Network scale-up method\nHow many X do you know, who also know you,"
+  },
+  {
+    "objectID": "tec.html#network-scale-up-method-1",
+    "href": "tec.html#network-scale-up-method-1",
+    "title": "Gustavo Diaz",
+    "section": "Network scale-up method",
+    "text": "Network scale-up method\nHow many X do you know, who also know you, with whom you have interacted in the last year"
+  },
+  {
+    "objectID": "tec.html#network-scale-up-method-2",
+    "href": "tec.html#network-scale-up-method-2",
+    "title": "Gustavo Diaz",
+    "section": "Network scale-up method",
+    "text": "Network scale-up method\nHow many X do you know, who also know you, with whom you have interacted in the last year in person, by phone, or any other channel?"
+  },
+  {
+    "objectID": "tec.html#nsum-results",
+    "href": "tec.html#nsum-results",
+    "title": "Gustavo Diaz",
+    "section": "NSUM results",
+    "text": "NSUM results"
+  },
+  {
+    "objectID": "tec.html#network-scale-up-method-3",
+    "href": "tec.html#network-scale-up-method-3",
+    "title": "Gustavo Diaz",
+    "section": "Network scale-up method",
+    "text": "Network scale-up method\nHow many X do you know… \n\n\n\nFrom Las Piedras\nMale 25-29\nPolice officers\nUniversity students\nHad a kid last year\nPassed away last year\nMarried last year\nFemale 45-49\n\nPublic employees\nWelfare card holders\nRegistered with party\nWith kids in public school\nDid not vote in last election\nCurrently in jail\nRecently unemployed\nSENSITIVE ITEM"
+  },
+  {
+    "objectID": "tec.html#placebo",
+    "href": "tec.html#placebo",
+    "title": "Gustavo Diaz",
+    "section": "Placebo tests",
+    "text": "Placebo tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlacebo I\n\n\nPlacebo II\n\n\n\nItem\nEstimate\np\nn\nEstimate\np\nn\n\n\n\n\nDonate\n0.08\n0.55\n133\n-0.03\n0.32\n635\n\n\nEvict\n0.14\n0.46\n32\n0.00\n0.95\n628\n\n\nThreaten\n0.24\n0.08\n102\n0.02\n0.44\n641\n\n\nWork\n0.03\n0.88\n64\n0.01\n0.58\n647\n\n\n\n\n\n\n\n\n\n See Aronow et al (2015) for details"
+  },
+  {
+    "objectID": "tec.html#conclusion-1",
+    "href": "tec.html#conclusion-1",
+    "title": "Gustavo Diaz",
+    "section": "Conclusion",
+    "text": "Conclusion\nLessons\n\n\nPilot, pilot, pilot!\nAsk the same question in multiple ways\nCombine different questions to improve estimates\nMake adaptive rules before looking at results\n\n\n\n\nLearn more: gustavodiaz.org"
   }
 ]
