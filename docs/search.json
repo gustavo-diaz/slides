@@ -746,14 +746,14 @@
     "href": "tec.html#statistical-tests",
     "title": "Gustavo Diaz",
     "section": "Statistical tests",
-    "text": "Statistical tests\n\n\nGoal: Detect asymmetric shift across treatment schedules\nTwo tests:\n\n\nDifference-in-differences (clustered responses)\nSigned-rank test (paired responses)"
+    "text": "Statistical tests\n\n\nGoal: Detect asymmetric shift across treatment schedules\nTwo tests:\n\n\nDifference-in-differences\nSigned-rank test"
   },
   {
     "objectID": "tec.html#statistical-tests-1",
     "href": "tec.html#statistical-tests-1",
     "title": "Gustavo Diaz",
     "section": "Statistical tests",
-    "text": "Statistical tests\n\n\nGoal: Detect asymmetric shift across treatment schedules\nTwo tests:\n\n\nDifference-in-differences (clustered responses)\nSigned-rank test (paired responses)"
+    "text": "Statistical tests\n\n\nGoal: Detect asymmetric shift across treatment schedules\nTwo tests:\n\n\nDifference-in-differences\nSigned-rank test"
   },
   {
     "objectID": "tec.html#difference-in-differences-test",
@@ -823,14 +823,14 @@
     "href": "tec.html#survey",
     "title": "Gustavo Diaz",
     "section": "Survey",
-    "text": "Survey\n\nFacebook sample of Montevideo residents (N = 2688)\nFour criminal governance strategies\n\n\n\n\nNegative\n\nThreaten neighbors\nEvict neighbors\n\n\nPositive\n\nMake donations to neighbors\nOffer work to neighbors\n\n\n\n\n\n\nTreatments based on qualitative evidence from fieldwork (Pérez Bentancur and Tiscornia 2022)"
+    "text": "Survey\n\nFacebook sample of Montevideo residents (N = 2688)\nFour criminal governance strategies\n\n\n\n\nNegative\n\nThreaten neighbors\nEvict neighbors\n\n\nPositive\n\nMake donations to neighbors\nOffer work to neighbors\n\n\n\n\n\n\nWork in progres with Ines Fynn, Verónica Pérez Bentancur, and Lucía Tiscornia"
   },
   {
     "objectID": "tec.html#survey-1",
     "href": "tec.html#survey-1",
     "title": "Gustavo Diaz",
     "section": "Survey",
-    "text": "Survey\n\nFacebook sample of Montevideo residents (N = 2688)\nFour criminal governance strategies\n\n\n\nNegative\n\nThreaten neighbors\nEvict neighbors\n\n\nPositive\n\nMake donations to neighbors\nOffer work to neighbors\n\n\n\n\n\nTreatments based on qualitative evidence from fieldwork (Pérez Bentancur and Tiscornia 2022)"
+    "text": "Survey\n\nFacebook sample of Montevideo residents (N = 2688)\nFour criminal governance strategies\n\n\n\nNegative\n\nThreaten neighbors\nEvict neighbors\n\n\nPositive\n\nMake donations to neighbors\nOffer work to neighbors\n\n\n\n\n\nWork in progres with Ines Fynn, Verónica Pérez Bentancur, and Lucía Tiscornia"
   },
   {
     "objectID": "tec.html#dle-with-placebo-item",
@@ -1180,6 +1180,6 @@
     "href": "tec.html#conclusion-1",
     "title": "Gustavo Diaz",
     "section": "Conclusion",
-    "text": "Conclusion\nLessons\n\n\nPilot, pilot, pilot!\nAsk the same question in multiple ways\nCombine different questions to improve estimates\nMake adaptive rules before looking at results\n\n\n\n\nLearn more: gustavodiaz.org"
+    "text": "Conclusion\nLessons\n\n\nDon’t give up!\nPilot, pilot, pilot\nAsk the same question in multiple ways\nCombine different questions to improve estimates\nMake adaptive rules before looking at results\n\n\n\n\nLearn more: gustavodiaz.org"
   }
 ]

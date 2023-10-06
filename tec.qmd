@@ -737,9 +737,9 @@ toy %>%
 
 - Two tests: 
 
-1. **Difference-in-differences** (clustered responses)
+1. Difference-in-differences
 
-2. **Signed-rank test** (paired responses)
+2. Signed-rank test
 
 :::
 
@@ -751,9 +751,9 @@ toy %>%
 
 - Two tests: 
 
-1. [**Difference-in-differences** (clustered responses)]{style="color: red;"}
+1. [**Difference-in-differences**]{style="color: red;"}
 
-2. [**Signed-rank test** (paired responses)]{style="color: gray;"}
+2. [Signed-rank test]{style="color: gray;"}
 
 ## Difference-in-differences test
 
@@ -819,28 +819,6 @@ attn_tab %>%
 
 # Criminal Governance Tools in Uruguay
 
-## Background
-
-. . .
-
-::: {.callout-note}
-## Criminal governance
-
-Informal tools to **control community behaviors** that involve **political, economic, or social aspects** with the goal of profiting from illicit markets.
-:::
-
-::: incremental
-- More common in contexts of **high violence** and **low state presence**
-
-- Why do we see them in Uruguay?
-
-- **Goal:** Estimate extent of criminal governance tools
-
-:::
-
-::: aside
-This is work in progres with [Ines Fynn](https://uy.linkedin.com/in/ines-fynn-8b07733b), [Verónica Pérez Bentancur](https://cienciassociales.edu.uy/departamento-de-ciencia-politica/veronica-perez-bentancur/), and [Lucía Tiscornia](https://www.luciatiscornia.com/)
-:::
 
 ## Survey
 
@@ -868,7 +846,7 @@ This is work in progres with [Ines Fynn](https://uy.linkedin.com/in/ines-fynn-8b
 :::
 
 ::: aside
-Treatments based on qualitative evidence from fieldwork [(Pérez Bentancur and Tiscornia 2022)](https://doi.org/10.1177/00491241221082595)
+Work in progres with [Ines Fynn](https://uy.linkedin.com/in/ines-fynn-8b07733b), [Verónica Pérez Bentancur](https://cienciassociales.edu.uy/departamento-de-ciencia-politica/veronica-perez-bentancur/), and [Lucía Tiscornia](https://www.luciatiscornia.com/)
 :::
 
 ## Survey {visibility="uncounted"}
@@ -896,7 +874,7 @@ Treatments based on qualitative evidence from fieldwork [(Pérez Bentancur and T
 :::
 
 ::: aside
-Treatments based on qualitative evidence from fieldwork [(Pérez Bentancur and Tiscornia 2022)](https://doi.org/10.1177/00491241221082595)
+Work in progres with [Ines Fynn](https://uy.linkedin.com/in/ines-fynn-8b07733b), [Verónica Pérez Bentancur](https://cienciassociales.edu.uy/departamento-de-ciencia-politica/veronica-perez-bentancur/), and [Lucía Tiscornia](https://www.luciatiscornia.com/)
 :::
 
 ## DLE with placebo item
@@ -1336,7 +1314,8 @@ ggplot(bounds) +
 ### Lessons
 
 ::: incremental
-- Pilot, pilot, pilot!
+- Don't give up!
+- Pilot, pilot, pilot
 - Ask the same question in multiple ways
 - Combine different questions to improve estimates
 - Make adaptive rules before looking at results
