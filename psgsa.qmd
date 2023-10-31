@@ -1,0 +1,131 @@
+---
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: true
+---
+
+::: {style="text-align: center"}
+## Applying for Academic Jobs Outside of the US {.center .smaller}
+
+&nbsp;
+
+
+**Gustavo Diaz**  
+McMaster University  
+[gustavodiaz.org](https://gustavodiaz.org/)  
+<diazg2@mcmaster.ca>
+
+&nbsp;
+
+Slides: [talks.gustavodiaz.org/psgsa](https://talks.gustavodiaz.org/psgsa.html)
+
+:::
+
+## Reasons
+
+### Why apply abroad?
+
+::: incremental
+- Personal choice
+
+- US market is crazy
+:::
+
+### Why NOT apply abroad?
+
+::: incremental
+- Personal choice
+
+- Other markets are crazy too
+:::
+
+## Countries I have applied to
+
+::: columns
+::: {.column width="50%"}
+Australia  
+Canada  
+Chile  
+Denmark  
+France  
+Germany  
+Hong Kong  
+Ireland
+:::
+
+::: {.column width="50%"}
+Korea  
+Mexico  
+Singapore  
+Spain  
+United Arab Emirates  
+United Kingdom  
+United States  
+Uruguay
+:::
+:::
+
+## Countries I interviewed in
+
+::: columns
+::: {.column width="50%"}
+**Australia**  
+**Canada**  
+Chile  
+Denmark  
+France  
+**Germany**  
+Hong Kong  
+Ireland
+:::
+
+::: {.column width="50%"}
+**Korea**  
+**Mexico**  
+Singapore  
+**Spain**  
+United Arab Emirates  
+**United Kingdom**  
+**United States**  
+**Uruguay**
+:::
+:::
+
+# Stuff I have learned
+
+## Applications
+
+Cumbersome application requirements:
+
+::: incremental
+- **Denmark:** Get coauthors to sign on % contribution of publications
+
+- **Australia, UK:** Person specification
+
+- **Canada:** Email applications
+
+- Only makes sense if you are applying to many jobs
+:::
+
+## Things that are different
+
+::: incremental
+
+- Chair systems
+
+- Advisor systems
+
+- Department or campus-wide search committees
+
+- Scripted interviews
+
+- Meet and greets
+
+- Public results
+
+- Moving is hard
+
+- Immigration is trauma
+
+:::
