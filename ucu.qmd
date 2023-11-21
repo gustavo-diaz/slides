@@ -398,18 +398,6 @@ Adapted from [Diaz (2023)](https://doi.org/10.1017/XPS.2023.24)
 
 ## But variance reduction is not free
 
-::: incremental
-- Baseline lists need to be comparable
-
-- Easiest way is to use *paired items* 
-
-- American Family Association (A) $\approx$ Tea Party Patriots (B)
-
-- **BUT** that makes it easier to spot the *sensitive item*
-:::
-
-## Different baseline estimates
-
 ```{r}
 ggplot(est_df %>% filter(experiment == "Y")) +
   aes(x = term, y = estimate, shape = term) +
