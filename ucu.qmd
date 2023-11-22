@@ -417,7 +417,7 @@ Adapted from [Diaz (2023)](https://doi.org/10.1017/XPS.2023.24)
 :::
 
 
-## Different baseline estimates {visibility="uncounted"}
+## But variance reduction is not free {visibility="uncounted"}
 
 ```{r}
 ggplot(est_df %>% filter(experiment == "Y")) +
@@ -783,13 +783,13 @@ attn_tab %>%
 ::: columns
 
 ::: {.column width="48%"}
-### Negative
+### Violent
 - Threaten neighbors
 - Evict neighbors
 :::
 
 ::: {.column width="52%"}
-### Positive
+### Non-violent
 - Make donations to neighbors
 - Offer work to neighbors
 
@@ -810,13 +810,13 @@ Work in progres with [Ines Fynn](https://uy.linkedin.com/in/ines-fynn-8b07733b),
 ::: columns
 
 ::: {.column width="48%"}
-### Negative
+### Violent
 - [**Threaten neighbors**]{style="color: red;"}
 - [Evict neighbors]{style="color: gray;"}
 :::
 
 ::: {.column width="52%"}
-### Positive
+### Non-violent
 - [Make donations to neighbors]{style="color: gray;"}
 - [Offer work to neighbors]{style="color: gray;"}
 
@@ -978,6 +978,10 @@ ggplot(cu_df %>% filter(list_treatment == "Threaten")) +
        y = "Proportion saw gangs\nthreatening neighbors")
 ```
 
+::: aside
+Looks the same for the other sensitive items!
+:::
+
 ## Prevalence estimates {visibility="uncounted"}
 
 ```{r}
@@ -992,6 +996,10 @@ ggplot(cu_df %>% filter(list_treatment == "Threaten")) +
        y = "Proportion saw gangs\nthreatening neighbors")
 ```
 
+::: aside
+Looks the same for the other sensitive items!
+:::
+
 ## Prevalence estimates {visibility="uncounted"}
 
 ```{r}
@@ -1006,20 +1014,10 @@ ggplot(cu_df %>% filter(list_treatment == "Threaten")) +
        y = "Proportion saw gangs\nthreatening neighbors")
 ```
 
-## Same for the other sensitive items!
+::: aside
+Looks the same for the other sensitive items!
+:::
 
-```{r}
-ggplot(cu_df %>% filter(list_treatment != "Threaten")) +
-  aes(x = estimator, y = estimate) +
-  ylim(-0.4, 0.4) +
-  geom_hline(yintercept = 0, linetype = "dashed") +
-  geom_point(size = 4) +
-  geom_linerange(aes(x = estimator, ymin = conf.low, ymax = conf.high),
-                 linewidth = 1) +
-  facet_grid(~list_treatment) +
-  labs(x = "Estimator",
-       y = "Proportion")
-```
 
 ## What went wrong?
 
@@ -1341,7 +1339,7 @@ all_df = cu %>%
     list = ifelse(list == "count_a", "List A", "List B"),
     Z = ifelse(Z == 0, "Control", "Treatment"),
     tool = ifelse(list_treatment == "Threaten" | list_treatment == "Evict",
-                  "negative", "positive")
+                  "violent", "non-violent")
   )
 
 
