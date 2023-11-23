@@ -2,7 +2,7 @@
 format:
   revealjs:
     embed-resources: true
-    slide-number: true
+    slide-number: false
 ---
 
 ::: {style="text-align: center"}
