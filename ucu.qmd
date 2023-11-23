@@ -679,7 +679,7 @@ toy %>%
 ::: incremental
 - Unique question format
 - Lists usually appear close to each other
-- Positively correlation across lists [(Glynn 2013)](https://doi.org/10.1093/poq/nfs070)
+- Positive correlation across lists [(Glynn 2013)](https://doi.org/10.1093/poq/nfs070)
 :::
 
 ## Statistical tests
