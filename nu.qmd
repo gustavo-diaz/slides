@@ -1126,8 +1126,6 @@ Looks the same for the other sensitive items!
 
 ## What went wrong?
 
-<!-- CONTINUE HERE MAKE THIS MUCH SHORTER -->
-
 ::: incremental
 
 - Placebo item more frequent than we anticipated
@@ -1139,45 +1137,9 @@ Looks the same for the other sensitive items!
 <!-- Think of how response patterns suggest we need DLE tests -->
 - **Problem:** Respondents may have noticed sensitive item and altered responses in unintended ways
 
-- **Goal:** Rule out *strategic errors*
+- **Goal:** Use tests to rule out *strategic errors*
 
 :::
-
-## Assumptions
-
-. . .
-
-Standard [(Blair and Imai 2012)](https://doi.org/10.1093/pan/mpr048):
-
-- No liars (*one-sided lying*)
-
-- No design effects
-
-## Assumptions {visibility="uncounted"}
-
-Standard [(Blair and Imai 2012)](https://doi.org/10.1093/pan/mpr048):
-
-- **No liars (*one-sided lying*)**
-
-- No design effects
-
-
-## Assumptions {visibility="uncounted"}
-
-Standard [(Blair and Imai 2012)](https://doi.org/10.1093/pan/mpr048):
-
-- **No liars (*one-sided lying*)** {{< fa circle-check >}} 
-
-- No design effects
-
-## Assumptions {visibility="uncounted"}
-
-Standard [(Blair and Imai 2012)](https://doi.org/10.1093/pan/mpr048):
-
-- **No liars (*one-sided lying*)** {{< fa circle-check >}} 
-
-- **No design effects**
-
 
 
 ## Applying difference-in-differences test
@@ -1211,86 +1173,25 @@ tab %>%
       col.names = c("Sensitive item", "Statistic", "p-value"))
 ```
 
-## Assumptions {visibility="uncounted"}
-
-Standard [(Blair and Imai 2012)](https://doi.org/10.1093/pan/mpr048):
-
-- **No liars (*one-sided lying*)** {{< fa circle-check >}} 
-
-- **No design effects** {{< fa circle-check >}}  
-
 . . .
 
-- **Implications:**
+Observed test statistics **not unlikely** under the null hypothesis of **no carryover design effect**
 
-    - Control responses *never* increase
-    - Control response = 5 {{< fa arrow-right >}} *always* decrease by one
-    - Control response = 0 {{< fa arrow-right >}}  *never* change
+## So we can move from this
 
-
-
-## Assumptions {visibility="uncounted"}
-
-Standard [(Blair and Imai 2012)](https://doi.org/10.1093/pan/mpr048):
-
-- **No liars (*one-sided lying*)** {{< fa circle-check >}} 
-
-- **No design effects** {{< fa circle-check >}} 
-
-. . .
-
-Additional:
-
-. . .
-
-- **Known placebo proportion**
-
-## Assumptions {visibility="uncounted"}
-
-Standard [(Blair and Imai 2012)](https://doi.org/10.1093/pan/mpr048):
-
-- **No liars (*one-sided lying*)** {{< fa circle-check >}} 
-
-- **No design effects** {{< fa circle-check >}}    
-
-Additional:
-
-- **Known placebo proportion**
+```{r}
+ggplot(cu_df %>% filter(list_treatment == "Threaten")) +
+  aes(x = estimator, y = estimate) +
+  ylim(-0.4, 0.4) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  geom_point(size = 4) +
+  geom_linerange(aes(x = estimator, ymin = conf.low, ymax = conf.high),
+                 linewidth = 1) +
+  labs(x = "Estimator",
+       y = "Proportion saw gangs\nthreatening neighbors")
+```
     
-    - No survey question {{< fa circle-xmark >}}
-    
-## Assumptions {visibility="uncounted"}
-
-Standard [(Blair and Imai 2012)](https://doi.org/10.1093/pan/mpr048):
-
-- **No liars (*one-sided lying*)** {{< fa circle-check >}} 
-
-- **No design effects** {{< fa circle-check >}}    
-
-Additional:
-
-- **Known placebo proportion**
-    
-    - No survey question {{< fa circle-xmark >}}
-    - No auxiliary information {{< fa circle-xmark >}}
-    
-## Assumptions {visibility="uncounted"}
-
-Standard [(Blair and Imai 2012)](https://doi.org/10.1093/pan/mpr048):
-
-- **No liars (*one-sided lying*)** {{< fa circle-check >}} 
-
-- **No design effects** {{< fa circle-check >}}    
-
-Additional:
-
-- **Known placebo proportion**
-    
-    - No survey question {{< fa circle-xmark >}}
-    - No auxiliary information {{< fa circle-xmark >}}
-    - **Construct bounds at different hypothetical values**
-    
-## DLE Estimate bounds
+## To estimate bounds
 
 ```{r}
 sims = read.csv("list/sim_placebo.csv")
@@ -1321,7 +1222,7 @@ ggplot(bounds) +
   
 ```
 
-## DLE Estimate bounds {visibility="uncounted"}
+## To estimate bounds {visibility="uncounted"}
 
 ```{r}
 ggplot(bounds) +
@@ -1336,7 +1237,7 @@ ggplot(bounds) +
        y = "Estimated proportion saw \n gangs threatening neighbors")
 ```
 
-## DLE Estimate bounds {visibility="uncounted"}
+## To estimate bounds {visibility="uncounted"}
 
 ```{r}
 ggplot(bounds) +
@@ -1367,6 +1268,8 @@ ggplot(bounds) +
 :::
 
 ## Conclusion {visibility="uncounted"}
+
+<!-- CONTINUE HERE FOR NORTHWESTERN THE MAIN LESSON IS THAT NEW TOOLS COME WITH HIDDEN COSTS. NO FREE LUNCH. MANY TECHNIQUES PROMISE IMPROVING ALONG THE BIAS-VARIANCE FRONTIER. -->
 
 ### Lessons
 

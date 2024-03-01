@@ -2314,7 +2314,7 @@
     "href": "nu.html#what-went-wrong",
     "title": "Gustavo Diaz",
     "section": "What went wrong?",
-    "text": "What went wrong?\n\n\nPlacebo item more frequent than we anticipated\nOffsets prevalence rates we would have observed\nSolution: Reconstruct estimate bounds without placebo item\n\n\n\nProblem: Respondents may have noticed sensitive item and altered responses in unintended ways\nGoal: Rule out strategic errors"
+    "text": "What went wrong?\n\n\nPlacebo item more frequent than we anticipated\nOffsets prevalence rates we would have observed\nSolution: Reconstruct estimate bounds without placebo item\n\n\n\nProblem: Respondents may have noticed sensitive item and altered responses in unintended ways\nGoal: Use tests to rule out strategic errors"
   },
   {
     "objectID": "nu.html#assumptions",
@@ -2356,7 +2356,7 @@
     "href": "nu.html#applying-difference-in-differences-test-1",
     "title": "Gustavo Diaz",
     "section": "Applying difference-in-differences test",
-    "text": "Applying difference-in-differences test\n\n\n\n\n\nSensitive item\nStatistic\np-value\n\n\n\n\nThreaten neighbors\n0.12\n0.41\n\n\nEvict neighbors\n0.08\n0.58\n\n\nMake donations\n-0.24\n0.16\n\n\nOffer work\n-0.11\n0.47"
+    "text": "Applying difference-in-differences test\n\n\n\n\n\nSensitive item\nStatistic\np-value\n\n\n\n\nThreaten neighbors\n0.12\n0.41\n\n\nEvict neighbors\n0.08\n0.58\n\n\nMake donations\n-0.24\n0.16\n\n\nOffer work\n-0.11\n0.47\n\n\n\n\n\n\n\n\nObserved test statistics not unlikely under the null hypothesis of no carryover design effect"
   },
   {
     "objectID": "nu.html#assumptions-4",
@@ -2419,7 +2419,7 @@
     "href": "nu.html#conclusion",
     "title": "Gustavo Diaz",
     "section": "Conclusion",
-    "text": "Conclusion\nSummary\n\n\nDLEs improve along bias-variance frontier\nBut bring additional questions about validity\nNew tools to address validity\nApplications: Justify research design and recover estimates\n\n\n\n\nLearn more: gustavodiaz.org"
+    "text": "Conclusion\n\nSummary\n\n\nDLEs improve along bias-variance frontier\nBut bring additional questions about validity\nNew tools to address validity\nApplications: Justify research design and recover estimates\n\n\n\n\nLearn more: gustavodiaz.org"
   },
   {
     "objectID": "nu.html#conclusion-1",
@@ -2588,5 +2588,33 @@
     "title": "Gustavo Diaz",
     "section": "Criminal governance tools in Uruguay",
     "text": "Criminal governance tools in Uruguay\n\nFacebook sample of Montevideo residents (N = 2688)\nFour criminal governance strategies\n\n\n\nViolent\n\nThreaten neighbors\nEvict neighbors\n\n\nNon-violent\n\nMake donations to neighbors\nOffer work to neighbors\n\n\n\n\n\nWork in progres with Ines Fynn, Verónica Pérez Bentancur, and Lucía Tiscornia"
+  },
+  {
+    "objectID": "nu.html#so-we-can-move-from-this",
+    "href": "nu.html#so-we-can-move-from-this",
+    "title": "Gustavo Diaz",
+    "section": "So we can move from this",
+    "text": "So we can move from this"
+  },
+  {
+    "objectID": "nu.html#to-estimate-bounds",
+    "href": "nu.html#to-estimate-bounds",
+    "title": "Gustavo Diaz",
+    "section": "To estimate bounds",
+    "text": "To estimate bounds"
+  },
+  {
+    "objectID": "nu.html#to-estimate-bounds-1",
+    "href": "nu.html#to-estimate-bounds-1",
+    "title": "Gustavo Diaz",
+    "section": "To estimate bounds",
+    "text": "To estimate bounds"
+  },
+  {
+    "objectID": "nu.html#to-estimate-bounds-2",
+    "href": "nu.html#to-estimate-bounds-2",
+    "title": "Gustavo Diaz",
+    "section": "To estimate bounds",
+    "text": "To estimate bounds"
   }
 ]
