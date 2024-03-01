@@ -1135,9 +1135,9 @@ Looks the same for the other sensitive items!
 - **Solution:** Reconstruct estimate bounds without placebo item
 
 <!-- Think of how response patterns suggest we need DLE tests -->
-- **Problem:** Respondents may have noticed sensitive item and altered responses in unintended ways
+- **Challenge:** Respondents may have noticed sensitive item and altered responses in unintended ways
 
-- **Goal:** Use tests to rule out *strategic errors*
+- Use tests to rule out **strategic errors**
 
 :::
 
@@ -1274,11 +1274,10 @@ ggplot(bounds) +
 ### Lessons
 
 ::: incremental
-- Don't give up!
-- Pilot, pilot, pilot
-- Ask the same question in multiple ways
-- Combine different questions to improve estimates
-- Make adaptive rules before looking at results
+- Seemingly cost-free innovations may have hidden costs
+- Need tools to incorporate into workflow
+- Pilot, pilot pilot!
+- Adaptive rules before confirmatory analyses
 :::
 
 ::: aside

@@ -2314,7 +2314,7 @@
     "href": "nu.html#what-went-wrong",
     "title": "Gustavo Diaz",
     "section": "What went wrong?",
-    "text": "What went wrong?\n\n\nPlacebo item more frequent than we anticipated\nOffsets prevalence rates we would have observed\nSolution: Reconstruct estimate bounds without placebo item\n\n\n\nProblem: Respondents may have noticed sensitive item and altered responses in unintended ways\nGoal: Use tests to rule out strategic errors"
+    "text": "What went wrong?\n\n\nPlacebo item more frequent than we anticipated\nOffsets prevalence rates we would have observed\nSolution: Reconstruct estimate bounds without placebo item\n\n\n\nChallenge: Respondents may have noticed sensitive item and altered responses in unintended ways\nUse tests to rule out strategic errors"
   },
   {
     "objectID": "nu.html#assumptions",
@@ -2419,14 +2419,14 @@
     "href": "nu.html#conclusion",
     "title": "Gustavo Diaz",
     "section": "Conclusion",
-    "text": "Conclusion\n\nSummary\n\n\nDLEs improve along bias-variance frontier\nBut bring additional questions about validity\nNew tools to address validity\nApplications: Justify research design and recover estimates\n\n\n\n\nLearn more: gustavodiaz.org"
+    "text": "Conclusion\nSummary\n\n\nDLEs improve along bias-variance frontier\nBut bring additional questions about validity\nNew tools to address validity\nApplications: Justify research design and recover estimates\n\n\n\n\nLearn more: gustavodiaz.org"
   },
   {
     "objectID": "nu.html#conclusion-1",
     "href": "nu.html#conclusion-1",
     "title": "Gustavo Diaz",
     "section": "Conclusion",
-    "text": "Conclusion\nLessons\n\n\nDon’t give up!\nPilot, pilot, pilot\nAsk the same question in multiple ways\nCombine different questions to improve estimates\nMake adaptive rules before looking at results\n\n\n\n\nLearn more: gustavodiaz.org"
+    "text": "Conclusion\n\nLessons\n\n\nSeemingly cost-free innovations may have hidden costs\nNeed tools to incorporate into workflow\nPilot, pilot pilot!\nAdaptive rules before confirmatory analyses\n\n\n\n\nLearn more: gustavodiaz.org"
   },
   {
     "objectID": "nu.html#appendix",
