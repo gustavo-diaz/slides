@@ -2616,5 +2616,40 @@
     "title": "Gustavo Diaz",
     "section": "To estimate bounds",
     "text": "To estimate bounds"
+  },
+  {
+    "objectID": "nu2.html#navigating-the-bias-variance-tradeoff",
+    "href": "nu2.html#navigating-the-bias-variance-tradeoff",
+    "title": "Gustavo Diaz",
+    "section": "Navigating the Bias-Variance Tradeoff",
+    "text": "Navigating the Bias-Variance Tradeoff\n \nGustavo Diaz\nMcMaster University\ngustavodiaz.org\ndiazg2@mcmaster.ca\n \nSlides: talks.gustavodiaz.org/nu2"
+  },
+  {
+    "objectID": "nu2.html#bias-variance-tradeoff-as-darts",
+    "href": "nu2.html#bias-variance-tradeoff-as-darts",
+    "title": "Gustavo Diaz",
+    "section": "Bias-variance tradeoff as darts",
+    "text": "Bias-variance tradeoff as darts"
+  },
+  {
+    "objectID": "nu2.html#but-the-game-of-darts-is-more-complicated",
+    "href": "nu2.html#but-the-game-of-darts-is-more-complicated",
+    "title": "Gustavo Diaz",
+    "section": "But the game of darts is more complicated",
+    "text": "But the game of darts is more complicated"
+  },
+  {
+    "objectID": "nu2.html#two-types-of-tradeoffs",
+    "href": "nu2.html#two-types-of-tradeoffs",
+    "title": "Gustavo Diaz",
+    "section": "Two types of tradeoffs",
+    "text": "Two types of tradeoffs\n\n\nExplicit: Is a little bias worth the increase in precision?\nImplicit: Improving precision without sacrificing unbiasedness?"
+  },
+  {
+    "objectID": "nu2.html#two-types-of-tradeoffs-1",
+    "href": "nu2.html#two-types-of-tradeoffs-1",
+    "title": "Gustavo Diaz",
+    "section": "Two types of tradeoffs",
+    "text": "Two types of tradeoffs\n\nExplicit: Is a little bias worth the increase in precision?\nImplicit: Improving precision without sacrificing unbiasedness?"
   }
 ]

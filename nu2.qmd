@@ -1,0 +1,68 @@
+---
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: false
+    progress: false
+    code-line-numbers: false
+---
+
+::: {style="text-align: center"}
+## Navigating the Bias-Variance Tradeoff {.center .smaller}
+
+&nbsp;
+
+
+**Gustavo Diaz**  
+McMaster University  
+[gustavodiaz.org](https://gustavodiaz.org/)  
+<diazg2@mcmaster.ca>
+
+&nbsp;
+
+Slides: [talks.gustavodiaz.org/nu2](https://talks.gustavodiaz.org/nu2.html)
+
+:::
+
+
+
+## Bias-variance tradeoff as darts
+
+![](list/darts.png){fig-align="center"}
+
+## But the game of darts is more complicated
+
+::: columns
+::: {.column width="50%"}
+![](list/darts_board.png)
+:::
+
+::: {.column width="50%"}
+![](list/darts_scoring.png){fig-align="center" width="72%" height="72%"}
+:::
+:::
+
+
+## Two types of tradeoffs
+
+::: incremental
+
+1. **Explicit:** Is a little bias worth the increase in precision?
+
+2. **Implicit:** Improving precision without sacrificing unbiasedness? 
+:::
+
+## Two types of tradeoffs {visibility="uncounted"}
+
+1. [**Explicit:** Is a little bias worth the increase in precision?]{style="color: gray;"}
+
+2. [**Implicit:** Improving precision without sacrificing unbiasedness?]{style="color: red;"}
+
+## Example 1
+
+<!-- Here show precision retention -->
+
+## Example 2
+
+<!-- Here show popw24 -->
+
