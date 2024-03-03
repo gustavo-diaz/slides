@@ -4,7 +4,7 @@ format:
     embed-resources: true
     slide-number: false
     progress: false
-    code-line-numbers: false
+    code-line-numbers: true
 ---
 
 ::: {style="text-align: center"}
@@ -20,10 +20,29 @@ McMaster University
 
 &nbsp;
 
-Slides: [talks.gustavodiaz.org/nu2](https://talks.gustavodiaz.org/nu2.html)
+Slides: [gustavodiaz.org/nu](https://gustavodiaz.org/nu.html)
 
 :::
 
+
+```{r include=FALSE}
+library(knitr)
+
+opts_chunk$set(fig.pos = "center", echo = FALSE, 
+               message = FALSE, warning = FALSE)
+```
+
+```{r setup}
+# Packages
+library(tidyverse)
+library(DeclareDesign)
+library(kableExtra)
+library(ggh4x) # nested facets
+
+
+# ggplot global options
+theme_set(theme_gray(base_size = 20))
+```
 
 
 ## Bias-variance tradeoff as darts
@@ -47,22 +66,180 @@ Slides: [talks.gustavodiaz.org/nu2](https://talks.gustavodiaz.org/nu2.html)
 
 ::: incremental
 
-1. **Explicit:** Is a little bias worth the increase in precision?
+1. **Explicit:** Is some bias worth the increase in precision?
 
 2. **Implicit:** Improving precision without sacrificing unbiasedness? 
 :::
 
 ## Two types of tradeoffs {visibility="uncounted"}
 
-1. [**Explicit:** Is a little bias worth the increase in precision?]{style="color: gray;"}
+1. [**Explicit:** Is some bias worth the increase in precision?]{style="color: #4E2A84;"}
 
-2. [**Implicit:** Improving precision without sacrificing unbiasedness?]{style="color: red;"}
+2. [**Implicit:** Improving precision without sacrificing unbiasedness?]{style="color: gray;"}
 
-## Example 1
+---
 
-<!-- Here show precision retention -->
+![](teaching/popw24.png)
 
-## Example 2
+::: aside
+[popw24.gustavodiaz.org](https://popw24.gustavodiaz.org/)
+:::
 
-<!-- Here show popw24 -->
+---
 
+```{r, echo = TRUE, eval = FALSE}
+# Model
+model = declare_model(N = 300, U = rnorm(N),
+                      potential_outcomes(Y ~ 0.2 * Z + U))
+
+# Inquiry
+inquiry = declare_inquiry(ATE = mean(Y_Z_1 - Y_Z_0))
+
+# Data strategy
+assign = declare_assignment(Z = complete_ra(N, prob = 0.5))
+measure = declare_measurement(Y = reveal_outcomes(Y ~ Z))
+
+# Answer strategy
+estimator = declare_estimator(Y ~ Z, inquiry = "ATE")
+
+# Put research design together
+rct = model + inquiry + assign + measure + estimator
+```
+
+::: aside
+[book.declaredesign.org](https://book.declaredesign.org/)
+:::
+
+
+## Two types of tradeoffs {visibility="uncounted"}
+
+1. [**Explicit:** Is some bias worth the increase in precision?]{style="color: #4E2A84;"}
+
+2. [**Implicit:** Improving precision without sacrificing unbiasedness?]{style="color: gray;"}
+
+## Two types of tradeoffs {visibility="uncounted"}
+
+1. [**Explicit:** Is some bias worth the increase in precision?]{style="color: gray;"}
+
+2. [**Implicit:** Improving precision without sacrificing unbiasedness?]{style="color: #4E2A84;"}
+
+## Alternative experimental designs
+
+```{r}
+alt_tab = data.frame(
+  Randomization = c("Complete", "Block"),
+  Post_only = c("Standard", "Block randomized"),
+  Pre_post = c("Pre-post", "Block randomized & pre-post")
+)
+
+colnames(alt_tab) = c("", "Post-only", "Pre-post")
+
+
+
+alt_tab %>% 
+  kbl() %>% 
+  add_header_above(c("", "Outcome measurement" = 2), bold = T) %>% 
+  pack_rows("Randomization", 1, 2) %>%
+  row_spec(2, background = "#dcdcdc") %>%
+  column_spec(3, background= "#dcdcdc") %>%
+  column_spec(1, background= "white")
+
+```
+
+::: aside
+[Paper](https://gustavodiaz.org/files/research/precision_retention.pdf) with [Erin Rossiter](https://erossiter.com/)
+:::
+
+## Precision-retention tradeoff
+
+$$
+SE(\widehat{ATE}_\text{Standard}) =\\ \sqrt{\frac{\text{Var}(Y_i(0)) + \text{Var}(Y_i(1)) + 2\text{Cov}(Y_i(0), Y_i(1))}{N-1}}
+$$
+
+::: aside
+[Paper](https://gustavodiaz.org/files/research/precision_retention.pdf) with [Erin Rossiter](https://erossiter.com/)
+:::
+
+## Precision-retention tradeoff
+
+```{r}
+load("precision_retention/sim_discretev2.rda")
+
+# Diagnose
+diag_a = sim_a %>% 
+  group_by(attrition_rate, estimator) %>% 
+  summarize(
+    powerp = mean(p.value <= .05, na.rm = TRUE),
+    powerci = mean(0 > conf.high | 0 < conf.low, na.rm = TRUE),
+    meanp = mean(p.value, na.rm = TRUE),
+    coverage = mean(estimand <= conf.high & estimand >= conf.low, na.rm = TRUE),
+    mean_estimate = mean(estimate, na.rm = TRUE),
+    bias = mean(estimate - estimand, na.rm = TRUE),
+    mse = mean((estimate - estimand)^2, na.rm = TRUE),
+    mad = mean(abs(estimate - estimand), na.rm = TRUE),
+    sd_estimate = sd(estimate, na.rm = TRUE),
+    mean_se = mean(std.error, na.rm = TRUE),
+    mean_estimand = mean(estimand, na.rm = TRUE),
+    nestimand = length(unique(estimand)),
+    nsims = n()
+  )
+
+# Recode estimator name order
+diag_a$estimator = fct_relevel(diag_a$estimator,
+                               "Post only complete_ra",
+                               "Post only block_ra",
+                               "Change score complete_ra",
+                               "Change score block_ra")
+
+ggplot(diag_a) +
+  aes(x = attrition_rate, y = powerp, color = estimator, shape = estimator) +
+  geom_line(size = 1, alpha = 0) + geom_point(size = 2, alpha = 0) +
+  theme(legend.position = "bottom") +
+  scale_color_viridis_d(end = 0.8,
+                        labels = c("Complete + post only",
+                                   "Block + post only",
+                                   "Block + post only",
+                                   "Block + pre-post")) +
+  scale_shape_discrete(labels = c("Complete + post only",
+                                   "Block + post only",
+                                   "Block + post only",
+                                   "Block + pre-post")) +
+  labs(x = "Sample loss rate",
+       y = expression(paste('Power at ', alpha  == 0.05)),
+       color = "Design",
+       shape = "Design") +
+  scale_y_continuous(breaks = seq(0, 1, by = 0.2), limits = c(0, 1)) +
+  guides(color = guide_legend(nrow = 2, byrow = TRUE))
+```
+
+::: aside
+[Paper](https://gustavodiaz.org/files/research/precision_retention.pdf) with [Erin Rossiter](https://erossiter.com/)
+:::
+
+## Precision-retention tradeoff
+
+```{r}
+ggplot(diag_a) +
+  aes(x = attrition_rate, y = powerp, color = estimator, shape = estimator) +
+  geom_line(size = 1) + geom_point(size = 2) +
+  theme(legend.position = "bottom") +
+  scale_color_viridis_d(end = 0.8,
+                        labels = c("Complete + post only",
+                                   "Block + post only",
+                                   "Block + post only",
+                                   "Block + pre-post")) +
+  scale_shape_discrete(labels = c("Complete + post only",
+                                   "Block + post only",
+                                   "Block + post only",
+                                   "Block + pre-post")) +
+  labs(x = "Sample loss rate",
+       y = expression(paste('Power at ', alpha  == 0.05)),
+       color = "Design",
+       shape = "Design") +
+  scale_y_continuous(breaks = seq(0, 1, by = 0.2), limits = c(0, 1)) +
+  guides(color = guide_legend(nrow = 2, byrow = TRUE))
+```
+
+::: aside
+[Paper](https://gustavodiaz.org/files/research/precision_retention.pdf) with [Erin Rossiter](https://erossiter.com/)
+:::

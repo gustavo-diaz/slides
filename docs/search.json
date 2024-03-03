@@ -2622,7 +2622,7 @@
     "href": "nu2.html#navigating-the-bias-variance-tradeoff",
     "title": "Gustavo Diaz",
     "section": "Navigating the Bias-Variance Tradeoff",
-    "text": "Navigating the Bias-Variance Tradeoff\n \nGustavo Diaz\nMcMaster University\ngustavodiaz.org\ndiazg2@mcmaster.ca\n \nSlides: talks.gustavodiaz.org/nu2"
+    "text": "Navigating the Bias-Variance Tradeoff\n \nGustavo Diaz\nMcMaster University\ngustavodiaz.org\ndiazg2@mcmaster.ca\n \nSlides: gustavodiaz.org/nu"
   },
   {
     "objectID": "nu2.html#bias-variance-tradeoff-as-darts",
@@ -2643,13 +2643,692 @@
     "href": "nu2.html#two-types-of-tradeoffs",
     "title": "Gustavo Diaz",
     "section": "Two types of tradeoffs",
-    "text": "Two types of tradeoffs\n\n\nExplicit: Is a little bias worth the increase in precision?\nImplicit: Improving precision without sacrificing unbiasedness?"
+    "text": "Two types of tradeoffs\n\n\nExplicit: Is some bias worth the increase in precision?\nImplicit: Improving precision without sacrificing unbiasedness?"
   },
   {
     "objectID": "nu2.html#two-types-of-tradeoffs-1",
     "href": "nu2.html#two-types-of-tradeoffs-1",
     "title": "Gustavo Diaz",
     "section": "Two types of tradeoffs",
-    "text": "Two types of tradeoffs\n\nExplicit: Is a little bias worth the increase in precision?\nImplicit: Improving precision without sacrificing unbiasedness?"
+    "text": "Two types of tradeoffs\n\nExplicit: Is some bias worth the increase in precision?\nImplicit: Improving precision without sacrificing unbiasedness?"
+  },
+  {
+    "objectID": "nu2.html#example-1",
+    "href": "nu2.html#example-1",
+    "title": "Gustavo Diaz",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "nu2.html#example-2",
+    "href": "nu2.html#example-2",
+    "title": "Gustavo Diaz",
+    "section": "Example 2",
+    "text": "Example 2"
+  },
+  {
+    "objectID": "nu2.html#example",
+    "href": "nu2.html#example",
+    "title": "Gustavo Diaz",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "nu2.html#two-types-of-tradeoffs-2",
+    "href": "nu2.html#two-types-of-tradeoffs-2",
+    "title": "Gustavo Diaz",
+    "section": "Two types of tradeoffs",
+    "text": "Two types of tradeoffs\n\nExplicit: Is some bias worth the increase in precision?\nImplicit: Improving precision without sacrificing unbiasedness?"
+  },
+  {
+    "objectID": "nu2.html#two-types-of-tradeoffs-3",
+    "href": "nu2.html#two-types-of-tradeoffs-3",
+    "title": "Gustavo Diaz",
+    "section": "Two types of tradeoffs",
+    "text": "Two types of tradeoffs\n\nExplicit: Is some bias worth the increase in precision?\nImplicit: Improving precision without sacrificing unbiasedness?"
+  },
+  {
+    "objectID": "nu2.html#sample-code",
+    "href": "nu2.html#sample-code",
+    "title": "Gustavo Diaz",
+    "section": "Sample code",
+    "text": "Sample code"
+  },
+  {
+    "objectID": "nu2.html#precision-retention-tradeoff",
+    "href": "nu2.html#precision-retention-tradeoff",
+    "title": "Gustavo Diaz",
+    "section": "Precision-retention tradeoff",
+    "text": "Precision-retention tradeoff\n\\[\nSE(\\widehat{ATE}_\\text{Standard}) =\\\\ \\sqrt{\\frac{\\text{Var}(Y_i(0)) + \\text{Var}(Y_i(1)) + 2\\text{Cov}(Y_i(0), Y_i(1))}{N-1}}\n\\]\n\n\nPaper with Erin Rossiter"
+  },
+  {
+    "objectID": "nu2.html#alternative-experimental-designs",
+    "href": "nu2.html#alternative-experimental-designs",
+    "title": "Gustavo Diaz",
+    "section": "Alternative experimental designs",
+    "text": "Alternative experimental designs\n\n\n\n\n\n\n\n\n\n\n\n\nOutcome measurement\n\n\n\n\nPost-only\nPre-post\n\n\n\n\nRandomization\n\n\nComplete\nStandard\nPre-post\n\n\nBlock\nBlock randomized\nBlock randomized & pre-post\n\n\n\n\n\n\n\n\n\nPaper with Erin Rossiter"
+  },
+  {
+    "objectID": "nu2.html#precision-gains-persist-after-non-negligible-sample-loss",
+    "href": "nu2.html#precision-gains-persist-after-non-negligible-sample-loss",
+    "title": "Gustavo Diaz",
+    "section": "Precision gains persist after non-negligible sample loss",
+    "text": "Precision gains persist after non-negligible sample loss"
+  },
+  {
+    "objectID": "nu2.html#precision-retention-tradeoff-1",
+    "href": "nu2.html#precision-retention-tradeoff-1",
+    "title": "Gustavo Diaz",
+    "section": "Precision-retention tradeoff",
+    "text": "Precision-retention tradeoff\n\n\n\n\n\n\n\n\n\n\n\nPaper with Erin Rossiter"
+  },
+  {
+    "objectID": "nu2.html#precision-retention-tradeoff-2",
+    "href": "nu2.html#precision-retention-tradeoff-2",
+    "title": "Gustavo Diaz",
+    "section": "Precision-retention tradeoff",
+    "text": "Precision-retention tradeoff\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPaper with Erin Rossiter"
+  },
+  {
+    "objectID": "nu1.html#improving-list-experiments",
+    "href": "nu1.html#improving-list-experiments",
+    "title": "Gustavo Diaz",
+    "section": "Improving List Experiments",
+    "text": "Improving List Experiments\n \nGustavo Diaz\nMcMaster University\ngustavodiaz.org\ndiazg2@mcmaster.ca\n \nSlides: talks.gustavodiaz.org/nu1"
+  },
+  {
+    "objectID": "nu1.html#questions",
+    "href": "nu1.html#questions",
+    "title": "Gustavo Diaz",
+    "section": "Questions",
+    "text": "Questions\n\n\nHave you lied about having COVID symptoms?\nWould you bribe a police officer to avoid a traffic ticket?\nHave you been offered goods or favors for your vote?\nDo you know anyone with ties to a militant organization?\nWould you oppose a black family moving next door?\nWould you allow Muslim immigrants to become citizens?"
+  },
+  {
+    "objectID": "nu1.html#what-do-these-have-in-common",
+    "href": "nu1.html#what-do-these-have-in-common",
+    "title": "Gustavo Diaz",
+    "section": "What do these have in common?",
+    "text": "What do these have in common?\n\n\nThey are sensitive questions\nWe can only learn about them using surveys\nBut asking about them directly leads to misreporting\nThis form of measurement error is called sensitivity bias"
+  },
+  {
+    "objectID": "nu1.html#techniques-to-reduce-sensitivity-bias",
+    "href": "nu1.html#techniques-to-reduce-sensitivity-bias",
+    "title": "Gustavo Diaz",
+    "section": "Techniques to reduce sensitivity bias",
+    "text": "Techniques to reduce sensitivity bias\n\nHonesty appeals\nConfidentiality protocols\nRandomized response\nNetwork scale-up\nEndorsement experiments\nList experiments"
+  },
+  {
+    "objectID": "nu1.html#techniques-to-reduce-sensitivity-bias-1",
+    "href": "nu1.html#techniques-to-reduce-sensitivity-bias-1",
+    "title": "Gustavo Diaz",
+    "section": "Techniques to reduce sensitivity bias",
+    "text": "Techniques to reduce sensitivity bias\n\nHonesty appeals\nConfidentiality protocols\nRandomized response\nNetwork scale-up\nEndorsement experiments\nList experiments"
+  },
+  {
+    "objectID": "nu1.html#example",
+    "href": "nu1.html#example",
+    "title": "Gustavo Diaz",
+    "section": "Example",
+    "text": "Example\n\n\n\n\n\n\nSource: NPR"
+  },
+  {
+    "objectID": "nu1.html#list-experiment",
+    "href": "nu1.html#list-experiment",
+    "title": "Gustavo Diaz",
+    "section": "List experiment",
+    "text": "List experiment\nHere is a list of things that some people have done.\n\n\nSource: Rosenfeld et al (2016)"
+  },
+  {
+    "objectID": "nu1.html#list-experiment-1",
+    "href": "nu1.html#list-experiment-1",
+    "title": "Gustavo Diaz",
+    "section": "List experiment",
+    "text": "List experiment\nPlease listen to them and then tell me HOW MANY of them you have done in the past two years.\n\n\nSource: Rosenfeld et al (2016)"
+  },
+  {
+    "objectID": "nu1.html#list-experiment-2",
+    "href": "nu1.html#list-experiment-2",
+    "title": "Gustavo Diaz",
+    "section": "List experiment",
+    "text": "List experiment\nDo not tell me which ones. Just tell me HOW MANY:\n\n\n \nControl group\n\nDiscussed politics with family or friends\nCast a ballot for governor Phil Bryant\nPaid dues to a union\nGiven money to a Tea Party candidate\n\n\n\nSource: Rosenfeld et al (2016)"
+  },
+  {
+    "objectID": "nu1.html#list-experiment-3",
+    "href": "nu1.html#list-experiment-3",
+    "title": "Gustavo Diaz",
+    "section": "List experiment",
+    "text": "List experiment\nDo not tell me which ones. Just tell me HOW MANY:\n\n \nTreatment group\n\nDiscussed politics with family or friends\nCast a ballot for governor Phil Bryant\nPaid dues to a union\nGiven money to a Tea Party candidate\n\n\nSource: Rosenfeld et al (2016)"
+  },
+  {
+    "objectID": "nu1.html#list-experiment-4",
+    "href": "nu1.html#list-experiment-4",
+    "title": "Gustavo Diaz",
+    "section": "List experiment",
+    "text": "List experiment\nDo not tell me which ones. Just tell me HOW MANY:\n\n \nTreatment group\n\nDiscussed politics with family or friends\nCast a ballot for governor Phil Bryant\nPaid dues to a union\nGiven money to a Tea Party candidate\nVoted “YES” on the Personhood Initiative\n\n\nSource: Rosenfeld et al (2016)"
+  },
+  {
+    "objectID": "nu1.html#prevalence-rate",
+    "href": "nu1.html#prevalence-rate",
+    "title": "Gustavo Diaz",
+    "section": "Prevalence rate",
+    "text": "Prevalence rate\n\\[\n\\text{Proportion(Voted yes)} =\\\\ \\text{Mean(List with sensitive item)} -\\\\ \\text{Mean(List without sensitive item)}\n\\]\n\nlibrary(estimatr)\ndifference_in_means(count ~ sensitive, data = df)\n\n \n\nWe get a prevalence rate estimate but we do not know how individual respondents voted!"
+  },
+  {
+    "objectID": "nu1.html#compare-with-direct-question",
+    "href": "nu1.html#compare-with-direct-question",
+    "title": "Gustavo Diaz",
+    "section": "Compare with direct question",
+    "text": "Compare with direct question\nDid you vote YES or NO on the Personhood Initiative, which appeared on the November 2011 Mississippi General Election Ballot?\n\n\\[\n\\text{Proportion(Voted yes)} =\\\\ \\text{Mean(Answer yes)}\n\\]\n\nt.test(yes ~ 1, data = df)"
+  },
+  {
+    "objectID": "nu1.html#validation",
+    "href": "nu1.html#validation",
+    "title": "Gustavo Diaz",
+    "section": "Validation",
+    "text": "Validation\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Rosenfeld et al (2016)"
+  },
+  {
+    "objectID": "nu1.html#validation-1",
+    "href": "nu1.html#validation-1",
+    "title": "Gustavo Diaz",
+    "section": "Validation",
+    "text": "Validation\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Rosenfeld et al (2016)"
+  },
+  {
+    "objectID": "nu1.html#validation-2",
+    "href": "nu1.html#validation-2",
+    "title": "Gustavo Diaz",
+    "section": "Validation",
+    "text": "Validation\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Rosenfeld et al (2016)"
+  },
+  {
+    "objectID": "nu1.html#validation-3",
+    "href": "nu1.html#validation-3",
+    "title": "Gustavo Diaz",
+    "section": "Validation",
+    "text": "Validation\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Rosenfeld et al (2016)"
+  },
+  {
+    "objectID": "nu1.html#sensitivity-bias-reduction-not-always-worth-the-increased-variance",
+    "href": "nu1.html#sensitivity-bias-reduction-not-always-worth-the-increased-variance",
+    "title": "Gustavo Diaz",
+    "section": "Sensitivity bias reduction not always worth the increased variance",
+    "text": "Sensitivity bias reduction not always worth the increased variance"
+  },
+  {
+    "objectID": "nu1.html#can-we-do-better",
+    "href": "nu1.html#can-we-do-better",
+    "title": "Gustavo Diaz",
+    "section": "Can we do better?",
+    "text": "Can we do better?"
+  },
+  {
+    "objectID": "nu1.html#double-list-experiment",
+    "href": "nu1.html#double-list-experiment",
+    "title": "Gustavo Diaz",
+    "section": "Double list experiment",
+    "text": "Double list experiment\n\nList A\n\nCalifornians for Disability (advocating for people with disabilities)\nCalifornia National Organization for Women (advocating for women’s equality and empowerment)\nAmerican Family Association (advocating for pro-family values)\nAmerican Red Cross (humanitarian organization)\n\n\n\nList B\n\nAmerican Legion (veterans service organization)\nEquality California (gay and lesbian advocacy organization)\nTea Party Patriots (conservative group supporting lower taxes and limited government)\nSalvation Army (charitable organization)\n\n\n\n\nSource: Alvarez et al (2019)"
+  },
+  {
+    "objectID": "nu1.html#sensitive-item",
+    "href": "nu1.html#sensitive-item",
+    "title": "Gustavo Diaz",
+    "section": "Sensitive item",
+    "text": "Sensitive item\nOrganization X (advocating for immigration reduction and measures against undocumented immigration)\n\n\nEveryone sees it\nRandomly appears in list A or B\nEquivalent to two parallel list experiments"
+  },
+  {
+    "objectID": "nu1.html#three-prevalence-estimators",
+    "href": "nu1.html#three-prevalence-estimators",
+    "title": "Gustavo Diaz",
+    "section": "Three prevalence estimators",
+    "text": "Three prevalence estimators\n\n\\[\n\\hat{\\tau}_A = \\text{Mean}(A_t) - \\text{Mean}(A_c)\n\\]\n\ndifference_in_means(count ~ sensitive, subset = list == \"A\", data = df)\n\n\n\n\\[\n\\hat{\\tau}_B = \\text{Mean}(B_t) - \\text{Mean}(B_c)\n\\]\n\ndifference_in_means(count ~ sensitive, subset = list == \"B\", data = df )\n\n\n\n\\[\n\\hat{\\tau}_{Pooled} = (\\hat{\\tau}_A + \\hat{\\tau}_B)/2\n\\]\n\nlm_robust(count ~ sensitive + list, clusters = id, data = df)\n\n\n\n\nSee Diaz (2023) and Miller (1984) for details"
+  },
+  {
+    "objectID": "nu1.html#dle-yields-more-precise-estimates",
+    "href": "nu1.html#dle-yields-more-precise-estimates",
+    "title": "Gustavo Diaz",
+    "section": "DLE yields more precise estimates",
+    "text": "DLE yields more precise estimates\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Diaz (2023)"
+  },
+  {
+    "objectID": "nu1.html#dle-yields-more-precise-estimates-1",
+    "href": "nu1.html#dle-yields-more-precise-estimates-1",
+    "title": "Gustavo Diaz",
+    "section": "DLE yields more precise estimates",
+    "text": "DLE yields more precise estimates\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Diaz (2023)"
+  },
+  {
+    "objectID": "nu1.html#but-variance-reduction-is-not-free",
+    "href": "nu1.html#but-variance-reduction-is-not-free",
+    "title": "Gustavo Diaz",
+    "section": "But variance reduction is not free",
+    "text": "But variance reduction is not free\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Diaz (2023)"
+  },
+  {
+    "objectID": "nu1.html#but-variance-reduction-is-not-free-1",
+    "href": "nu1.html#but-variance-reduction-is-not-free-1",
+    "title": "Gustavo Diaz",
+    "section": "But variance reduction is not free",
+    "text": "But variance reduction is not free\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Diaz (2023)"
+  },
+  {
+    "objectID": "nu1.html#dle-variants",
+    "href": "nu1.html#dle-variants",
+    "title": "Gustavo Diaz",
+    "section": "DLE variants",
+    "text": "DLE variants\n\n\n\n\n\n\nList order\nSensitive item location\n\n\n\n\nFixed\nFixed\n\n\nRandomized\nFixed\n\n\nFixed\nRandomized\n\n\nRandomized\nRandomized"
+  },
+  {
+    "objectID": "nu1.html#dle-variants-1",
+    "href": "nu1.html#dle-variants-1",
+    "title": "Gustavo Diaz",
+    "section": "DLE variants",
+    "text": "DLE variants\n\n\n\n\n\nList order\nSensitive item location\n\n\n\n\nFixed\nFixed\n\n\nRandomized\nFixed\n\n\nFixed\nRandomized\n\n\nRandomized\nRandomized\n\n\n\n\n\n\n\n\nFixed-fixed is not an admissible design"
+  },
+  {
+    "objectID": "nu1.html#dle-variants-2",
+    "href": "nu1.html#dle-variants-2",
+    "title": "Gustavo Diaz",
+    "section": "DLE variants",
+    "text": "DLE variants\n\n\n\n\n\nList order\nSensitive item location\n\n\n\n\nFixed\nFixed\n\n\nRandomized\nFixed\n\n\nFixed\nRandomized\n\n\nRandomized\nRandomized\n\n\n\n\n\n\n\n\nFixed-fixed is not an admissible design\nRandomized-fixed keeps sensitive item in second list"
+  },
+  {
+    "objectID": "nu1.html#dle-variants-3",
+    "href": "nu1.html#dle-variants-3",
+    "title": "Gustavo Diaz",
+    "section": "DLE variants",
+    "text": "DLE variants\n\n\n\n\n\nList order\nSensitive item location\n\n\n\n\nFixed\nFixed\n\n\nRandomized\nFixed\n\n\nFixed\nRandomized\n\n\nRandomized\nRandomized\n\n\n\n\n\n\n\n\nFixed-fixed is not an admissible design\nRandomized-fixed keeps sensitive item in second list"
+  },
+  {
+    "objectID": "nu1.html#dle-variants-4",
+    "href": "nu1.html#dle-variants-4",
+    "title": "Gustavo Diaz",
+    "section": "DLE variants",
+    "text": "DLE variants\n\n\n\n\n\nList order\nSensitive item location\n\n\n\n\nFixed\nFixed\n\n\nRandomized\nFixed\n\n\nFixed\nRandomized\n\n\nRandomized\nRandomized\n\n\n\n\n\n\n\n\nFixed-fixed is not an admissible design\nRandomized-fixed keeps sensitive item in second list\nFixed-randomized and randomized-randomized shuffle sensitive item order"
+  },
+  {
+    "objectID": "nu1.html#carryover-design-effects",
+    "href": "nu1.html#carryover-design-effects",
+    "title": "Gustavo Diaz",
+    "section": "Carryover design effects",
+    "text": "Carryover design effects\n\n\n\n\n\n\nDesign effect (Blair and Imai 2012)\n\n\nThe inclusion of a sensitive item affects how survey participants respond to the baseline items within the list.\n\n\n\n\n\n\n\n\n\n\nCarryover design effect\n\n\nThe inclusion of a sensitive item in one list affects how participants respond to the baseline items in the other list."
+  },
+  {
+    "objectID": "nu1.html#toy-example",
+    "href": "nu1.html#toy-example",
+    "title": "Gustavo Diaz",
+    "section": "Toy example",
+    "text": "Toy example\n\n\n\n\n\nObserved response\nList 1\nList 2\nDifference\n\n\n\n\nBaseline\n2\n2\n0\n\n\nDeflation\n\n\nSensitive first\n1\n1\n0\n\n\nSensitive second\n2\n1\n1\n\n\nInflation\n\n\nSensitive first\n3\n3\n0\n\n\nSensitive second\n2\n3\n-1"
+  },
+  {
+    "objectID": "nu1.html#toy-example-1",
+    "href": "nu1.html#toy-example-1",
+    "title": "Gustavo Diaz",
+    "section": "Toy example",
+    "text": "Toy example\n\n\n\n\n\nObserved response\nList 1\nList 2\nDifference\n\n\n\n\nBaseline\n2\n2\n0\n\n\nDeflation\n\n\nSensitive first\n1\n1\n0\n\n\nSensitive second\n2\n1\n1\n\n\nInflation\n\n\nSensitive first\n3\n3\n0\n\n\nSensitive second\n2\n3\n-1"
+  },
+  {
+    "objectID": "nu1.html#toy-example-2",
+    "href": "nu1.html#toy-example-2",
+    "title": "Gustavo Diaz",
+    "section": "Toy example",
+    "text": "Toy example\n\n\n\n\n\nObserved response\nList 1\nList 2\nDifference\n\n\n\n\nBaseline\n2\n2\n0\n\n\nDeflation\n\n\nSensitive first\n1\n1\n0\n\n\nSensitive second\n2\n1\n1\n\n\nInflation\n\n\nSensitive first\n3\n3\n0\n\n\nSensitive second\n2\n3\n-1"
+  },
+  {
+    "objectID": "nu1.html#toy-example-3",
+    "href": "nu1.html#toy-example-3",
+    "title": "Gustavo Diaz",
+    "section": "Toy example",
+    "text": "Toy example\n\n\n\n\n\nObserved response\nList 1\nList 2\nDifference\n\n\n\n\nBaseline\n2\n2\n0\n\n\nDeflation\n\n\nSensitive first\n1\n1\n0\n\n\nSensitive second\n2\n1\n1\n\n\nInflation\n\n\nSensitive first\n3\n3\n0\n\n\nSensitive second\n2\n3\n-1"
+  },
+  {
+    "objectID": "nu1.html#toy-example-4",
+    "href": "nu1.html#toy-example-4",
+    "title": "Gustavo Diaz",
+    "section": "Toy example",
+    "text": "Toy example\n\n\n\n\n\nObserved response\nList 1\nList 2\nDifference\n\n\n\n\nBaseline\n2\n2\n0\n\n\nDeflation\n\n\nSensitive first\n1\n1\n0\n\n\nSensitive second\n2\n1\n1\n\n\nInflation\n\n\nSensitive first\n3\n3\n0\n\n\nSensitive second\n2\n3\n-1"
+  },
+  {
+    "objectID": "nu1.html#toy-example-5",
+    "href": "nu1.html#toy-example-5",
+    "title": "Gustavo Diaz",
+    "section": "Toy example",
+    "text": "Toy example\n\n\n\n\n\nObserved response\nList 1\nList 2\nDifference\n\n\n\n\nBaseline\n2\n2\n0\n\n\nDeflation\n\n\nSensitive first\n1\n1\n0\n\n\nSensitive second\n2\n1\n1\n\n\nInflation\n\n\nSensitive first\n3\n3\n0\n\n\nSensitive second\n2\n3\n-1"
+  },
+  {
+    "objectID": "nu1.html#toy-example-6",
+    "href": "nu1.html#toy-example-6",
+    "title": "Gustavo Diaz",
+    "section": "Toy example",
+    "text": "Toy example\n\n\n\n\n\nObserved response\nList 1\nList 2\nDifference\n\n\n\n\nBaseline\n2\n2\n0\n\n\nDeflation\n\n\nSensitive first\n1\n1\n0\n\n\nSensitive second\n2\n1\n1\n\n\nInflation\n\n\nSensitive first\n3\n3\n0\n\n\nSensitive second\n2\n3\n-1"
+  },
+  {
+    "objectID": "nu1.html#toy-example-7",
+    "href": "nu1.html#toy-example-7",
+    "title": "Gustavo Diaz",
+    "section": "Toy example",
+    "text": "Toy example\n\n\n\n\n\nObserved response\nList 1\nList 2\nDifference\n\n\n\n\nBaseline\n2\n2\n0\n\n\nDeflation\n\n\nSensitive first\n1\n1\n0\n\n\nSensitive second\n2\n1\n1\n\n\nInflation\n\n\nSensitive first\n3\n3\n0\n\n\nSensitive second\n2\n3\n-1"
+  },
+  {
+    "objectID": "nu1.html#why-does-this-happen",
+    "href": "nu1.html#why-does-this-happen",
+    "title": "Gustavo Diaz",
+    "section": "Why does this happen?",
+    "text": "Why does this happen?\n\n\nUnique question format\nLists usually appear close to each other\nPositive correlation across lists (Glynn 2013)\n\n\n\nGoal: Detect asymmetric shift across treatment schedules"
+  },
+  {
+    "objectID": "nu1.html#statistical-tests",
+    "href": "nu1.html#statistical-tests",
+    "title": "Gustavo Diaz",
+    "section": "Statistical tests",
+    "text": "Statistical tests\n\n\nDifference-in-differences\nSigned-rank test"
+  },
+  {
+    "objectID": "nu1.html#statistical-tests-1",
+    "href": "nu1.html#statistical-tests-1",
+    "title": "Gustavo Diaz",
+    "section": "Statistical tests",
+    "text": "Statistical tests\n\n\nDifference-in-differences\nSigned-rank test"
+  },
+  {
+    "objectID": "nu1.html#difference-in-differences-test",
+    "href": "nu1.html#difference-in-differences-test",
+    "title": "Gustavo Diaz",
+    "section": "Difference-in-differences test",
+    "text": "Difference-in-differences test\n\\[\n\\hat{\\tau}_1 = \\text{Mean}(\\text{First list}_t) - \\text{Mean}(\\text{First list}_c)\n\\]\n\\[\n\\hat{\\tau}_2 = \\text{Mean}(\\text{Second list}_t) - \\text{Mean}(\\text{Second list}_c)\n\\]\n\n\n\\(H_0: \\hat{\\tau}_1 - \\hat{\\tau}_2 = 0\\)\nDeflation: \\(\\hat{\\tau}_1 - \\hat{\\tau}_2 &lt; 0\\)\nInflation: \\(\\hat{\\tau}_1 - \\hat{\\tau}_2 &gt; 0\\)\n\n\n\n\n# For fixed-randomized design\nlm_robust(count ~ sensitive*first, clusters = id, data = df)"
+  },
+  {
+    "objectID": "nu1.html#application-to-alvarez-et-al-2019",
+    "href": "nu1.html#application-to-alvarez-et-al-2019",
+    "title": "Gustavo Diaz",
+    "section": "Application to Alvarez et al (2019)",
+    "text": "Application to Alvarez et al (2019)\n\n\n\n\n\nExperiment\nStatistic\np-value\n\n\n\n\nOrganization X (advocacy group)\n0.079\n0.623\n\n\nOrganization Y (border patrol)\n-0.268\n0.082"
+  },
+  {
+    "objectID": "nu1.html#application-to-alvarez-et-al-2019-1",
+    "href": "nu1.html#application-to-alvarez-et-al-2019-1",
+    "title": "Gustavo Diaz",
+    "section": "Application to Alvarez et al (2019)",
+    "text": "Application to Alvarez et al (2019)\n\n\n\n\n\nExperiment\nStatistic\np-value\n\n\n\n\nOrganization X (advocacy group)\n0.079\n0.623\n\n\nOrganization Y (border patrol)\n-0.268\n0.082"
+  },
+  {
+    "objectID": "nu1.html#application-to-alvarez-et-al-2019-2",
+    "href": "nu1.html#application-to-alvarez-et-al-2019-2",
+    "title": "Gustavo Diaz",
+    "section": "Application to Alvarez et al (2019)",
+    "text": "Application to Alvarez et al (2019)\n\n\n\n\n\nExperiment\nStatistic\np-value\n\n\n\n\nOrganization X (advocacy group)\n0.079\n0.623\n\n\nOrganization Y (border patrol)\n-0.268\n0.082"
+  },
+  {
+    "objectID": "nu1.html#tests-improve-our-ability-to-choose-baseline-items-for-a-dle",
+    "href": "nu1.html#tests-improve-our-ability-to-choose-baseline-items-for-a-dle",
+    "title": "Gustavo Diaz",
+    "section": "Tests improve our ability to choose baseline items for a DLE",
+    "text": "Tests improve our ability to choose baseline items for a DLE"
+  },
+  {
+    "objectID": "nu1.html#they-also-help-when-other-things-go-wrong",
+    "href": "nu1.html#they-also-help-when-other-things-go-wrong",
+    "title": "Gustavo Diaz",
+    "section": "They also help when other things go wrong",
+    "text": "They also help when other things go wrong"
+  },
+  {
+    "objectID": "nu1.html#criminal-governance-tools-in-uruguay",
+    "href": "nu1.html#criminal-governance-tools-in-uruguay",
+    "title": "Gustavo Diaz",
+    "section": "Criminal governance tools in Uruguay",
+    "text": "Criminal governance tools in Uruguay\n\nFacebook sample of Montevideo residents (N = 2688)\nFour criminal governance strategies\n\n\n\n\nViolent\n\nThreaten neighbors\nEvict neighbors\n\n\nNon-violent\n\nMake donations to neighbors\nOffer work to neighbors\n\n\n\n\n\n\nWork in progres with Ines Fynn, Verónica Pérez Bentancur, and Lucía Tiscornia"
+  },
+  {
+    "objectID": "nu1.html#criminal-governance-tools-in-uruguay-1",
+    "href": "nu1.html#criminal-governance-tools-in-uruguay-1",
+    "title": "Gustavo Diaz",
+    "section": "Criminal governance tools in Uruguay",
+    "text": "Criminal governance tools in Uruguay\n\nFacebook sample of Montevideo residents (N = 2688)\nFour criminal governance strategies\n\n\n\nViolent\n\nThreaten neighbors\nEvict neighbors\n\n\nNon-violent\n\nMake donations to neighbors\nOffer work to neighbors\n\n\n\n\n\nWork in progres with Ines Fynn, Verónica Pérez Bentancur, and Lucía Tiscornia"
+  },
+  {
+    "objectID": "nu1.html#dle-with-placebo-item",
+    "href": "nu1.html#dle-with-placebo-item",
+    "title": "Gustavo Diaz",
+    "section": "DLE with placebo item",
+    "text": "DLE with placebo item\nThings people have experienced in the last six months:\n\n\n\n\n\nList A\nList B\n\n\n\n\nSaw people doing sports\nSaw people playing soccer\n\n\nVisited friends\nChatted with friends\n\n\nActivities by feminist groups\nActivities by LGBTQ groups\n\n\nWent to church\nWent to charity events"
+  },
+  {
+    "objectID": "nu1.html#dle-with-placebo-item-1",
+    "href": "nu1.html#dle-with-placebo-item-1",
+    "title": "Gustavo Diaz",
+    "section": "DLE with placebo item",
+    "text": "DLE with placebo item\nThings people have experienced in the last six months:\n\n\n\n\n\nList A\nList B\n\n\n\n\nSaw people doing sports\nSaw people playing soccer\n\n\nVisited friends\nChatted with friends\n\n\nActivities by feminist groups\nActivities by LGBTQ groups\n\n\nWent to church\nWent to charity events\n\n\nGangs threatening neighbors\nDid not drink mate"
+  },
+  {
+    "objectID": "nu1.html#dle-with-placebo-item-2",
+    "href": "nu1.html#dle-with-placebo-item-2",
+    "title": "Gustavo Diaz",
+    "section": "DLE with placebo item",
+    "text": "DLE with placebo item\nThings people have experienced in the last six months:\n\n\n\n\n\nList A\nList B\n\n\n\n\nSaw people doing sports\nSaw people playing soccer\n\n\nVisited friends\nChatted with friends\n\n\nActivities by feminist groups\nActivities by LGBTQ groups\n\n\nWent to church\nWent to charity events\n\n\nDid not drink mate\nGangs threatening neighbors"
+  },
+  {
+    "objectID": "nu1.html#prevalence-estimates",
+    "href": "nu1.html#prevalence-estimates",
+    "title": "Gustavo Diaz",
+    "section": "Prevalence estimates",
+    "text": "Prevalence estimates\n\n\n\n\n\n\n\n\n\n\n\nLooks the same for the other sensitive items!"
+  },
+  {
+    "objectID": "nu1.html#prevalence-estimates-1",
+    "href": "nu1.html#prevalence-estimates-1",
+    "title": "Gustavo Diaz",
+    "section": "Prevalence estimates",
+    "text": "Prevalence estimates\n\n\n\n\n\n\n\n\n\n\n\nLooks the same for the other sensitive items!"
+  },
+  {
+    "objectID": "nu1.html#prevalence-estimates-2",
+    "href": "nu1.html#prevalence-estimates-2",
+    "title": "Gustavo Diaz",
+    "section": "Prevalence estimates",
+    "text": "Prevalence estimates\n\n\n\n\n\n\n\n\n\n\n\nLooks the same for the other sensitive items!"
+  },
+  {
+    "objectID": "nu1.html#what-went-wrong",
+    "href": "nu1.html#what-went-wrong",
+    "title": "Gustavo Diaz",
+    "section": "What went wrong?",
+    "text": "What went wrong?\n\n\nPlacebo item more frequent than we anticipated\nOffsets prevalence rates we would have observed\nSolution: Reconstruct estimate bounds without placebo item\n\n\n\nChallenge: Respondents may have noticed sensitive item and altered responses in unintended ways\nUse tests to rule out strategic errors"
+  },
+  {
+    "objectID": "nu1.html#applying-difference-in-differences-test",
+    "href": "nu1.html#applying-difference-in-differences-test",
+    "title": "Gustavo Diaz",
+    "section": "Applying difference-in-differences test",
+    "text": "Applying difference-in-differences test\n\n\n\n\n\n\nSensitive item\nStatistic\np-value\n\n\n\n\nThreaten neighbors\n0.12\n0.41\n\n\nEvict neighbors\n0.08\n0.58\n\n\nMake donations\n-0.24\n0.16\n\n\nOffer work\n-0.11\n0.47"
+  },
+  {
+    "objectID": "nu1.html#applying-difference-in-differences-test-1",
+    "href": "nu1.html#applying-difference-in-differences-test-1",
+    "title": "Gustavo Diaz",
+    "section": "Applying difference-in-differences test",
+    "text": "Applying difference-in-differences test\n\n\n\n\n\nSensitive item\nStatistic\np-value\n\n\n\n\nThreaten neighbors\n0.12\n0.41\n\n\nEvict neighbors\n0.08\n0.58\n\n\nMake donations\n-0.24\n0.16\n\n\nOffer work\n-0.11\n0.47\n\n\n\n\n\n\n\n\nObserved test statistics not unlikely under the null hypothesis of no carryover design effect"
+  },
+  {
+    "objectID": "nu1.html#so-we-can-move-from-this",
+    "href": "nu1.html#so-we-can-move-from-this",
+    "title": "Gustavo Diaz",
+    "section": "So we can move from this",
+    "text": "So we can move from this"
+  },
+  {
+    "objectID": "nu1.html#to-estimate-bounds",
+    "href": "nu1.html#to-estimate-bounds",
+    "title": "Gustavo Diaz",
+    "section": "To estimate bounds",
+    "text": "To estimate bounds"
+  },
+  {
+    "objectID": "nu1.html#to-estimate-bounds-1",
+    "href": "nu1.html#to-estimate-bounds-1",
+    "title": "Gustavo Diaz",
+    "section": "To estimate bounds",
+    "text": "To estimate bounds"
+  },
+  {
+    "objectID": "nu1.html#to-estimate-bounds-2",
+    "href": "nu1.html#to-estimate-bounds-2",
+    "title": "Gustavo Diaz",
+    "section": "To estimate bounds",
+    "text": "To estimate bounds"
+  },
+  {
+    "objectID": "nu1.html#conclusion",
+    "href": "nu1.html#conclusion",
+    "title": "Gustavo Diaz",
+    "section": "Conclusion",
+    "text": "Conclusion\nSummary\n\n\nDLEs improve along bias-variance frontier\nBut bring additional questions about validity\nNew tools to address validity\nApplications: Justify research design and recover estimates\n\n\n\n\nLearn more: gustavodiaz.org"
+  },
+  {
+    "objectID": "nu1.html#conclusion-1",
+    "href": "nu1.html#conclusion-1",
+    "title": "Gustavo Diaz",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nLessons\n\n\nSeemingly cost-free innovations may have hidden costs\nNeed tools to incorporate into workflow\nPilot, pilot pilot!\nAdaptive rules before confirmatory analyses\n\n\n\n\nLearn more: gustavodiaz.org"
+  },
+  {
+    "objectID": "nu1.html#appendix",
+    "href": "nu1.html#appendix",
+    "title": "Gustavo Diaz",
+    "section": "Appendix",
+    "text": "Appendix\n\n\nAlvarez et al (2019) details\nMontevideo survey responses\nSigned rank test\nDLE cost simulations\nPerformance simulations\nPlacebo tests\nNetwork scale-up"
+  },
+  {
+    "objectID": "nu1.html#cali",
+    "href": "nu1.html#cali",
+    "title": "Gustavo Diaz",
+    "section": "Alvarez et al (2019) details",
+    "text": "Alvarez et al (2019) details\n\n\n\n\n\n\n\n\n\n\n\n\nPlacement\n\n\n\n\nList A\nList B\n\n\n\n\nSensitive item\n\n\nOrganization X\n545\n525\n\n\nOrganization Y\n537\n543"
+  },
+  {
+    "objectID": "nu1.html#mean-supported-organizations",
+    "href": "nu1.html#mean-supported-organizations",
+    "title": "Gustavo Diaz",
+    "section": "Mean supported organizations",
+    "text": "Mean supported organizations"
+  },
+  {
+    "objectID": "nu1.html#control-list-distributions",
+    "href": "nu1.html#control-list-distributions",
+    "title": "Gustavo Diaz",
+    "section": "Control list distributions",
+    "text": "Control list distributions"
+  },
+  {
+    "objectID": "nu1.html#mvd",
+    "href": "nu1.html#mvd",
+    "title": "Gustavo Diaz",
+    "section": "Montevideo survey",
+    "text": "Montevideo survey"
+  },
+  {
+    "objectID": "nu1.html#montevideo-survey",
+    "href": "nu1.html#montevideo-survey",
+    "title": "Gustavo Diaz",
+    "section": "Montevideo survey",
+    "text": "Montevideo survey"
+  },
+  {
+    "objectID": "nu1.html#montevideo-survey-1",
+    "href": "nu1.html#montevideo-survey-1",
+    "title": "Gustavo Diaz",
+    "section": "Montevideo survey",
+    "text": "Montevideo survey"
+  },
+  {
+    "objectID": "nu1.html#montevideo-survey-2",
+    "href": "nu1.html#montevideo-survey-2",
+    "title": "Gustavo Diaz",
+    "section": "Montevideo survey",
+    "text": "Montevideo survey"
+  },
+  {
+    "objectID": "nu1.html#steph",
+    "href": "nu1.html#steph",
+    "title": "Gustavo Diaz",
+    "section": "Stephenson’s signed rank test",
+    "text": "Stephenson’s signed rank test\n\\[\n\\widetilde{T} = \\sum_{i=1}^N \\text{sgn} \\{(z_i - (1-z_i)) (Y_{i1} - Y_{i2})\\} \\times \\tilde{q}_i\n\\]\n\\[\n\\tilde{q}_i = {q_i-1 \\choose m-1} \\text{ for } q_i \\geq m\n\\]\n\\[\n\\tilde{q}_i = 0 \\text{ for } q_i &lt; m\n\\]\n\\[\n\\text{with } 1 \\leq m \\leq N\n\\]\n\n\n See Stephenson (1981) and Rosenbaum (2020) for details"
+  },
+  {
+    "objectID": "nu1.html#applied-to-alvarez-et-al-2019",
+    "href": "nu1.html#applied-to-alvarez-et-al-2019",
+    "title": "Gustavo Diaz",
+    "section": "Applied to Alvarez et al (2019)",
+    "text": "Applied to Alvarez et al (2019)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOrganization X\n\n\nOrganization Y\n\n\n\nm\nStatistic\np-value\nStatistic\np-value\n\n\n\n\n2\n8.356400e+04\n1\n3.571300e+04\n1\n\n\n5\n3.809258e+12\n1\n3.323093e+12\n1\n\n\n10\n1.791638e+23\n1\n1.825804e+23\n1\n\n\n50\n1.439408e+86\n1\n2.533938e+86\n1"
+  },
+  {
+    "objectID": "nu1.html#cost",
+    "href": "nu1.html#cost",
+    "title": "Gustavo Diaz",
+    "section": "DLEs are costly to implement",
+    "text": "DLEs are costly to implement"
+  },
+  {
+    "objectID": "nu1.html#performance",
+    "href": "nu1.html#performance",
+    "title": "Gustavo Diaz",
+    "section": "Test performance",
+    "text": "Test performance"
+  },
+  {
+    "objectID": "nu1.html#signed-rank-performance",
+    "href": "nu1.html#signed-rank-performance",
+    "title": "Gustavo Diaz",
+    "section": "Signed rank performance",
+    "text": "Signed rank performance"
+  },
+  {
+    "objectID": "nu1.html#placebo",
+    "href": "nu1.html#placebo",
+    "title": "Gustavo Diaz",
+    "section": "Placebo tests",
+    "text": "Placebo tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlacebo I\n\n\nPlacebo II\n\n\n\nItem\nEstimate\np\nn\nEstimate\np\nn\n\n\n\n\nDonate\n0.08\n0.55\n133\n-0.03\n0.32\n635\n\n\nEvict\n0.14\n0.46\n32\n0.00\n0.95\n628\n\n\nThreaten\n0.24\n0.08\n102\n0.02\n0.44\n641\n\n\nWork\n0.03\n0.88\n64\n0.01\n0.58\n647\n\n\n\n\n\n\n\n\n\n See Aronow et al (2015) for details"
+  },
+  {
+    "objectID": "nu1.html#nsum",
+    "href": "nu1.html#nsum",
+    "title": "Gustavo Diaz",
+    "section": "Network scale-up method",
+    "text": "Network scale-up method\n\nHow many X do you know,"
+  },
+  {
+    "objectID": "nu1.html#network-scale-up-method",
+    "href": "nu1.html#network-scale-up-method",
+    "title": "Gustavo Diaz",
+    "section": "Network scale-up method",
+    "text": "Network scale-up method\nHow many X do you know, who also know you,"
+  },
+  {
+    "objectID": "nu1.html#network-scale-up-method-1",
+    "href": "nu1.html#network-scale-up-method-1",
+    "title": "Gustavo Diaz",
+    "section": "Network scale-up method",
+    "text": "Network scale-up method\nHow many X do you know, who also know you, with whom you have interacted in the last year"
+  },
+  {
+    "objectID": "nu1.html#network-scale-up-method-2",
+    "href": "nu1.html#network-scale-up-method-2",
+    "title": "Gustavo Diaz",
+    "section": "Network scale-up method",
+    "text": "Network scale-up method\nHow many X do you know, who also know you, with whom you have interacted in the last year in person, by phone, or any other channel?"
+  },
+  {
+    "objectID": "nu1.html#network-scale-up-method-3",
+    "href": "nu1.html#network-scale-up-method-3",
+    "title": "Gustavo Diaz",
+    "section": "Network scale-up method",
+    "text": "Network scale-up method\nHow many X do you know… \n\n\n\nFrom Las Piedras\nMale 25-29\nPolice officers\nUniversity students\nHad a kid last year\nPassed away last year\nMarried last year\nFemale 45-49\n\nPublic employees\nWelfare card holders\nRegistered with party\nWith kids in public school\nDid not vote in last election\nCurrently in jail\nRecently unemployed\nSENSITIVE ITEM"
+  },
+  {
+    "objectID": "nu1.html#nsum-results",
+    "href": "nu1.html#nsum-results",
+    "title": "Gustavo Diaz",
+    "section": "NSUM results",
+    "text": "NSUM results"
   }
 ]

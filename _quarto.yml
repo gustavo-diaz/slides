@@ -37,7 +37,7 @@ website:
     
   page-footer:
       border: false
-      left: © 2023 Gustavo Diaz
+      left: © 2024 Gustavo Diaz
       right: Powered by [{{< fa brands r-project >}}](https://cran.r-project.org/) and [Quarto](https://quarto.org/)
   
 format:
