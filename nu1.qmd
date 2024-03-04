@@ -541,6 +541,33 @@ ggplot(est_df %>% filter(experiment == "Y")) +
 Adapted from [Diaz (2023)](https://doi.org/10.1017/XPS.2023.24)
 :::
 
+## Carryover design effects
+
+::: {.callout-note}
+## Design effect [(Blair and Imai 2012)](https://doi.org/10.1093/pan/mpr048)
+
+The inclusion of a sensitive item affects how survey participants respond to the baseline items **within the list**.
+
+:::
+
+. . .
+
+::: {.callout-tip}
+## Carryover design effect
+
+The inclusion of a sensitive item **in one list** affects how participants respond to the baseline items in **the other list**.
+:::
+
+
+## Why does this happen?
+
+. . .
+
+- Unique question format
+- Lists usually appear close to each other
+- Positive correlation across lists [(Glynn 2013)](https://doi.org/10.1093/poq/nfs070)
+
+
 ## DLE variants
 
 . . .
@@ -648,24 +675,8 @@ designs %>%
 - **Randomized-fixed** keeps sensitive item in second list
 - **Fixed-randomized** and **randomized-randomized** *shuffle sensitive item order*
 
-## Carryover design effects
 
-::: {.callout-note}
-## Design effect [(Blair and Imai 2012)](https://doi.org/10.1093/pan/mpr048)
-
-The inclusion of a sensitive item affects how survey participants respond to the baseline items **within the list**.
-
-:::
-
-. . .
-
-::: {.callout-tip}
-## Carryover design effect
-
-The inclusion of a sensitive item **in one list** affects how participants respond to the baseline items in **the other list**.
-:::
-
-## Toy example
+## Asymmetric shift
 
 ```{r}
 # Four cases
@@ -695,7 +706,7 @@ toy %>%
   row_spec(1:5, color = "white")
 ```
 
-## Toy example {visibility="uncounted"}
+## Asymmetric shift {visibility="uncounted"}
 
 ```{r}
 toy %>% 
@@ -707,7 +718,7 @@ toy %>%
   row_spec(2:5, color = "white")
 ```
 
-## Toy example {visibility="uncounted"}
+## Asymmetric shift {visibility="uncounted"}
 
 ```{r}
 toy %>% 
@@ -719,7 +730,7 @@ toy %>%
   row_spec(2:5, color = "white")
 ```
 
-## Toy example {visibility="uncounted"}
+## Asymmetric shift {visibility="uncounted"}
 
 ```{r}
 toy %>% 
@@ -731,7 +742,7 @@ toy %>%
   row_spec(3:5, color = "white")
 ```
 
-## Toy example {visibility="uncounted"}
+## Asymmetric shift {visibility="uncounted"}
 
 ```{r}
 toy %>% 
@@ -743,7 +754,7 @@ toy %>%
   row_spec(4:5, color = "white")
 ```
 
-## Toy example {visibility="uncounted"}
+## Asymmetric shift {visibility="uncounted"}
 
 ```{r}
 toy %>% 
@@ -755,7 +766,7 @@ toy %>%
   row_spec(4:5, color = "white")
 ```
 
-## Toy example {visibility="uncounted"}
+## Asymmetric shift {visibility="uncounted"}
 
 ```{r}
 toy %>% 
@@ -767,7 +778,7 @@ toy %>%
   row_spec(5, color = "white")
 ```
 
-## Toy example {visibility="uncounted"}
+## Asymmetric shift {visibility="uncounted"}
 
 ```{r}
 toy %>% 
@@ -778,34 +789,6 @@ toy %>%
   column_spec(1, bold = c(T, F, F, F, F))
 ```
 
-## Why does this happen?
-
-. . .
-
-- Unique question format
-- Lists usually appear close to each other
-- Positive correlation across lists [(Glynn 2013)](https://doi.org/10.1093/poq/nfs070)
-
-. . .
-
-**Goal:** Detect *asymmetric shift* across *treatment schedules*
-
-## Statistical tests
-
-. . .
-
-1. Difference-in-differences
-
-2. Signed-rank test
-
-
-## Statistical tests {visibility="uncounted"}
-
-<!-- Keep signed rank for appendix -->
-
-1. **Difference-in-differences**
-
-2. [Signed-rank test]{style="color: gray;"}
 
 ## Difference-in-differences test
 
@@ -829,6 +812,10 @@ $$
 # For fixed-randomized design
 lm_robust(count ~ sensitive*first, clusters = id, data = df)
 ```
+
+::: aside
+There is also a signed-rank test [(Diaz 2023)](https://doi.org/10.1017/XPS.2023.24)
+:::
 
 
 ## Application to [Alvarez et al (2019)](https://doi.org/10.1017/pan.2018.57)
@@ -1269,14 +1256,11 @@ ggplot(bounds) +
 
 ## Conclusion {visibility="uncounted"}
 
-<!-- CONTINUE HERE FOR NORTHWESTERN THE MAIN LESSON IS THAT NEW TOOLS COME WITH HIDDEN COSTS. NO FREE LUNCH. MANY TECHNIQUES PROMISE IMPROVING ALONG THE BIAS-VARIANCE FRONTIER. -->
-
 ### Lessons
 
 ::: incremental
 - Seemingly cost-free innovations may have hidden costs
 - Need tools to incorporate into workflow
-- Pilot, pilot pilot!
 - Adaptive rules before confirmatory analyses
 :::
 

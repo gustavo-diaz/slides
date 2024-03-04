@@ -2734,7 +2734,7 @@
     "href": "nu1.html#improving-list-experiments",
     "title": "Gustavo Diaz",
     "section": "Improving List Experiments",
-    "text": "Improving List Experiments\n \nGustavo Diaz\nMcMaster University\ngustavodiaz.org\ndiazg2@mcmaster.ca\n \nSlides: talks.gustavodiaz.org/nu1"
+    "text": "Improving List Experiments\n \nGustavo Diaz\nMcMaster University\ngustavodiaz.org\ndiazg2@mcmaster.ca\n \nSlides: gustavodiaz.org/nu"
   },
   {
     "objectID": "nu1.html#questions",
@@ -3014,7 +3014,7 @@
     "href": "nu1.html#why-does-this-happen",
     "title": "Gustavo Diaz",
     "section": "Why does this happen?",
-    "text": "Why does this happen?\n\n\nUnique question format\nLists usually appear close to each other\nPositive correlation across lists (Glynn 2013)\n\n\n\nGoal: Detect asymmetric shift across treatment schedules"
+    "text": "Why does this happen?\n\n\nUnique question format\nLists usually appear close to each other\nPositive correlation across lists (Glynn 2013)"
   },
   {
     "objectID": "nu1.html#statistical-tests",
@@ -3035,7 +3035,7 @@
     "href": "nu1.html#difference-in-differences-test",
     "title": "Gustavo Diaz",
     "section": "Difference-in-differences test",
-    "text": "Difference-in-differences test\n\\[\n\\hat{\\tau}_1 = \\text{Mean}(\\text{First list}_t) - \\text{Mean}(\\text{First list}_c)\n\\]\n\\[\n\\hat{\\tau}_2 = \\text{Mean}(\\text{Second list}_t) - \\text{Mean}(\\text{Second list}_c)\n\\]\n\n\n\\(H_0: \\hat{\\tau}_1 - \\hat{\\tau}_2 = 0\\)\nDeflation: \\(\\hat{\\tau}_1 - \\hat{\\tau}_2 &lt; 0\\)\nInflation: \\(\\hat{\\tau}_1 - \\hat{\\tau}_2 &gt; 0\\)\n\n\n\n\n# For fixed-randomized design\nlm_robust(count ~ sensitive*first, clusters = id, data = df)"
+    "text": "Difference-in-differences test\n\\[\n\\hat{\\tau}_1 = \\text{Mean}(\\text{First list}_t) - \\text{Mean}(\\text{First list}_c)\n\\]\n\\[\n\\hat{\\tau}_2 = \\text{Mean}(\\text{Second list}_t) - \\text{Mean}(\\text{Second list}_c)\n\\]\n\n\n\\(H_0: \\hat{\\tau}_1 - \\hat{\\tau}_2 = 0\\)\nDeflation: \\(\\hat{\\tau}_1 - \\hat{\\tau}_2 &lt; 0\\)\nInflation: \\(\\hat{\\tau}_1 - \\hat{\\tau}_2 &gt; 0\\)\n\n\n\n\n# For fixed-randomized design\nlm_robust(count ~ sensitive*first, clusters = id, data = df)\n\n\n\n\nThere is also a signed-rank test (Diaz 2023)"
   },
   {
     "objectID": "nu1.html#application-to-alvarez-et-al-2019",
@@ -3189,7 +3189,7 @@
     "href": "nu1.html#conclusion-1",
     "title": "Gustavo Diaz",
     "section": "Conclusion",
-    "text": "Conclusion\n\nLessons\n\n\nSeemingly cost-free innovations may have hidden costs\nNeed tools to incorporate into workflow\nPilot, pilot pilot!\nAdaptive rules before confirmatory analyses\n\n\n\n\nLearn more: gustavodiaz.org"
+    "text": "Conclusion\nLessons\n\n\nSeemingly cost-free innovations may have hidden costs\nNeed tools to incorporate into workflow\nAdaptive rules before confirmatory analyses\n\n\n\n\nLearn more: gustavodiaz.org"
   },
   {
     "objectID": "nu1.html#appendix",
@@ -3330,5 +3330,61 @@
     "title": "Gustavo Diaz",
     "section": "NSUM results",
     "text": "NSUM results"
+  },
+  {
+    "objectID": "nu1.html#asymmetric-shift",
+    "href": "nu1.html#asymmetric-shift",
+    "title": "Gustavo Diaz",
+    "section": "Asymmetric shift",
+    "text": "Asymmetric shift\n\n\n\n\n\nObserved response\nList 1\nList 2\nDifference\n\n\n\n\nBaseline\n2\n2\n0\n\n\nDeflation\n\n\nSensitive first\n1\n1\n0\n\n\nSensitive second\n2\n1\n1\n\n\nInflation\n\n\nSensitive first\n3\n3\n0\n\n\nSensitive second\n2\n3\n-1"
+  },
+  {
+    "objectID": "nu1.html#asymmetric-shift-1",
+    "href": "nu1.html#asymmetric-shift-1",
+    "title": "Gustavo Diaz",
+    "section": "Asymmetric shift",
+    "text": "Asymmetric shift\n\n\n\n\n\nObserved response\nList 1\nList 2\nDifference\n\n\n\n\nBaseline\n2\n2\n0\n\n\nDeflation\n\n\nSensitive first\n1\n1\n0\n\n\nSensitive second\n2\n1\n1\n\n\nInflation\n\n\nSensitive first\n3\n3\n0\n\n\nSensitive second\n2\n3\n-1"
+  },
+  {
+    "objectID": "nu1.html#asymmetric-shift-2",
+    "href": "nu1.html#asymmetric-shift-2",
+    "title": "Gustavo Diaz",
+    "section": "Asymmetric shift",
+    "text": "Asymmetric shift\n\n\n\n\n\nObserved response\nList 1\nList 2\nDifference\n\n\n\n\nBaseline\n2\n2\n0\n\n\nDeflation\n\n\nSensitive first\n1\n1\n0\n\n\nSensitive second\n2\n1\n1\n\n\nInflation\n\n\nSensitive first\n3\n3\n0\n\n\nSensitive second\n2\n3\n-1"
+  },
+  {
+    "objectID": "nu1.html#asymmetric-shift-3",
+    "href": "nu1.html#asymmetric-shift-3",
+    "title": "Gustavo Diaz",
+    "section": "Asymmetric shift",
+    "text": "Asymmetric shift\n\n\n\n\n\nObserved response\nList 1\nList 2\nDifference\n\n\n\n\nBaseline\n2\n2\n0\n\n\nDeflation\n\n\nSensitive first\n1\n1\n0\n\n\nSensitive second\n2\n1\n1\n\n\nInflation\n\n\nSensitive first\n3\n3\n0\n\n\nSensitive second\n2\n3\n-1"
+  },
+  {
+    "objectID": "nu1.html#asymmetric-shift-4",
+    "href": "nu1.html#asymmetric-shift-4",
+    "title": "Gustavo Diaz",
+    "section": "Asymmetric shift",
+    "text": "Asymmetric shift\n\n\n\n\n\nObserved response\nList 1\nList 2\nDifference\n\n\n\n\nBaseline\n2\n2\n0\n\n\nDeflation\n\n\nSensitive first\n1\n1\n0\n\n\nSensitive second\n2\n1\n1\n\n\nInflation\n\n\nSensitive first\n3\n3\n0\n\n\nSensitive second\n2\n3\n-1"
+  },
+  {
+    "objectID": "nu1.html#asymmetric-shift-5",
+    "href": "nu1.html#asymmetric-shift-5",
+    "title": "Gustavo Diaz",
+    "section": "Asymmetric shift",
+    "text": "Asymmetric shift\n\n\n\n\n\nObserved response\nList 1\nList 2\nDifference\n\n\n\n\nBaseline\n2\n2\n0\n\n\nDeflation\n\n\nSensitive first\n1\n1\n0\n\n\nSensitive second\n2\n1\n1\n\n\nInflation\n\n\nSensitive first\n3\n3\n0\n\n\nSensitive second\n2\n3\n-1"
+  },
+  {
+    "objectID": "nu1.html#asymmetric-shift-6",
+    "href": "nu1.html#asymmetric-shift-6",
+    "title": "Gustavo Diaz",
+    "section": "Asymmetric shift",
+    "text": "Asymmetric shift\n\n\n\n\n\nObserved response\nList 1\nList 2\nDifference\n\n\n\n\nBaseline\n2\n2\n0\n\n\nDeflation\n\n\nSensitive first\n1\n1\n0\n\n\nSensitive second\n2\n1\n1\n\n\nInflation\n\n\nSensitive first\n3\n3\n0\n\n\nSensitive second\n2\n3\n-1"
+  },
+  {
+    "objectID": "nu1.html#asymmetric-shift-7",
+    "href": "nu1.html#asymmetric-shift-7",
+    "title": "Gustavo Diaz",
+    "section": "Asymmetric shift",
+    "text": "Asymmetric shift\n\n\n\n\n\nObserved response\nList 1\nList 2\nDifference\n\n\n\n\nBaseline\n2\n2\n0\n\n\nDeflation\n\n\nSensitive first\n1\n1\n0\n\n\nSensitive second\n2\n1\n1\n\n\nInflation\n\n\nSensitive first\n3\n3\n0\n\n\nSensitive second\n2\n3\n-1"
   }
 ]
