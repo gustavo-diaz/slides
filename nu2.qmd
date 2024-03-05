@@ -221,6 +221,36 @@ ggplot(diag_a) +
 ```{r}
 ggplot(diag_a) +
   aes(x = attrition_rate, y = powerp, color = estimator, shape = estimator) +
+  geom_line(size = 1) + 
+  geom_point(size = 2) +
+  theme(legend.position = "bottom") +
+  scale_color_viridis_d(end = 0.8,
+                        labels = c("Complete + post only",
+                                   "Block + post only",
+                                   "Block + post only",
+                                   "Block + pre-post"),
+                        alpha = c(1, 0, 0, 0)) +
+  scale_shape_discrete(labels = c("Complete + post only",
+                                   "Block + post only",
+                                   "Block + post only",
+                                   "Block + pre-post")) +
+  labs(x = "Sample loss rate",
+       y = expression(paste('Power at ', alpha  == 0.05)),
+       color = "Design",
+       shape = "Design") +
+  scale_y_continuous(breaks = seq(0, 1, by = 0.2), limits = c(0, 1)) +
+  guides(color = guide_legend(nrow = 2, byrow = TRUE))
+```
+
+::: aside
+[Paper](https://gustavodiaz.org/files/research/precision_retention.pdf) with [Erin Rossiter](https://erossiter.com/)
+:::
+
+## Precision-retention tradeoff
+
+```{r}
+ggplot(diag_a) +
+  aes(x = attrition_rate, y = powerp, color = estimator, shape = estimator) +
   geom_line(size = 1) + geom_point(size = 2) +
   theme(legend.position = "bottom") +
   scale_color_viridis_d(end = 0.8,

@@ -1209,20 +1209,32 @@ ggplot(bounds) +
   
 ```
 
+
 ## To estimate bounds {visibility="uncounted"}
 
 ```{r}
 ggplot(bounds) +
   aes(x = pi, y = hi) +
-  geom_line(linewidth = 1, alpha = 0) +
-  geom_line(aes(y = lo), linewidth = 1, alpha = 0) +
-  geom_hline(yintercept = direct, linetype = "dashed") +
+  geom_line(linewidth = 1) +
+  geom_line(aes(y = lo), linewidth = 1) +
+  labs(x = "Proportion holding placebo",
+       y = "Estimated proportion saw \n gangs threatening neighbors")
+```
+
+
+## To estimate bounds {visibility="uncounted"}
+
+```{r}
+ggplot(bounds) +
+  aes(x = pi, y = hi) +
+  geom_line(linewidth = 1) +
+  geom_line(aes(y = lo), linewidth = 1) +
   geom_vline(xintercept = 0.5, linetype = "dashed") +
-  annotate("text", x = 0.018, y = direct + 0.03, label = "Direct question") +
   annotate("text", x = 0.56, y = 0.9, label = "Unrealistic") +
   labs(x = "Proportion holding placebo",
        y = "Estimated proportion saw \n gangs threatening neighbors")
 ```
+
 
 ## To estimate bounds {visibility="uncounted"}
 
@@ -1238,6 +1250,7 @@ ggplot(bounds) +
   labs(x = "Proportion holding placebo",
        y = "Estimated proportion saw \n gangs threatening neighbors")
 ```
+
 
 ## Conclusion
 

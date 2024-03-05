@@ -2727,7 +2727,7 @@
     "href": "nu2.html#precision-retention-tradeoff-2",
     "title": "Gustavo Diaz",
     "section": "Precision-retention tradeoff",
-    "text": "Precision-retention tradeoff\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPaper with Erin Rossiter"
+    "text": "Precision-retention tradeoff\n\n\n\n\n\n\n\n\n\n\n\nPaper with Erin Rossiter"
   },
   {
     "objectID": "nu1.html#improving-list-experiments",
@@ -3386,5 +3386,19 @@
     "title": "Gustavo Diaz",
     "section": "Asymmetric shift",
     "text": "Asymmetric shift\n\n\n\n\n\nObserved response\nList 1\nList 2\nDifference\n\n\n\n\nBaseline\n2\n2\n0\n\n\nDeflation\n\n\nSensitive first\n1\n1\n0\n\n\nSensitive second\n2\n1\n1\n\n\nInflation\n\n\nSensitive first\n3\n3\n0\n\n\nSensitive second\n2\n3\n-1"
+  },
+  {
+    "objectID": "nu2.html#precision-retention-tradeoff-3",
+    "href": "nu2.html#precision-retention-tradeoff-3",
+    "title": "Gustavo Diaz",
+    "section": "Precision-retention tradeoff",
+    "text": "Precision-retention tradeoff\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPaper with Erin Rossiter"
+  },
+  {
+    "objectID": "nu1.html#to-estimate-bounds-3",
+    "href": "nu1.html#to-estimate-bounds-3",
+    "title": "Gustavo Diaz",
+    "section": "To estimate bounds",
+    "text": "To estimate bounds"
   }
 ]
