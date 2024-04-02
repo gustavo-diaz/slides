@@ -1,0 +1,315 @@
+---
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: false
+    progress: false
+---
+
+::: {style="text-align: center"}
+##  Criminal Governance in Unexpected Contexts {.center .smaller}
+
+::: columns
+
+::: {.column width="50%"}
+**Lucía Tiscornia**  
+University College Dublin  
+<lucia.tiscornia@ucd.ie>  
+
+
+**Ines Fynn**  
+Universidad Católica del Uruguay 
+<ines.fynn@ucu.edu.uy>  
+
+
+:::
+
+::: {.column width="50%"}
+**Verónica Pérez Bentancur**  
+Universidad de la República
+<veronica.perez@cienciassociales.edu.uy>  
+
+**Gustavo Diaz**  
+McMaster University  
+<diazg2@mcmaster.ca>  
+
+
+:::
+
+:::
+
+&nbsp;
+
+Slides and paper: [talks.gustavodiaz.org](https://talks.gustavodiaz.org/)
+
+:::
+
+
+
+```{r include=FALSE}
+library(knitr)
+
+opts_chunk$set(fig.pos = "center", echo = FALSE, 
+               message = FALSE, warning = FALSE)
+```
+
+```{r setup}
+# Packages
+library(tidyverse)
+library(DeclareDesign)
+library(kableExtra)
+
+
+# ggplot global options
+theme_set(theme_gray(base_size = 20))
+ggdodge = position_dodge(width = 0.5)
+```
+
+## Question {.center}
+
+How does criminal governance work when **state presence/capacity** is **high**?
+
+---
+
+![](crim_gov/countries.png)
+
+## Criminal governance
+
+
+::: aside
+See [Arias (2017)](https://doi.org/10.1017/9781316650073), [Lessing (2021)](https://doi.org/10.1017/S1537592720001243), [Trejo and Ley (2021)](https://doi.org/10.1017/9781108894807)
+:::
+
+## Criminal governance {visibility="uncounted"}
+
+Ability
+
+::: aside
+See [Arias (2017)](https://doi.org/10.1017/9781316650073), [Lessing (2021)](https://doi.org/10.1017/S1537592720001243), [Trejo and Ley (2021)](https://doi.org/10.1017/9781108894807)
+:::
+
+## Criminal governance {visibility="uncounted"}
+
+Ability to **control a community's behavior** 
+
+::: aside
+See [Arias (2017)](https://doi.org/10.1017/9781316650073), [Lessing (2021)](https://doi.org/10.1017/S1537592720001243), [Trejo and Ley (2021)](https://doi.org/10.1017/9781108894807)
+:::
+
+## Criminal governance {visibility="uncounted"}
+
+Ability to **control a community's behavior**  with the **goal of profiting from illicit markets**
+
+::: aside
+See [Arias (2017)](https://doi.org/10.1017/9781316650073), [Lessing (2021)](https://doi.org/10.1017/S1537592720001243), [Trejo and Ley (2021)](https://doi.org/10.1017/9781108894807)
+:::
+
+## Criminal governance {visibility="uncounted"}
+
+Ability to **control a community's behavior**  with the **goal of profiting from illicit markets**; manifest in **political**, **economic**, and **social** spheres.
+
+::: aside
+See [Arias (2017)](https://doi.org/10.1017/9781316650073), [Lessing (2021)](https://doi.org/10.1017/S1537592720001243), [Trejo and Ley (2021)](https://doi.org/10.1017/9781108894807)
+:::
+
+. . .
+
+Mechanisms of control:
+
+1. **Violent:** Threats, direct violence, extortion
+2. **Nonviolent:** Jobs, payment of bills, basic goods provision
+
+## Our theory
+
+![](crim_gov/theory.png)
+
+
+## Research Design
+### Case selection: Montevideo, Uruguay
+
+- Low violence and crime
+- Extensive social protection
+- **Crucial least likely case**
+
+## Research Design {visibility="uncounted"}
+### Fieldwork (2021-2022)
+
+- 66 in depth interviews
+- Review of press and documents (2012-2022)
+- **Criminal governance is a sensitive topic**
+- **Affected populations are hidden**
+
+## Research Design {visibility="uncounted"}
+### Online survey (2022)
+
+- **Estimate prevalence of criminal governance actions**
+- N = 2,688
+- Direct questions
+- Network scale-up questions (NSUM)
+
+## Survey: Direct question
+
+**During the last six months, in your neighborhood, have you seen criminal organizations...**
+
+. . .
+
+&nbsp;
+
+::: columns
+
+::: {.column width="48%"}
+#### Violent
+- Threaten neighbors
+- Evict neighbors
+:::
+
+::: {.column width="52%"}
+#### Nonviolent
+- Make donations to neighbors
+- Offer jobs to neighbors
+
+
+:::
+
+:::
+
+## Survey: NSUM questions
+
+. . .
+
+**How many X do you know,**
+
+## Survey: NSUM questions {visibility="uncounted"}
+
+**How many X do you know, who also know you,**
+
+## Survey: NSUM questions {visibility="uncounted"}
+
+**How many X do you know, who also know you, with whom you have interacted in the last year**
+
+## Survey: NSUM questions {visibility="uncounted"}
+
+**How many X do you know, who also know you, with whom you have interacted in the last year in person, by phone, or any other channel?**
+
+. . .
+
+::: columns
+
+::: {.column width="45%"}
+From *Las Piedras*  
+Male 25-29  
+Police officers  
+University students  
+Had a kid last year  
+Passed away last year  
+Married last year  
+Female 45-49
+:::
+
+::: {.column width="55%"}
+Public employees  
+Welfare card holders  
+Registered with party  
+With kids in public school  
+Did not vote in last election  
+Currently in jail  
+Recently unemployed  
+*[CRIMINAL GOVERNANCE ACTION]*
+:::
+
+:::
+
+## Survey: Results
+
+```{r}
+results = read.csv("crim_gov/crevice_results.csv")
+
+estimates = results %>% 
+  filter(is.na(block))
+
+estimates$list_treatment = fct_relevel(estimates$list_treatment,
+                                       "Threaten neighbors",
+                                       "Evict neighbors",
+                                       "Make donations",
+                                       "Offer work")
+
+ggplot(estimates) +
+  aes(x = list_treatment, y = estimate, shape = estimator) +
+  # ylim(0,0.5) +
+  geom_point(size = 3, position = ggdodge, alpha = 0) +
+  geom_errorbar(aes(x = list_treatment,
+                    ymin = ci84.low,
+                    ymax = ci84.high),
+                linewidth = 1, width = 0.2,
+                position = ggdodge,
+                alpha = 0) +
+  geom_linerange(aes(x = list_treatment,
+                     ymin = conf.low,
+                     ymax = conf.high),
+                 linewidth = 1,
+                 position = ggdodge,
+                 alpha = 0) +
+  theme(legend.position = "bottom") +
+  labs(x = "Have you seen criminal groups...",
+       y = "Proportion",
+       shape = "Question")
+```
+
+::: aside
+Vertical lines are 95% CI, horizontal ticks are 84% CI
+:::
+
+## Survey: Results {visibility="uncounted"}
+
+```{r}
+ggplot(estimates) +
+  aes(x = list_treatment, y = estimate, shape = estimator) +
+  # ylim(0,0.5) +
+  geom_point(size = 3, position = ggdodge) +
+  geom_errorbar(aes(x = list_treatment,
+                     ymin = ci84.low,
+                     ymax = ci84.high),
+                 linewidth = 1, width = 0.2,
+                 position = ggdodge) +
+  geom_linerange(aes(x = list_treatment,
+                     ymin = conf.low,
+                     ymax = conf.high),
+                 linewidth = 1,
+                 position = ggdodge) +
+  theme(legend.position = "bottom") +
+  labs(x = "Have you seen criminal groups...",
+       y = "Proportion",
+       shape = "Question")
+```
+
+::: aside
+Vertical lines are 95% CI, horizontal ticks are 84% CI
+:::
+
+## What else?
+
+::: incremental
+- **Survey:** Similar prevalence in low/high income neighborhoods
+- **Survey:** Constrained space for criminal governance
+- **Interviews:** Limited attempts at social/political control
+:::
+
+## Conclusion
+
+### Findings
+
+- Criminal governance is a relevant phenomenon in Montevideo
+- But no attempt at social/political control
+
+. . .
+
+### Implications
+
+- Current explanations may be biased towards cases with more aggressive security policy
+- Rethink theoretical scope conditions
+
+::: aside
+**Learn more:** [talks.gustavodiaz.org](https://talks.gustavodiaz.org/)
+:::
+
+
