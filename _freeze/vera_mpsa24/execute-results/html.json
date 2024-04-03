@@ -1,0 +1,20 @@
+{
+  "hash": "4900f811d52f11734e83aa2f5711469d",
+  "result": {
+    "markdown": "---\nformat:\n  revealjs:\n    embed-resources: true\n    slide-number: false\n    progress: false\n---\n\n\n\n::: {.cell}\n\n:::\n\n\n## Vera: Cleaning up Politics\n\n![](mpsa24/devries_solaz.png)\n\n. . .\n\n**Innovation:** Focus on anti-corruption campaign platforms\n\n::: aside\nDe Vries, Catherine E. and Hector Solaz. 2017. \"The Electoral Consequences of Corruption.\" *Annual Review of Political Science* 20: 391-408, p. 395\n:::\n\n## Case selection\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](vera_mpsa24_files/figure-revealjs/unnamed-chunk-3-1.png){fig-pos='center' width=960}\n:::\n:::\n\n\n\n## Case selection\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](vera_mpsa24_files/figure-revealjs/unnamed-chunk-4-1.png){fig-pos='center' width=960}\n:::\n:::\n\n\n. . .\n\n{{< fa arrow-right >}} If it's true in Paraguay it should elsewhere in the region\n\n\n## Puzzling findings\n\n![](mpsa24/vera_results.png)\n\n::: incremental\n- People care about anti-corruption platform but ignore previous bribery record!?\n\n- Worth exploring further\n:::\n::: aside\nVera (2024), p. 30\n:::\n\n## Why would this happen?\n\n<!-- Write more as they come to me -->\n\n::: incremental\n- Different baselines but no interaction?\n\n- Information about \"his/her party\"?\n\n- Reformed criminals $\\approx$ New clean parties?\n\n- People stop paying attention to other attributes when they see anti-corruption platforms?\n\n:::\n\n",
+    "supporting": [
+      "vera_mpsa24_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\r\n<script>\r\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\r\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\r\n  // slide changes (different for each slide format).\r\n  (function () {\r\n    // dispatch for htmlwidgets\r\n    function fireSlideEnter() {\r\n      const event = window.document.createEvent(\"Event\");\r\n      event.initEvent(\"slideenter\", true, true);\r\n      window.document.dispatchEvent(event);\r\n    }\r\n\r\n    function fireSlideChanged(previousSlide, currentSlide) {\r\n      fireSlideEnter();\r\n\r\n      // dispatch for shiny\r\n      if (window.jQuery) {\r\n        if (previousSlide) {\r\n          window.jQuery(previousSlide).trigger(\"hidden\");\r\n        }\r\n        if (currentSlide) {\r\n          window.jQuery(currentSlide).trigger(\"shown\");\r\n        }\r\n      }\r\n    }\r\n\r\n    // hookup for slidy\r\n    if (window.w3c_slidy) {\r\n      window.w3c_slidy.add_observer(function (slide_num) {\r\n        // slide_num starts at position 1\r\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\r\n      });\r\n    }\r\n\r\n  })();\r\n</script>\r\n\r\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

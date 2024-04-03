@@ -1,0 +1,104 @@
+---
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: false
+    progress: false
+---
+
+```{r include=FALSE}
+library(knitr)
+
+opts_chunk$set(fig.pos = "center", echo = FALSE, 
+               message = FALSE, warning = FALSE)
+```
+
+```{r}
+library(tidyverse)
+# remotes::install_github("jimjam-slam/ggflags")
+library(ggflags)
+```
+
+## Vera: Cleaning up Politics
+
+![](mpsa24/devries_solaz.png)
+
+. . .
+
+**Innovation:** Focus on anti-corruption campaign platforms
+
+::: aside
+De Vries, Catherine E. and Hector Solaz. 2017. "The Electoral Consequences of Corruption." *Annual Review of Political Science* 20: 391-408, p. 395
+:::
+
+## Case selection
+
+```{r}
+paraguay = data.frame(x = 1, y = 1, country = "py")
+
+ggplot(paraguay) +
+  aes(x = x, y = y, country = country) +
+  labs(x = "Corruption in country",
+       y = "Effectiveness of\nanti-corruption platforms") +
+  theme_classic(base_size = 20) +
+  scale_x_continuous(breaks = c(0, 1),
+                     labels = c("Low", "High"),
+                     limits = c(-0.1, 1.1)) +
+scale_y_continuous(breaks = c(0, 1),
+                     labels = c("No", "Yes"),
+                     limits = c(-0.1, 1.1))
+```
+
+
+## Case selection
+
+```{r}
+paraguay = data.frame(x = 1, y = 1, country = "py")
+
+ggplot(paraguay) +
+  aes(x = x, y = y, country = country) +
+  geom_flag(size = 15) +
+  labs(x = "Corruption in country",
+       y = "Effectiveness of\nanti-corruption platforms") +
+  theme_classic(base_size = 20) +
+  scale_x_continuous(breaks = c(0, 1),
+                     labels = c("Low", "High"),
+                     limits = c(-0.1, 1.1)) +
+scale_y_continuous(breaks = c(0, 1),
+                     labels = c("No", "Yes"),
+                     limits = c(-0.1, 1.1))
+```
+
+. . .
+
+{{< fa arrow-right >}} If it's true in Paraguay it should elsewhere in the region
+
+
+## Puzzling findings
+
+![](mpsa24/vera_results.png)
+
+::: incremental
+- People care about anti-corruption platform but ignore previous bribery record!?
+
+- Worth exploring further
+:::
+::: aside
+Vera (2024), p. 30
+:::
+
+## Why would this happen?
+
+<!-- Write more as they come to me -->
+
+::: incremental
+- Different baselines but no interaction?
+
+- Information about "his/her party"?
+
+- Reformed criminals $\approx$ New clean parties?
+
+- People stop paying attention to other attributes when they see anti-corruption platforms?
+
+:::
+
