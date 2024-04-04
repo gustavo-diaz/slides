@@ -301,7 +301,12 @@ Vertical lines are 95% CI, horizontal ticks are 84% CI
 - Criminal governance is a relevant phenomenon in Montevideo
 - But no attempt at social/political control
 
-. . .
+::: aside
+**Learn more:** [talks.gustavodiaz.org](https://talks.gustavodiaz.org/)
+:::
+
+
+## Conclusion
 
 ### Implications
 
