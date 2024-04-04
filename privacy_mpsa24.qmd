@@ -1,0 +1,134 @@
+---
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: false
+    progress: false
+---
+
+::: {style="text-align: center"}
+##  How the Presence of Others<br>Can Bias Survey Responses {.center .smaller}
+
+&nbsp;    
+
+:::: columns
+
+::: {.column width="33%"}
+
+**Gustavo Diaz**  
+McMaster University  
+<diazg2@mcmaster.ca>  
+
+:::
+
+::: {.column width="33%"}
+**Michelle Dion**  
+McMaster University
+<dionm@mcmaster.ca>
+:::
+
+::: {.column width="33%"}
+**Guillem Riambau**  
+Universitat de Barcelona 
+Institut d'Economia de Barcelona  
+<griambau@ub.edu>
+:::
+
+::::
+
+&nbsp;
+
+Slides and paper: [talks.gustavodiaz.org](https://talks.gustavodiaz.org/)
+
+:::
+
+
+
+```{r include=FALSE}
+library(knitr)
+
+opts_chunk$set(fig.pos = "center", echo = FALSE, 
+               message = FALSE, warning = FALSE)
+```
+
+```{r setup}
+# Packages
+library(tidyverse)
+library(DeclareDesign)
+library(kableExtra)
+
+
+# ggplot global options
+theme_set(theme_gray(base_size = 20))
+ggdodge = position_dodge(width = 0.5)
+```
+
+## Disclaimer {{< fa triangle-exclamation >}} {.center background-color="#FDBF57"}
+
+Data harmonization still in progress!
+
+## Sensitive survey questions
+
+::: incremental
+1. A social referent...
+
+2. ... who *can learn* the response
+
+3. ... has a *preferred* response 
+
+4. Cost of *wrong* response
+:::
+
+::: aside
+See [Tourangeau and Yan (2007)](https://psycnet.apa.org/doi/10.1037/0033-2909.133.5.859) and [Blair et al (2020)](https://doi.org/10.1017/S0003055420000374) for extensive discussions
+:::
+
+. . .
+
+&nbsp;
+
+{{< fa arrow-right >}} Presence of others meets all criteria
+
+## What we know so far
+
+::: incremental
+- **Presence of enumerators:** Political questions are sensitive
+
+- **Household surveys:** Presence of parents/spouses shapes answers
+
+- **Afrobarometer:** Family and non-family affect responses and *don't know* rates [(Zimbalist 2022)](https://doi.org/10.1080/13645579.2021.1886397)
+:::
+
+## This project
+
+1. More data and more details
+
+2. Determine severity of problem
+
+## This project
+
+1. **More data and more details**
+
+2. [Determine severity of problem]{style="color: gray;"}
+
+## Asian Barometer Surveys
+
+<!-- CONTINUE HERE DESCRIBE SURVEY AND WHY WE CHOOSE IT  -->
+
+## Coverage
+
+<!-- HERE SHOW PLOT WITH PRESENCE OF OTHERS ACROSS COUNTRIES  -->
+
+## Sensitive questions
+
+<!-- HERE SHOW LIST OF QUESTIONS WE FOCUS ON. REMEMBER TO MENTION THESE ARE NOT ALL THE QUESTIONS, AND THAT I WON'T SHOW EVERYTHING, JUST THE INTERESTING STUFF -->
+
+## Results
+
+<!-- PICK AND CHOOSE, DIFFERENT SLIDES FOR REFUSAL AND ANSWERS -->
+
+## Conclusion
+
+::: aside
+**Learn more:** [talks.gustavodiaz.org](https://talks.gustavodiaz.org/)
+:::
