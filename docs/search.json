@@ -2559,7 +2559,7 @@
     "href": "privacy_mpsa24.html#asian-barometer-surveys",
     "title": "Gustavo Diaz",
     "section": "Asian Barometer Surveys",
-    "text": "Asian Barometer Surveys"
+    "text": "Asian Barometer Surveys\n\n\nWaves 1-5 (2000-2021)\n1,000-1,800 respondents per country-wave\n15 countries, 21 years, 97,439 interviews\n95% Detailed record of who was present\n45% of interviews had others present\nPartner/spouse &gt; Children &gt; Parents/in-laws &gt; Nonfamily &gt; Party/gov officials"
   },
   {
     "objectID": "privacy_mpsa24.html#this-project-1",
@@ -2580,7 +2580,7 @@
     "href": "privacy_mpsa24.html#sensitive-questions",
     "title": "Gustavo Diaz",
     "section": "Sensitive questions",
-    "text": "Sensitive questions"
+    "text": "Sensitive questions\n\n\nCountry is a democracy\nSatisfaction with democracy\nSystem of government is capable of solving country’s problems\nI would rather live under our system of government\nGovernment will solve most important problem"
   },
   {
     "objectID": "privacy_mpsa24.html#results",
@@ -2595,5 +2595,26 @@
     "title": "Gustavo Diaz",
     "section": "Conclusion",
     "text": "Conclusion\n\n\n\n\n\n\nLearn more: talks.gustavodiaz.org"
+  },
+  {
+    "objectID": "privacy_mpsa24.html#results-refusal-to-answer",
+    "href": "privacy_mpsa24.html#results-refusal-to-answer",
+    "title": "Gustavo Diaz",
+    "section": "Results: Refusal to answer",
+    "text": "Results: Refusal to answer\n\n\n\n\n\n\n\n\n\n\n\n\nControls for sex, education, age, urban, religiosity. Country and wave fixed effects. HC2 standard errors."
+  },
+  {
+    "objectID": "privacy_mpsa24.html#results-agreement-to-questions",
+    "href": "privacy_mpsa24.html#results-agreement-to-questions",
+    "title": "Gustavo Diaz",
+    "section": "Results: Agreement to questions",
+    "text": "Results: Agreement to questions\n\n\n\n\n\n\n\n\n\n\n\nControls for sex, education, age, urban, religiosity. Country and wave fixed effects. HC2 standard errors."
+  },
+  {
+    "objectID": "privacy_mpsa24.html#next-steps",
+    "href": "privacy_mpsa24.html#next-steps",
+    "title": "Gustavo Diaz",
+    "section": "Next steps",
+    "text": "Next steps\n\n\nQuestions about trust, perceptions of corruption\nDetermine whether presence of others biases statistical inferences\nTakeaway: Take into account in research design and analysis\n\n\n\n\n\n\n\n\nLearn more: talks.gustavodiaz.org"
   }
 ]

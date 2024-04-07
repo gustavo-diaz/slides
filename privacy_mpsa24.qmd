@@ -54,8 +54,11 @@ opts_chunk$set(fig.pos = "center", echo = FALSE,
 ```{r setup}
 # Packages
 library(tidyverse)
+library(haven)
 library(DeclareDesign)
 library(kableExtra)
+library(vdemdata) # For electoral democracy scores
+library(countrycode) # Convert country names to codes
 
 
 # ggplot global options
@@ -113,21 +116,306 @@ See [Tourangeau and Yan (2007)](https://psycnet.apa.org/doi/10.1037/0033-2909.13
 
 ## Asian Barometer Surveys
 
-<!-- CONTINUE HERE DESCRIBE SURVEY AND WHY WE CHOOSE IT  -->
+::: incremental
+
+- Waves 1-5 (2000-2021)
+
+- 1,000-1,800 respondents per country-wave
+
+- 15 countries, 21 years, 97,439 interviews
+
+- 95% Detailed record of who was present
+
+- 45% of interviews had others present
+
+- Partner/spouse > Children > Parents/in-laws > Nonfamily > Party/gov officials
+
+:::
 
 ## Coverage
 
-<!-- HERE SHOW PLOT WITH PRESENCE OF OTHERS ACROSS COUNTRIES  -->
+```{r}
+ab = readRDS("privacy/ab.rds")
+
+ab = ab %>% 
+    mutate(year = ifelse(year < 2000 | year > 2021, NA, year))
+
+ab = ab %>% 
+    mutate(
+        country = str_replace(country, "_", " "),
+        country = str_to_sentence(country),
+        country_id = countrycode(
+        country,
+        origin = "country.name",
+        destination = "vdem"
+    )) %>% 
+    relocate(country_id)
+```
+
+
+```{r}
+# Codebook: https://v-dem.net/documents/38/v-dem_codebook_v14.pdf
+v = vdem %>% 
+    select(country_name, country_id, year,
+          v2x_libdem, v2x_regime, v2x_regime_amb) %>% 
+    filter(year >= 2000 & year <= 2021)
+
+abv = left_join(ab, v, by = c("country_id", "year"))
+
+# binary democracy score
+abv = abv %>% mutate(democracy = ifelse(v2x_regime <= 1, 0, 1))
+```
+
+```{r}
+breakdown = abv %>% 
+    summarize(record = mean(!is.na(bystander_any)),
+              prop_present = mean(bystander_any, na.rm = TRUE),
+              n = n(),
+              .by = c(wave, country)
+              ) %>% 
+    mutate(prop_present = ifelse(record == 0, NA, prop_present))
+
+ggplot(breakdown) +
+    aes(x = as.factor(wave), y = country, 
+        fill = as.factor(record)) +
+    geom_tile(color = "white") +
+    geom_text(aes(label = round(prop_present, 2)), size = 4) +
+    scale_fill_grey(labels = c("Not recorded", "Recorded")) +
+    scale_y_discrete(limits = rev) +
+    theme(legend.position = "bottom") +
+    labs(x = "Wave",
+         y = "Country",
+         fill = "Others present")
+```
+
+
 
 ## Sensitive questions
 
-<!-- HERE SHOW LIST OF QUESTIONS WE FOCUS ON. REMEMBER TO MENTION THESE ARE NOT ALL THE QUESTIONS, AND THAT I WON'T SHOW EVERYTHING, JUST THE INTERESTING STUFF -->
+::: incremental
+1. Country is a democracy
 
-## Results
+2. Satisfaction with democracy
 
-<!-- PICK AND CHOOSE, DIFFERENT SLIDES FOR REFUSAL AND ANSWERS -->
+3. System of government is capable of solving country's problems
 
-## Conclusion
+4. I would rather live under our system of government
+
+5. Government will solve most important problem
+:::
+
+## Results: Refusal to answer
+<!-- Anyone, Children, Parents/inlaws, neighbors/passersby -->
+
+```{r, cache=TRUE}
+refusal_outcomes = c("scale(this_country_a_democracy_NA_str)",
+                     "scale(satisfaction_democracy_NA_str)",
+                     "scale(system_capable_solving_NA_str)",
+                     "scale(our_system_best_NA_str)",
+                     "scale(gov_will_solve_problems_NA_str)")
+
+# bystander_any
+ref_any = refusal_outcomes %>% 
+    map(~formula(paste0(., "~ bystander_any + woman + education_f + age_4_f + 
+                        urban + religiosity_2_f"))) %>% 
+    map(~lm_robust(., data = abv, se_type = "stata", weights = w,
+                   fixed_effects = ~ country + wave)) %>% 
+    map(tidy) %>%
+    bind_rows() %>% 
+    filter(term == "bystander_any") %>% 
+    relocate(outcome) %>% 
+    mutate(group = "refusal")
+
+# bystander_children
+ref_children = refusal_outcomes %>% 
+    map(~formula(paste0(., "~ bystander_children + woman + education_f + age_4_f + 
+                        urban + religiosity_2_f"))) %>% 
+    map(~lm_robust(., data = abv, se_type = "stata", weights = w,
+                   fixed_effects = ~ country + wave)) %>% 
+    map(tidy) %>%
+    bind_rows() %>% 
+    filter(term == "bystander_children") %>% 
+    relocate(outcome) %>% 
+    mutate(group = "refusal")
+
+# bystander_parent
+ref_parent = refusal_outcomes %>% 
+    map(~formula(paste0(., "~ bystander_parent + woman + education_f + age_4_f + 
+                        urban + religiosity_2_f"))) %>% 
+    map(~lm_robust(., data = abv, se_type = "stata", weights = w,
+                   fixed_effects = ~ country + wave)) %>% 
+    map(tidy) %>%
+    bind_rows() %>% 
+    filter(term == "bystander_parent") %>% 
+    relocate(outcome) %>% 
+    mutate(group = "refusal")
+
+# bystander_nonfamily
+ref_nonfamily = refusal_outcomes %>% 
+    map(~formula(paste0(., "~ bystander_nonfamily + woman + education_f + age_4_f + 
+                        urban + religiosity_2_f"))) %>% 
+    map(~lm_robust(., data = abv, se_type = "stata", weights = w,
+                   fixed_effects = ~ country + wave)) %>% 
+    map(tidy) %>%
+    bind_rows() %>% 
+    filter(term == "bystander_nonfamily") %>% 
+    relocate(outcome) %>% 
+    mutate(group = "refusal")
+```
+
+```{r, cache=TRUE}
+democracy_outcomes = c("scale(this_country_a_democracy_a)",
+                     "scale(satisfaction_democracy_a)",
+                     "scale(system_capable_solving_a)",
+                     "scale(our_system_best_a)",
+                     "scale(gov_will_solve_problems_a)")
+
+
+# bystander_any
+dem_any = democracy_outcomes %>% 
+    map(~formula(paste0(., "~ bystander_any + woman + education_f + age_4_f + 
+                        urban + religiosity_2_f"))) %>% 
+    map(~lm_robust(., data = abv, se_type = "stata", weights = w,
+                   fixed_effects = ~ country + wave)) %>% 
+    map(tidy) %>%
+    bind_rows() %>% 
+    filter(term == "bystander_any") %>% 
+    relocate(outcome) %>% 
+    mutate(group = "democracy")
+
+# bystander_children
+dem_children = democracy_outcomes %>% 
+    map(~formula(paste0(., "~ bystander_children + woman + education_f + age_4_f + 
+                        urban + religiosity_2_f"))) %>% 
+    map(~lm_robust(., data = abv, se_type = "stata", weights = w,
+                   fixed_effects = ~ country + wave)) %>% 
+    map(tidy) %>%
+    bind_rows() %>% 
+    filter(term == "bystander_children") %>% 
+    relocate(outcome) %>% 
+    mutate(group = "democracy")
+
+# bystander_parent
+dem_parent = democracy_outcomes %>% 
+    map(~formula(paste0(., "~ bystander_parent + woman + education_f + age_4_f + 
+                        urban + religiosity_2_f"))) %>% 
+    map(~lm_robust(., data = abv, se_type = "stata", weights = w,
+                   fixed_effects = ~ country + wave)) %>% 
+    map(tidy) %>%
+    bind_rows() %>% 
+    filter(term == "bystander_parent") %>% 
+    relocate(outcome) %>% 
+    mutate(group = "democracy")
+
+# bystander_nonfamily
+dem_nonfamily = democracy_outcomes %>% 
+    map(~formula(paste0(., "~ bystander_nonfamily + woman + education_f + age_4_f + 
+                        urban + religiosity_2_f"))) %>% 
+    map(~lm_robust(., data = abv, se_type = "stata", weights = w,
+                   fixed_effects = ~ country + wave)) %>% 
+    map(tidy) %>%
+    bind_rows() %>% 
+    filter(term == "bystander_nonfamily") %>% 
+    relocate(outcome) %>% 
+    mutate(group = "democracy")
+```
+
+
+```{r}
+main_df = rbind(ref_any, ref_children, ref_parent, ref_nonfamily,
+      dem_any, dem_children, dem_parent, dem_nonfamily) %>% 
+    mutate(outcome = str_remove(outcome, "_NA_str\\)"),
+           outcome = str_remove(outcome, "scale\\("),
+           outcome = str_remove(outcome, "_a\\)"))
+
+# Reorder
+main_df = main_df %>% 
+    mutate(group = ifelse(group == "refusal", "Refusal", "Agreement"),
+           group = fct_rev(group),
+           term = fct_relevel(term,
+                              "bystander_nonfamily",
+                              "bystander_parent",
+                              "bystander_children",
+                              "bystander_any"),
+           outcome = fct_relevel(outcome,
+                                 "this_country_a_democracy",
+                                 "satisfaction_democracy",
+                                 "system_capable_solving",
+                                 "our_system_best",
+                                 "gov_will_solve_problems"))
+
+ggplot(main_df %>% filter(group == "Refusal")) +
+    aes(x = term, y = estimate, shape = outcome) +
+    geom_hline(yintercept = 0, linetype = "dashed") +
+    geom_point(size = 2, position = position_dodge(width = 0.5)) +
+    geom_linerange(aes(x = term, ymin = conf.low, ymax = conf.high),
+                   position = position_dodge(width = 0.5)) +
+    scale_x_discrete(labels = c("Nonfamily",
+                                "Parents or in-laws",
+                                "Children",
+                                "Anyone")) +
+    scale_shape_discrete(labels = c(
+        "Country is\na democracy\n",
+        "Satisfaction\nwith democracy\n",
+        "System capable of\n solving country's problems\n",
+        "Would rather live\nunder our system\n",
+        "Gov. will solve\nmost important problem\n"
+    )) +
+    coord_flip() +
+    # theme(legend.position = "bottom") +
+    labs(x = "Presence of...",
+         y = "Estimate",
+         shape = "Outcome")
+```
+
+
+::: aside
+Controls for sex, education, age, urban, religiosity. Country and wave fixed effects. HC2 standard errors.
+:::
+
+## Results: Agreement to questions
+
+```{r}
+ggplot(main_df %>% filter(group == "Agreement")) +
+    aes(x = term, y = estimate, shape = outcome) +
+    geom_hline(yintercept = 0, linetype = "dashed") +
+    geom_point(size = 2, position = position_dodge(width = 0.5)) +
+    geom_linerange(aes(x = term, ymin = conf.low, ymax = conf.high),
+                   position = position_dodge(width = 0.5)) +
+    scale_x_discrete(labels = c("Nonfamily",
+                                "Parents or in-laws",
+                                "Children",
+                                "Anyone")) +
+    scale_shape_discrete(labels = c(
+        "Country is\na democracy\n",
+        "Satisfaction\nwith democracy\n",
+        "System capable of\n solving country's problems\n",
+        "Would rather live\nunder our system\n",
+        "Gov. will solve\nmost important problem\n"
+    )) +
+    coord_flip() +
+    # theme(legend.position = "bottom") +
+    labs(x = "Presence of...",
+         y = "Estimate",
+         shape = "Outcome")
+```
+
+
+::: aside
+Controls for sex, education, age, urban, religiosity. Country and wave fixed effects. HC2 standard errors.
+:::
+
+
+## Next steps
+
+::: incremental
+- Questions about trust, perceptions of corruption
+
+- Determine whether presence of others biases statistical inferences
+
+- **Takeaway:** Take into account in research design and analysis
+
+:::
 
 ::: aside
 **Learn more:** [talks.gustavodiaz.org](https://talks.gustavodiaz.org/)
