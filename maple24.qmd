@@ -1,0 +1,80 @@
+---
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: false
+    progress: false
+---
+
+::: {style="text-align: center"}
+##  The Merits of Externally Invalid Survey Experiments {.center .smaller}
+
+&nbsp;    
+
+**Gustavo Diaz**  
+McMaster University  
+[gustavodiaz.org](https://gustavodiaz.org/)  
+<diazg2@mcmaster.ca>
+
+&nbsp;
+
+Slides and paper: [talks.gustavodiaz.org](https://talks.gustavodiaz.org/)
+
+:::
+
+
+
+```{r include=FALSE}
+library(knitr)
+
+opts_chunk$set(fig.pos = "center", echo = FALSE, 
+               message = FALSE, warning = FALSE)
+```
+
+```{r setup}
+# Packages
+library(tidyverse)
+library(haven)
+library(DeclareDesign)
+library(kableExtra)
+
+
+# ggplot global options
+theme_set(theme_gray(base_size = 20))
+ggdodge = position_dodge(width = 0.5)
+```
+
+## Limitations
+
+. . .
+
+"Future research should confirm if our findings generalize..."
+
+::: incremental
+- ...with a representative sample
+- ...in other countries
+- ...beyond the survey setting
+- ...when using behavioral outcomes
+:::
+
+## Usual workflow
+
+:::
+1. Consider resource/ethical/practical limitations
+
+2. Conduct survey experiment with convenience sample
+
+3. Wave hands about external validity
+
+:::
+
+## Recent trends
+
+<!-- List of papers to showcase. Needs more women -->
+<!-- Show one for X, T, Y, C -->
+<!-- X: https://erinhartman.com/publication/recycle/-->
+<!-- T: https://doi.org/10.1111/ajps.12710-->
+<!-- Y: https://doi.org/10.1017/S000305542000012X -->
+<!-- C: https://alexandercoppock.com/peyton_huber_coppock_2022.pdf-->
+
+

@@ -1,0 +1,18 @@
+{
+  "hash": "2b754caf447d51e4c141cc97aa66a1aa",
+  "result": {
+    "markdown": "---\nformat:\n  revealjs:\n    embed-resources: true\n    slide-number: false\n    progress: false\n---\n\n\n::: {style=\"text-align: center\"}\n##  The Merits of Externally Invalid Survey Experiments {.center .smaller}\n\n&nbsp;    \n\n**Gustavo Diaz**  \nMcMaster University  \n[gustavodiaz.org](https://gustavodiaz.org/)  \n<diazg2@mcmaster.ca>\n\n&nbsp;\n\nSlides and paper: [talks.gustavodiaz.org](https://talks.gustavodiaz.org/)\n\n:::\n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n\n## Limitations\n\n. . .\n\n\"Future research should confirm if our findings generalize...\"\n\n::: incremental\n- ...with a representative sample\n- ...in other countries\n- ...beyond the survey setting\n- ...when using behavioral outcomes\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\r\n<script>\r\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\r\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\r\n  // slide changes (different for each slide format).\r\n  (function () {\r\n    // dispatch for htmlwidgets\r\n    function fireSlideEnter() {\r\n      const event = window.document.createEvent(\"Event\");\r\n      event.initEvent(\"slideenter\", true, true);\r\n      window.document.dispatchEvent(event);\r\n    }\r\n\r\n    function fireSlideChanged(previousSlide, currentSlide) {\r\n      fireSlideEnter();\r\n\r\n      // dispatch for shiny\r\n      if (window.jQuery) {\r\n        if (previousSlide) {\r\n          window.jQuery(previousSlide).trigger(\"hidden\");\r\n        }\r\n        if (currentSlide) {\r\n          window.jQuery(currentSlide).trigger(\"shown\");\r\n        }\r\n      }\r\n    }\r\n\r\n    // hookup for slidy\r\n    if (window.w3c_slidy) {\r\n      window.w3c_slidy.add_observer(function (slide_num) {\r\n        // slide_num starts at position 1\r\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\r\n      });\r\n    }\r\n\r\n  })();\r\n</script>\r\n\r\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
