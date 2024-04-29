@@ -59,7 +59,7 @@ ggdodge = position_dodge(width = 0.5)
 
 ## Usual workflow
 
-:::
+::: incremental
 1. Consider resource/ethical/practical limitations
 
 2. Conduct survey experiment with convenience sample
@@ -76,5 +76,38 @@ ggdodge = position_dodge(width = 0.5)
 <!-- T: https://doi.org/10.1111/ajps.12710-->
 <!-- Y: https://doi.org/10.1017/S000305542000012X -->
 <!-- C: https://alexandercoppock.com/peyton_huber_coppock_2022.pdf-->
+
+
+![](invalid_survexp/huang2023.png){fig-align="center"}
+
+## Recent trends
+
+![](invalid_survexp/Brutger2023.png){fig-align="center"}
+
+## Recent trends
+
+![](invalid_survexp/incerti2020.png){fig-align="center"}
+
+## Recent trends
+
+![](invalid_survexp/peyton2021.png){fig-align="center"}
+
+## Goal
+
+::: incremental
+- Move beyond **limitations approach**
+
+- What makes an **externally invalid** experiment desirable *on its own*?
+
+- **Challenge:** Different kinds of external (in)validity
+
+:::
+
+## External validity concerns
+
+<!-- Merge Campbell, Shadish, Cook (see Jiawei Fu paper) and Egami and Hartman  -->
+
+<!-- Present XTYC as a table -->
+
 
 
