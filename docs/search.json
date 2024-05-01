@@ -2622,7 +2622,7 @@
     "href": "maple24.html#the-merits-of-externally-invalid-survey-experiments",
     "title": "Gustavo Diaz",
     "section": "The Merits of Externally Invalid Survey Experiments",
-    "text": "The Merits of Externally Invalid Survey Experiments\n \nGustavo Diaz\nMcMaster University\ngustavodiaz.org\ndiazg2@mcmaster.ca\n \nSlides and paper: talks.gustavodiaz.org"
+    "text": "The Merits of Externally Invalid Survey Experiments\n \nGustavo Diaz\nMcMaster University\ngustavodiaz.org\ndiazg2@mcmaster.ca\n \nSlides: talks.gustavodiaz.org"
   },
   {
     "objectID": "maple24.html#limitations",
@@ -2671,13 +2671,76 @@
     "href": "maple24.html#goal",
     "title": "Gustavo Diaz",
     "section": "Goal",
-    "text": "Goal\n\n\nMove beyond limitations approach\nWhat makes an externally invalid experiment desirable on its own?\nChallenge: Different kinds of external (in)validity"
+    "text": "Goal\n\n\nMove beyond limitations approach\nShould we ever implement an externally invalid survey experiment on purpose?\nIdentify what makes external invalidity desirable\nChallenge: Different kinds of external (in)validity"
   },
   {
     "objectID": "maple24.html#external-validity-concerns",
     "href": "maple24.html#external-validity-concerns",
     "title": "Gustavo Diaz",
     "section": "External validity concerns",
-    "text": "External validity concerns"
+    "text": "External validity concerns\n\n\n\n\n\n\n\n\nType\nConcern\n\n\n\n\nSample\nDoes this apply to a different population?\n\n\nTreatments\nDo they resemble real-world phenomena?\n\n\nOutcomes\nDo they reflect actual behaviors?\n\n\nContexts\nDoes this apply in a different setting?\n\n\n\n\n\n\n\n\n\nSee Shadish et al (2002) and Egami and Hartmant (2023) for details"
+  },
+  {
+    "objectID": "maple24.html#external-validity-concerns-1",
+    "href": "maple24.html#external-validity-concerns-1",
+    "title": "Gustavo Diaz",
+    "section": "External validity concerns",
+    "text": "External validity concerns\n\n\n\n\n\nType\nConcern\n\n\n\n\nSample\nDoes this apply to a different population?\n\n\nTreatments\nDo they resemble real-world phenomena?\n\n\nOutcomes\nDo they reflect actual behaviors?\n\n\nContexts\nDoes this apply in a different setting?\n\n\n\n\n\n\n\n\n\nSee Shadish et al (2002) and Egami and Hartmant (2023) for details"
+  },
+  {
+    "objectID": "maple24.html#external-validity-concerns-2",
+    "href": "maple24.html#external-validity-concerns-2",
+    "title": "Gustavo Diaz",
+    "section": "External validity concerns",
+    "text": "External validity concerns\n\n\n\n\n\nType\nConcern\n\n\n\n\nSample\nDoes this apply to a different population?\n\n\nTreatments\nDo they resemble real-world phenomena?\n\n\nOutcomes\nDo they reflect actual behaviors?\n\n\nContexts\nDoes this apply in a different setting?\n\n\n\n\n\n\n\n\n\nSee Shadish et al (2002) and Egami and Hartmant (2023) for details"
+  },
+  {
+    "objectID": "maple24.html#external-validity-concerns-3",
+    "href": "maple24.html#external-validity-concerns-3",
+    "title": "Gustavo Diaz",
+    "section": "External validity concerns",
+    "text": "External validity concerns\n\n\n\n\n\nType\nConcern\n\n\n\n\nSample\nDoes this apply to a different population?\n\n\nTreatments\nDo they resemble real-world phenomena?\n\n\nOutcomes\nDo they reflect actual behaviors?\n\n\nContexts\nDoes this apply in a different setting?\n\n\n\n\n\n\n\n\n\nSee Shadish et al (2002) and Egami and Hartmant (2023) for details"
+  },
+  {
+    "objectID": "maple24.html#external-validity-concerns-4",
+    "href": "maple24.html#external-validity-concerns-4",
+    "title": "Gustavo Diaz",
+    "section": "External validity concerns",
+    "text": "External validity concerns\n\n\n\n\n\nType\nConcern\n\n\n\n\nSample\nDoes this apply to a different population?\n\n\nTreatments\nDo they resemble real-world phenomena?\n\n\nOutcomes\nDo they reflect actual behaviors?\n\n\nContexts\nDoes this apply in a different setting?\n\n\n\n\n\n\n\n\n\nSee Shadish et al (2002) and Egami and Hartmant (2023) for details"
+  },
+  {
+    "objectID": "maple24.html#samples",
+    "href": "maple24.html#samples",
+    "title": "Gustavo Diaz",
+    "section": "Samples",
+    "text": "Samples"
+  },
+  {
+    "objectID": "maple24.html#treatments",
+    "href": "maple24.html#treatments",
+    "title": "Gustavo Diaz",
+    "section": "Treatments",
+    "text": "Treatments"
+  },
+  {
+    "objectID": "maple24.html#outcomes",
+    "href": "maple24.html#outcomes",
+    "title": "Gustavo Diaz",
+    "section": "Outcomes",
+    "text": "Outcomes"
+  },
+  {
+    "objectID": "maple24.html#contexts",
+    "href": "maple24.html#contexts",
+    "title": "Gustavo Diaz",
+    "section": "Contexts",
+    "text": "Contexts"
+  },
+  {
+    "objectID": "maple24.html#conclusion",
+    "href": "maple24.html#conclusion",
+    "title": "Gustavo Diaz",
+    "section": "Conclusion",
+    "text": "Conclusion"
   }
 ]
