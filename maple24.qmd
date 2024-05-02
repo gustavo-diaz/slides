@@ -70,27 +70,15 @@ ggdodge = position_dodge(width = 0.5)
 
 ## Recent trends
 
-<!-- List of papers to showcase. Needs more women -->
-<!-- Show one for X, T, Y, C -->
-<!-- X: https://erinhartman.com/publication/recycle/-->
-<!-- T: https://doi.org/10.1111/ajps.12710-->
-<!-- Y: https://doi.org/10.1017/S000305542000012X -->
-<!-- C: https://alexandercoppock.com/peyton_huber_coppock_2022.pdf-->
+<!-- One example about doing more with data -->
+<!-- Another about showing when external invalidity matters or not -->
+![](invalid_survexp/coppock2019.png){fig-align="center"}
 
+## Recent trends
 
 ![](invalid_survexp/huang2023.png){fig-align="center"}
 
 ## Recent trends
-
-![](invalid_survexp/Brutger2023.png){fig-align="center"}
-
-## Recent trends
-
-![](invalid_survexp/incerti2020.png){fig-align="center"}
-
-## Recent trends
-
-![](invalid_survexp/peyton2021.png){fig-align="center"}
 
 ## Goal
 
@@ -180,15 +168,61 @@ See [Shadish et al (2002)](https://psycnet.apa.org/record/2002-17373-000) and [E
 <!-- Of cases where external invalidity is desirable -->
 
 ## Samples
-<!-- ??? -->
+<!-- https://doi.org/10.1177/10659129221076 -->
+
+![](invalid_survexp/eidgahy2023.png){fig-align="center"}
+
+## Samples
+
+
+![](invalid_survexp/eidgahy2023_fig1.png){fig-align="center"}
 
 ## Treatments
-<!-- Weird experiments can approximate behavioran benchmarks better -->
+<!-- Weird experiments can approximate behavioral benchmarks better -->
+<!-- https://doi.org/10.1111/ajps.12205 -->
+
+![](invalid_survexp/rosenfeld2016_0.png){fig-align="center"}
+
+
+## Treatments
+
+![](invalid_survexp/rosenfeld2016.png){fig-align="center"}
+
 
 ## Outcomes
-<!-- ??? -->
+<!-- Maybe Boas Hidalgo Norms vs Action -->
+<!-- https://doi.org/10.1111/ajps.12413 -->
+![](invalid_survexp/boas2019_0.png){fig-align="center"}
+
+## Outcomes
+![](invalid_survexp/boas2019_1.png){fig-align="center"}
 
 ## Contexts
-<!-- ??? -->
+<!-- https://doi.org/10.1017/XPS.2023.15 -->
+
+![](invalid_survexp/jones2024_0.png){fig-align="center"}
+
+## Contexts
+
+*Saudi Arabia and Kuwait were selected for their theoretical case value;*
+
+## Contexts
+
+*Saudi Arabia and Kuwait were selected for their theoretical case value; both are high in gender inegalitarianism, and they offer tough tests.*
+
+## Contexts
+
+*Saudi Arabia and Kuwait were selected for their theoretical case value; both are high in gender inegalitarianism, and they offer tough tests. In addition, while these neighboring countries have much in common, both resource-rich and highly conservative, they also differ in important ways.*
+
+## Contexts
+
+*Saudi Arabia and Kuwait were selected for their theoretical case value; both are high in gender inegalitarianism, and they offer tough tests. In addition, while these neighboring countries have much in common, both resource-rich and highly conservative, they also differ in important ways. Thus, if similar results are found, the case for generalizability across different interaction types and varying national circumstances will be strengthened.*
+
+## Summary
+<!-- Show table with each type of invalidity is good for -->
 
 ## Conclusion
+
+<!-- Endline: Change research at the design stage -->
+<!-- What would you like to see to be convinced of this? -->
+<!-- How far does this line of inquiry go -->
