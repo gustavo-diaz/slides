@@ -100,7 +100,7 @@ ggdodge = position_dodge(width = 0.5)
 ```{r}
 concerns = tribble(
   ~Type, ~Concern,
-  "Sample", "Does this apply to a different population?",
+  "Samples", "Does this apply to a different population?",
   "Treatments", "Do they resemble real-world phenomena?",
   "Outcomes", "Do they reflect actual behaviors?",
   "Contexts", "Does this apply in a different setting?"
@@ -216,11 +216,27 @@ See [Shadish et al (2002)](https://psycnet.apa.org/record/2002-17373-000) and [E
 
 *Saudi Arabia and Kuwait were selected for their theoretical case value; both are high in gender inegalitarianism, and they offer tough tests. In addition, while these neighboring countries have much in common, both resource-rich and highly conservative, they also differ in important ways. Thus, if similar results are found, the case for generalizability across different interaction types and varying national circumstances will be strengthened.*
 
-## Summary
+## Conclusion
 <!-- Show table with each type of invalidity is good for -->
 
-## Conclusion
+```{r}
+merits = tribble(
+  ~Invalid, ~Benefit,
+  "Samples", "Delineate existing generalizations",
+  "Treatments", "Statistical properties",
+  "Outcomes", "Hypothetical/rare scenarios",
+  "Contexts", "Delineate existing generalizations"
+)
 
-<!-- Endline: Change research at the design stage -->
-<!-- What would you like to see to be convinced of this? -->
-<!-- How far does this line of inquiry go -->
+kbl(merits)
+```
+
+. . .
+
+- **Endline:** Consider merits while planning experiments
+
+- What would persuade **you** to embrace external invalidity?
+
+::: aside
+**Learn more:** [gustavodiaz.org](https://gustavodiaz.org/)
+:::
