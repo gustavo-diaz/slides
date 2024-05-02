@@ -78,8 +78,6 @@ ggdodge = position_dodge(width = 0.5)
 
 ![](invalid_survexp/huang2023.png){fig-align="center"}
 
-## Recent trends
-
 ## Goal
 
 ::: incremental
