@@ -105,9 +105,9 @@ ggdodge = position_dodge(width = 0.5)
 concerns = tribble(
   ~Type, ~Concern,
   "Samples", "Does this apply to a different population?",
+  "Contexts", "Does this apply in a different setting?",
   "Treatments", "Do they resemble real-world phenomena?",
-  "Outcomes", "Do they reflect actual behaviors?",
-  "Contexts", "Does this apply in a different setting?"
+  "Outcomes", "Do they reflect actual behaviors?"
 )
 
 kbl(concerns) %>% 
@@ -179,25 +179,6 @@ See [Shadish et al (2002)](https://psycnet.apa.org/record/2002-17373-000) and [E
 
 ![](invalid_survexp/eidgahy2023_fig1.png){fig-align="center"}
 
-## Treatments
-<!-- Weird experiments can approximate behavioral benchmarks better -->
-<!-- https://doi.org/10.1111/ajps.12205 -->
-
-![](invalid_survexp/rosenfeld2016_0.png){fig-align="center"}
-
-
-## Treatments
-
-![](invalid_survexp/rosenfeld2016.png){fig-align="center"}
-
-
-## Outcomes
-<!-- Maybe Boas Hidalgo Norms vs Action -->
-<!-- https://doi.org/10.1111/ajps.12413 -->
-![](invalid_survexp/boas2019_0.png){fig-align="center"}
-
-## Outcomes
-![](invalid_survexp/boas2019_1.png){fig-align="center"}
 
 ## Contexts
 <!-- https://doi.org/10.1017/XPS.2023.15 -->
@@ -220,16 +201,38 @@ See [Shadish et al (2002)](https://psycnet.apa.org/record/2002-17373-000) and [E
 
 *Saudi Arabia and Kuwait were selected for their theoretical case value; both are high in gender inegalitarianism, and they offer tough tests. In addition, while these neighboring countries have much in common, both resource-rich and highly conservative, they also differ in important ways. Thus, if similar results are found, the case for generalizability across different interaction types and varying national circumstances will be strengthened.*
 
+
+## Treatments
+<!-- Weird experiments can approximate behavioral benchmarks better -->
+<!-- https://doi.org/10.1111/ajps.12205 -->
+
+![](invalid_survexp/rosenfeld2016_0.png){fig-align="center"}
+
+
+## Treatments
+
+![](invalid_survexp/rosenfeld2016.png){fig-align="center"}
+
+
+## Outcomes
+<!-- Maybe Boas Hidalgo Norms vs Action -->
+<!-- https://doi.org/10.1111/ajps.12413 -->
+![](invalid_survexp/boas2019_0.png){fig-align="center"}
+
+## Outcomes
+![](invalid_survexp/boas2019_1.png){fig-align="center"}
+
+
 ## Conclusion
 <!-- Show table with each type of invalidity is good for -->
 
 ```{r}
 merits = tribble(
   ~Invalid, ~Benefit,
-  "Samples", "Delineate existing generalizations",
+  "Samples", "Contour generalizations",
+  "Contexts", "Contour generalizations",
   "Treatments", "Statistical properties",
   "Outcomes", "Hypothetical/rare scenarios",
-  "Contexts", "Delineate existing generalizations"
 )
 
 kbl(merits)
@@ -237,7 +240,7 @@ kbl(merits)
 
 . . .
 
-- **Endline:** Consider merits while planning experiments
+- **Endline:** Consider merits before implementation
 
 - What would persuade **you** to embrace external invalidity?
 
