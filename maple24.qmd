@@ -60,13 +60,19 @@ ggdodge = position_dodge(width = 0.5)
 ## Usual workflow
 
 ::: incremental
-1. Consider resource/ethical/practical limitations
+1. Research idea
 
-2. Conduct survey experiment with convenience sample
+2. Realize resource/ethical/practical limitations
 
-3. Wave hands about external validity
+3. Conduct experiment with limitations
+
+4. Wave hands about external validity
 
 :::
+
+## Recent trends
+
+<!-- Make an empty slide because lazy -->
 
 ## Recent trends
 
@@ -81,8 +87,6 @@ ggdodge = position_dodge(width = 0.5)
 ## Goal
 
 ::: incremental
-- Move beyond **limitations approach**
-
 - Should we ever implement an externally invalid survey experiment **on purpose**?
 
 - Identify what makes external invalidity *desirable*
