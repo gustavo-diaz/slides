@@ -2798,5 +2798,215 @@
     "title": "Gustavo Diaz",
     "section": "Summary",
     "text": "Summary\n\n\n\n\n\n\n\nInvalid\nBenefit\n\n\n\n\nSamples\nDelineate existing generalizations\n\n\nTreatments\nBias reduction\n\n\nOutcomes\nHypothetical/rare scenarios\n\n\nContexts\nDelineate existing generalizations"
+  },
+  {
+    "objectID": "ispp24.html#combining-list-experiments-and-the-network-scale-up-method",
+    "href": "ispp24.html#combining-list-experiments-and-the-network-scale-up-method",
+    "title": "Gustavo Diaz",
+    "section": "Combining List Experiments and the Network Scale Up Method",
+    "text": "Combining List Experiments and the Network Scale Up Method\n\n\nGustavo Díaz\nMcMaster University\ndiazg2@mcmaster.ca\nVerónica Pérez Bentancur\nUniversidad de la República veronica.perez@cienciassociales.edu.uy\n\nInes Fynn\nUniversidad Católica del Uruguay\nines.fynn@ucu.edu.uy\nLucía Tiscornia\nUniversity College Dublin\nlucia.tiscornia@ucd.ie\n\n\n \nSlides: gustavodiaz.org/talk"
+  },
+  {
+    "objectID": "ispp24.html#background",
+    "href": "ispp24.html#background",
+    "title": "Gustavo Diaz",
+    "section": "Background",
+    "text": "Background\n\n\nSocial scientists care about sensitive issues\nAsking about them directly leads to misreporting\nSolution: Indirect questioning techniques\nList experiments are a popular option"
+  },
+  {
+    "objectID": "ispp24.html#example",
+    "href": "ispp24.html#example",
+    "title": "Gustavo Diaz",
+    "section": "Example",
+    "text": "Example\nNow I am going to read you things that make people angry or upset\n\n\nAdapted from Kuklinski, Cobb, and Gilens (1997)"
+  },
+  {
+    "objectID": "ispp24.html#example-1",
+    "href": "ispp24.html#example-1",
+    "title": "Gustavo Diaz",
+    "section": "Example",
+    "text": "Example\nAfter I read them all, tell me HOW MANY of them upset you\n\n\nAdapted from Kuklinski, Cobb, and Gilens (1997)"
+  },
+  {
+    "objectID": "ispp24.html#example-2",
+    "href": "ispp24.html#example-2",
+    "title": "Gustavo Diaz",
+    "section": "Example",
+    "text": "Example\nI don’t want to know which ones, just tell me HOW MANY\n\nControl group\n\nThe federal government increasing tax on gasoline\nProfessional athletes getting million dollar contracts\nLarge corporations polluting the environment\n\n\n\n\nAdapted from Kuklinski, Cobb, and Gilens (1997)"
+  },
+  {
+    "objectID": "ispp24.html#example-3",
+    "href": "ispp24.html#example-3",
+    "title": "Gustavo Diaz",
+    "section": "Example",
+    "text": "Example\nI don’t want to know which ones, just tell me HOW MANY\nTreatment group\n\nThe federal government increasing tax on gasoline\nProfessional athletes getting million dollar contracts\nLarge corporations polluting the environment\n\n\n\nAdapted from Kuklinski, Cobb, and Gilens (1997)"
+  },
+  {
+    "objectID": "ispp24.html#example-4",
+    "href": "ispp24.html#example-4",
+    "title": "Gustavo Diaz",
+    "section": "Example",
+    "text": "Example\nI don’t want to know which ones, just tell me HOW MANY\nTreatment group\n\nThe federal government increasing tax on gasoline\nProfessional athletes getting million dollar contracts\nLarge corporations polluting the environment\nA black family moving next door\n\n\n\nAdapted from Kuklinski, Cobb, and Gilens (1997)"
+  },
+  {
+    "objectID": "ispp24.html#reduce-bias-but-increase-variance",
+    "href": "ispp24.html#reduce-bias-but-increase-variance",
+    "title": "Gustavo Diaz",
+    "section": "Reduce bias but increase variance",
+    "text": "Reduce bias but increase variance\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Rosenfeld, Imai, and Shapiro (2016)"
+  },
+  {
+    "objectID": "ispp24.html#reduce-bias-but-increase-variance-1",
+    "href": "ispp24.html#reduce-bias-but-increase-variance-1",
+    "title": "Gustavo Diaz",
+    "section": "Reduce bias but increase variance",
+    "text": "Reduce bias but increase variance\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Rosenfeld, Imai, and Shapiro (2016)"
+  },
+  {
+    "objectID": "ispp24.html#reduce-bias-but-increase-variance-2",
+    "href": "ispp24.html#reduce-bias-but-increase-variance-2",
+    "title": "Gustavo Diaz",
+    "section": "Reduce bias but increase variance",
+    "text": "Reduce bias but increase variance\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Rosenfeld, Imai, and Shapiro (2016)"
+  },
+  {
+    "objectID": "ispp24.html#reduce-bias-but-increase-variance-3",
+    "href": "ispp24.html#reduce-bias-but-increase-variance-3",
+    "title": "Gustavo Diaz",
+    "section": "Reduce bias but increase variance",
+    "text": "Reduce bias but increase variance\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Rosenfeld, Imai, and Shapiro (2016)"
+  },
+  {
+    "objectID": "ispp24.html#ways-to-reduce-variance",
+    "href": "ispp24.html#ways-to-reduce-variance",
+    "title": "Gustavo Diaz",
+    "section": "Ways to reduce variance",
+    "text": "Ways to reduce variance\n\nNegatively correlated items (Glynn 2013)\nCovariate adjustment (Blair and Imai 2012)\nAuxiliary information (Chou 2020)\nDouble list experiments (Diaz 2023)\nCombine with direct questions (Aronow et al 2015)"
+  },
+  {
+    "objectID": "ispp24.html#ways-to-reduce-variance-1",
+    "href": "ispp24.html#ways-to-reduce-variance-1",
+    "title": "Gustavo Diaz",
+    "section": "Ways to reduce variance",
+    "text": "Ways to reduce variance\n\nNegatively correlated items (Glynn 2013)\nCovariate adjustment (Blair and Imai 2012)\nAuxiliary information (Chou 2020)\nDouble list experiments (Diaz 2023)\nCombine with direct questions (Aronow et al 2015)"
+  },
+  {
+    "objectID": "ispp24.html#problem-low-statistical-precision",
+    "href": "ispp24.html#problem-low-statistical-precision",
+    "title": "Gustavo Diaz",
+    "section": "Problem: Low statistical precision",
+    "text": "Problem: Low statistical precision\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Rosenfeld, Imai, and Shapiro (2016)"
+  },
+  {
+    "objectID": "ispp24.html#problem-low-statistical-precision-1",
+    "href": "ispp24.html#problem-low-statistical-precision-1",
+    "title": "Gustavo Diaz",
+    "section": "Problem: Low statistical precision",
+    "text": "Problem: Low statistical precision\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Rosenfeld, Imai, and Shapiro (2016)"
+  },
+  {
+    "objectID": "ispp24.html#problem-low-statistical-precision-2",
+    "href": "ispp24.html#problem-low-statistical-precision-2",
+    "title": "Gustavo Diaz",
+    "section": "Problem: Low statistical precision",
+    "text": "Problem: Low statistical precision\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Rosenfeld, Imai, and Shapiro (2016)"
+  },
+  {
+    "objectID": "ispp24.html#problem-low-statistical-precision-3",
+    "href": "ispp24.html#problem-low-statistical-precision-3",
+    "title": "Gustavo Diaz",
+    "section": "Problem: Low statistical precision",
+    "text": "Problem: Low statistical precision\n\n\n\n\n\n\n\n\n\n\n\nAdapted from Rosenfeld, Imai, and Shapiro (2016)"
+  },
+  {
+    "objectID": "ispp24.html#ways-to-improve-precision",
+    "href": "ispp24.html#ways-to-improve-precision",
+    "title": "Gustavo Diaz",
+    "section": "Ways to improve precision",
+    "text": "Ways to improve precision\n\nNegatively correlated items (Glynn 2013)\nCovariate adjustment (Blair and Imai 2012)\nAuxiliary information (Chou 2020)\nDouble list experiments (Diaz 2023)\nCombine with direct questions (Aronow et al 2015)"
+  },
+  {
+    "objectID": "ispp24.html#ways-to-improve-precision-1",
+    "href": "ispp24.html#ways-to-improve-precision-1",
+    "title": "Gustavo Diaz",
+    "section": "Ways to improve precision",
+    "text": "Ways to improve precision\n\nNegatively correlated items (Glynn 2013)\nCovariate adjustment (Blair and Imai 2012)\nAuxiliary information (Chou 2020)\nDouble list experiments (Diaz 2023)\nCombine with direct questions (Aronow et al 2015)"
+  },
+  {
+    "objectID": "ispp24.html#combined-estimator",
+    "href": "ispp24.html#combined-estimator",
+    "title": "Gustavo Diaz",
+    "section": "Combined estimator",
+    "text": "Combined estimator\n\nLogic: You don’t need a list experiment for those who admit to the sensitive item in the direct question\n\n\n\\[\n\\hat{\\mu} = \\overline{X} + (1 - \\overline{X}) (\\overline{V}_{1,0} - \\overline{V}_{0,0})\n\\]\n\n\n\nSource: Aronow et al (2015)"
+  },
+  {
+    "objectID": "ispp24.html#problem",
+    "href": "ispp24.html#problem",
+    "title": "Gustavo Diaz",
+    "section": "Problem",
+    "text": "Problem\n\n\nCan’t always include direct questions\nNeed an indirect questioning technique that lets us infer individual responses to sensitive item\nBut most rely on anonymity\nCan’t combine without extra assumptions, altered designs, or population-level data"
+  },
+  {
+    "objectID": "ispp24.html#combined-estimator-1",
+    "href": "ispp24.html#combined-estimator-1",
+    "title": "Gustavo Diaz",
+    "section": "Combined estimator",
+    "text": "Combined estimator\n\nLogic: You don’t need a list experiment for those who admit to the sensitive item in the direct question\n\n\\[\n\\hat{\\mu} = \\underbrace{\\overline{X}}_\\text{Prop direct question yes} + \\underbrace{(1 - \\overline{X})}_\\text{Weight} \\times \\underbrace{(\\overline{V}_{1,0} - \\overline{V}_{0,0})}_\\text{LE diff-in-means if direct question no}\n\\]\n\n\nSource: Aronow et al (2015)"
+  },
+  {
+    "objectID": "ispp24.html#combined-estimator-2",
+    "href": "ispp24.html#combined-estimator-2",
+    "title": "Gustavo Diaz",
+    "section": "Combined estimator",
+    "text": "Combined estimator\n\nLogic: You don’t need a list experiment for those who admit to the sensitive item in the direct question\n\n\\[\n\\hat{\\mu} = \\underbrace{\\underbrace{\\overline{X}}_\\text{Prop direct question yes} + \\underbrace{(1 - \\overline{X})}_\\text{Weight} \\times \\underbrace{(\\overline{V}_{1,0} - \\overline{V}_{0,0})}_\\text{LE diff-in-means if direct question no}}_\\text{Weighted average of prevalence rates}\n\\]\n\n\nSource: Aronow et al (2015)"
+  },
+  {
+    "objectID": "ispp24.html#network-scale-up-method-nsum",
+    "href": "ispp24.html#network-scale-up-method-nsum",
+    "title": "Gustavo Diaz",
+    "section": "Network Scale-Up Method (NSUM)",
+    "text": "Network Scale-Up Method (NSUM)\n\nHow many people do you know,\n\n\n\nAdapted from McCarty et al (2001). Original has 29 anchors and 3 target groups"
+  },
+  {
+    "objectID": "ispp24.html#network-scale-up-method-nsum-1",
+    "href": "ispp24.html#network-scale-up-method-nsum-1",
+    "title": "Gustavo Diaz",
+    "section": "Network Scale-Up Method (NSUM)",
+    "text": "Network Scale-Up Method (NSUM)\nHow many people do you know, who also know you,\n\n\nAdapted from McCarty et al (2001). Original has 29 anchors and 3 target groups"
+  },
+  {
+    "objectID": "ispp24.html#network-scale-up-method-nsum-2",
+    "href": "ispp24.html#network-scale-up-method-nsum-2",
+    "title": "Gustavo Diaz",
+    "section": "Network Scale-Up Method (NSUM)",
+    "text": "Network Scale-Up Method (NSUM)\nHow many people do you know, who also know you, with whom you have interacted in the last year\n\n\nAdapted from McCarty et al (2001). Original has 29 anchors and 3 target groups"
+  },
+  {
+    "objectID": "ispp24.html#network-scale-up-method-nsum-3",
+    "href": "ispp24.html#network-scale-up-method-nsum-3",
+    "title": "Gustavo Diaz",
+    "section": "Network Scale-Up Method (NSUM)",
+    "text": "Network Scale-Up Method (NSUM)\nHow many people do you know, who also know you, with whom you have interacted in the last year in person, by phone, or any other channel.\n\n\nNamed Michael\nNamed Christina\nGave birth in the past 12 months\nCommercial pilots\nHave tested positive for HIV\n\n\n\n\nAdapted from McCarty et al (2001). Original has 29 anchors and 3 target groups"
+  },
+  {
+    "objectID": "ispp24.html#why-nsum",
+    "href": "ispp24.html#why-nsum",
+    "title": "Gustavo Diaz",
+    "section": "Why NSUM?",
+    "text": "Why NSUM?\n\n\nCan infer individual responses to sensitive item\n\n\n\n\n\n\n\n\n\nAssumption\n\n\nIf someone knows a unusually large number of people with the sensitive item, then they are likely to hold the sensitive item too.\n\n\n\n\n\n\nIf true, can use NSUM responses instead of direct questions\n\n\n\n\nGoal: Find individuals with large sensitive network relative to personal network"
+  },
+  {
+    "objectID": "ispp24.html#hierarchical-model",
+    "href": "ispp24.html#hierarchical-model",
+    "title": "Gustavo Diaz",
+    "section": "Hierarchical model",
+    "text": "Hierarchical model\n\\[\n\\begin{align*}\ny_{ik} \\sim \\text{negative-binomial}( & \\text{mean} = e^{\\alpha_i + \\beta_k},\\\\ & \\text{overdispersion} = \\omega_k)\n\\end{align*}\n\\]\n\n\n\\(y_{ik}\\): Degree of group \\(k\\) for person \\(i\\)\n\\(\\alpha_i\\): Expected degree of person \\(i\\) (logged)\n\\(\\beta_k\\): Expected degrees of group \\(k\\) (logged)\n\\(\\omega_k\\): Controls variance in propensity to know someone from group \\(k\\)\n\n\n\n\nDetails: Zheng, Salganik, and Gelman (2006); Calvo and Murillo (2013)"
+  },
+  {
+    "objectID": "ispp24.html#hierarchical-model-1",
+    "href": "ispp24.html#hierarchical-model-1",
+    "title": "Gustavo Diaz",
+    "section": "Hierarchical model",
+    "text": "Hierarchical model\n\nFit with MLE in two steps (Personal network, sensitive group network)\nFocus on standardized residuals:\n\n\\[\nr_{ik} = \\sqrt{y_{ik}} - \\sqrt{e \\alpha_i + \\beta_k}\n\\]\n\n\nHigh residual: Higher exposure to sensitive item\n\n\n\n\nDetails: Ventura, Ley, and Cantú (2023)"
   }
 ]

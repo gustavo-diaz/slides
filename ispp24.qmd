@@ -1,0 +1,422 @@
+---
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: false
+    progress: false
+---
+
+::: {style="text-align: center"}
+## Combining List Experiments and the Network Scale Up Method {.center .smaller}
+
+::: columns
+
+::: {.column width="50%"}
+**Gustavo Díaz**  
+McMaster University  
+<diazg2@mcmaster.ca>  
+
+**Verónica Pérez Bentancur**  
+Universidad de la República
+<veronica.perez@cienciassociales.edu.uy>  
+:::
+
+::: {.column width="50%"}
+**Ines Fynn**  
+Universidad Católica del Uruguay  
+<ines.fynn@ucu.edu.uy>
+
+**Lucía Tiscornia**  
+University College Dublin  
+<lucia.tiscornia@ucd.ie>
+
+:::
+
+:::
+
+&nbsp;
+
+Slides: [gustavodiaz.org/talk](https://gustavodiaz.org/talk.html)
+
+:::
+
+```{r include=FALSE}
+library(knitr)
+
+opts_chunk$set(fig.pos = "center", echo = FALSE, 
+               message = FALSE, warning = FALSE)
+```
+
+```{r setup}
+# Packages
+library(tidyverse)
+library(DeclareDesign)
+library(kableExtra)
+
+
+# ggplot global options
+theme_set(theme_gray(base_size = 20))
+```
+
+## Background
+
+::: incremental
+- Social scientists care about **sensitive issues**
+
+- Asking about them directly leads to **misreporting**
+
+- **Solution:** *Indirect questioning* techniques
+
+- **List experiments** are a popular option
+:::
+
+## Example
+
+Now I am going to read you things that make people angry or upset
+
+::: aside
+Adapted from [Kuklinski, Cobb, and Gilens (1997)](https://doi.org/10.1017/S0022381600053470)
+:::
+
+## Example {visibility="uncounted"}
+
+After I read them all, tell me HOW MANY of them upset you
+
+::: aside
+Adapted from [Kuklinski, Cobb, and Gilens (1997)](https://doi.org/10.1017/S0022381600053470)
+:::
+
+## Example {visibility="uncounted"}
+
+I don't want to know which ones, just tell me HOW MANY
+
+. . .
+
+### Control group
+
+1. The federal government increasing tax on gasoline
+2. Professional athletes getting million dollar contracts
+3. Large corporations polluting the environment
+
+::: aside
+Adapted from [Kuklinski, Cobb, and Gilens (1997)](https://doi.org/10.1017/S0022381600053470)
+:::
+
+## Example {visibility="uncounted"}
+
+I don't want to know which ones, just tell me HOW MANY
+
+### Treatment group
+
+1. The federal government increasing tax on gasoline
+2. Professional athletes getting million dollar contracts
+3. Large corporations polluting the environment
+
+::: aside
+Adapted from [Kuklinski, Cobb, and Gilens (1997)](https://doi.org/10.1017/S0022381600053470)
+:::
+
+## Example {visibility="uncounted"}
+
+I don't want to know which ones, just tell me HOW MANY
+
+### Treatment group
+
+1. The federal government increasing tax on gasoline
+2. Professional athletes getting million dollar contracts
+3. Large corporations polluting the environment
+4. **A black family moving next door**
+
+::: aside
+Adapted from [Kuklinski, Cobb, and Gilens (1997)](https://doi.org/10.1017/S0022381600053470)
+:::
+
+## Problem: Low statistical precision
+
+. . .
+
+```{r}
+# got this through
+# https://automeris.io/WebPlotDigitizer/
+# And by reverse engineering fig 1
+# Because replication data was not available
+# So this has some human error
+validation = data.frame(
+  technique = c("Direct question", "List experiment"),
+  estimate = c(0.396, 0.487),
+  upper = c(0.419, 0.562),
+  lower = c(0.376, 0.417)
+)
+
+actual_vote = 0.65
+
+ggplot(validation) +
+  aes(x = technique, y = estimate) +
+  geom_point(size = 4, alpha = 0) + 
+  geom_linerange(aes(x = technique, ymin = lower, ymax = upper),
+                 linewidth = 1, alpha = 0) +
+  ylim(0.2, 0.8) +
+  labs(x = "Technique", 
+       y = "Proportion voting against\ncriminalizing abortion")
+```
+
+::: aside
+Adapted from [Rosenfeld, Imai, and Shapiro (2016)](https://doi.org/10.1111/ajps.12205)
+:::
+
+## Problem: Low statistical precision {visibility="uncounted"}
+
+```{r}
+ggplot(validation) +
+  aes(x = technique, y = estimate) +
+  geom_hline(yintercept = actual_vote, 
+             linetype = "dashed",
+             linewidth = 1) +
+  geom_point(size = 4, alpha = 0) + 
+  geom_linerange(aes(x = technique, ymin = lower, ymax = upper),
+                 linewidth = 1, alpha = 0) +
+  annotate("text", x = 0.7, y = 0.7, size = 5, 
+           label = "Actual vote share") +
+  ylim(0.2, 0.8) +
+  labs(x = "Technique", 
+       y = "Proportion voting against\ncriminalizing abortion")
+```
+
+::: aside
+Adapted from [Rosenfeld, Imai, and Shapiro (2016)](https://doi.org/10.1111/ajps.12205)
+:::
+
+
+## Problem: Low statistical precision {visibility="uncounted"}
+
+```{r}
+ggplot(validation) +
+  aes(x = technique, y = estimate) +
+  geom_hline(yintercept = actual_vote, 
+             linetype = "dashed",
+             linewidth = 1) +
+  geom_point(size = 4) + 
+  geom_linerange(aes(x = technique, ymin = lower, ymax = upper),
+                 linewidth = 1, alpha = 0) +
+  annotate("text", x = 0.7, y = 0.7, size = 5, 
+           label = "Actual vote share") +
+  ylim(0.2, 0.8) +
+  labs(x = "Technique", 
+       y = "Proportion voting against\ncriminalizing abortion")
+```
+
+::: aside
+Adapted from [Rosenfeld, Imai, and Shapiro (2016)](https://doi.org/10.1111/ajps.12205)
+:::
+
+
+## Problem: Low statistical precision {visibility="uncounted"}
+
+```{r}
+ggplot(validation) +
+  aes(x = technique, y = estimate) +
+  geom_hline(yintercept = actual_vote, 
+             linetype = "dashed",
+             linewidth = 1) +
+  geom_point(size = 4) + 
+  geom_linerange(aes(x = technique, ymin = lower, ymax = upper),
+                 linewidth = 1) +
+  annotate("text", x = 0.7, y = 0.7, size = 5, 
+           label = "Actual vote share") +
+  ylim(0.2, 0.8) +
+  labs(x = "Technique", 
+       y = "Proportion voting against\ncriminalizing abortion")
+```
+
+::: aside
+Adapted from [Rosenfeld, Imai, and Shapiro (2016)](https://doi.org/10.1111/ajps.12205)
+:::
+
+## Ways to improve precision
+
+- Negatively correlated items [(Glynn 2013)](https://doi.org/10.1093/poq/nfs070)
+
+- Covariate adjustment [(Blair and Imai 2012)](https://doi.org/10.1093/pan/mpr048)
+
+- Auxiliary information [(Chou 2020)](https://doi.org/10.1177/0049124117729711)
+
+- Double list experiments [(Diaz 2023)](https://gustavodiaz.org/files/research/dle_test.pdf)
+
+- Combine with direct questions [(Aronow et al 2015)](https://doi.org/10.1093/jssam/smu023)
+
+## Ways to improve precision {visibility="uncounted"}
+
+- [Negatively correlated items [(Glynn 2013)](https://doi.org/10.1093/poq/nfs070)]{style="color: gray;"}
+
+- [Covariate adjustment [(Blair and Imai 2012)](https://doi.org/10.1093/pan/mpr048)]{style="color: gray;"}
+
+- [Auxiliary information [(Chou 2020)](https://doi.org/10.1177/0049124117729711)]{style="color: gray;"}
+
+- [Double list experiments [(Diaz 2023)](https://gustavodiaz.org/files/research/dle_test.pdf)]{style="color: gray;"}
+
+- **Combine with direct questions [(Aronow et al 2015)](https://doi.org/10.1093/jssam/smu023)**
+
+## Combined estimator
+
+- **Logic:** You don't need a list experiment for those who admit to the sensitive item in the direct question
+
+. . .
+
+$$
+\hat{\mu} = \overline{X} + (1 - \overline{X}) (\overline{V}_{1,0} - \overline{V}_{0,0})
+$$
+
+::: aside
+**Source:** [Aronow et al (2015)](https://doi.org/10.1093/jssam/smu023)
+:::
+
+## Combined estimator
+
+- **Logic:** You don't need a list experiment for those who admit to the sensitive item in the direct question
+
+$$
+\hat{\mu} = \underbrace{\overline{X}}_\text{Prop direct question yes} + \underbrace{(1 - \overline{X})}_\text{Weight} \times \underbrace{(\overline{V}_{1,0} - \overline{V}_{0,0})}_\text{LE diff-in-means if direct question no}
+$$
+
+::: aside
+**Source:** [Aronow et al (2015)](https://doi.org/10.1093/jssam/smu023)
+:::
+
+
+## Combined estimator
+
+- **Logic:** You don't need a list experiment for those who admit to the sensitive item in the direct question
+
+$$
+\hat{\mu} = \underbrace{\underbrace{\overline{X}}_\text{Prop direct question yes} + \underbrace{(1 - \overline{X})}_\text{Weight} \times \underbrace{(\overline{V}_{1,0} - \overline{V}_{0,0})}_\text{LE diff-in-means if direct question no}}_\text{Weighted average of prevalence rates}
+$$
+
+::: aside
+**Source:** [Aronow et al (2015)](https://doi.org/10.1093/jssam/smu023)
+:::
+
+## Problem
+
+::: incremental
+- Can't always include direct questions
+
+- Need an indirect questioning technique that lets us **infer individual responses to sensitive item**
+
+- But most rely on anonymity
+
+- Can't combine without extra assumptions, altered designs, or population-level data
+
+:::
+
+## Network Scale-Up Method (NSUM)
+
+. . .
+
+How many people do you know,
+
+::: aside
+Adapted from [McCarty et al (2001)](https://doi.org/10.17730/humo.60.1.efx5t9gjtgmga73y). Original has 29 anchors and 3 target groups
+:::
+
+## Network Scale-Up Method (NSUM) {visibility="uncounted"}
+
+How many people do you know, **who also know you,** 
+
+
+::: aside
+Adapted from [McCarty et al (2001)](https://doi.org/10.17730/humo.60.1.efx5t9gjtgmga73y). Original has 29 anchors and 3 target groups
+:::
+
+## Network Scale-Up Method (NSUM) {visibility="uncounted"}
+
+How many people do you know, **who also know you, with whom you have interacted in the last year** 
+
+
+::: aside
+Adapted from [McCarty et al (2001)](https://doi.org/10.17730/humo.60.1.efx5t9gjtgmga73y). Original has 29 anchors and 3 target groups
+:::
+
+## Network Scale-Up Method (NSUM) {visibility="uncounted"}
+
+How many people do you know, **who also know you, with whom you have interacted in the last year** in person, by phone, or any other channel.
+
+::: incremental
+- Named Michael
+- Named Christina
+- Gave birth in the past 12 months
+- Commercial pilots
+- **Have tested positive for HIV**
+:::
+
+::: aside
+Adapted from [McCarty et al (2001)](https://doi.org/10.17730/humo.60.1.efx5t9gjtgmga73y). Original has 29 anchors and 3 target groups
+:::
+
+## Why NSUM?
+
+[CONTINUE HERE MAKE MUCH SHORTER]
+
+. . .
+
+- Can infer **individual** responses to sensitive item
+
+. . .
+
+::: {.callout-warning}
+## Assumption
+If someone knows a unusually large number of people with the sensitive item, then they are likely to hold the sensitive item too.
+:::
+
+. . .
+
+- If true, can use NSUM responses instead of direct questions
+
+. . .
+
+- **Goal:** Find individuals with large *sensitive network* relative to *personal network*
+
+## Hierarchical model
+
+
+$$
+\begin{align*} 
+y_{ik} \sim \text{negative-binomial}( & \text{mean} = e^{\alpha_i + \beta_k},\\ & \text{overdispersion} = \omega_k)
+\end{align*} 
+$$
+
+::: incremental
+
+- $y_{ik}$: Degree of group $k$ for person $i$
+
+- $\alpha_i$: Expected degree of person $i$ (logged)
+
+- $\beta_k$: Expected degrees of group $k$ (logged)
+
+- $\omega_k$: Controls variance in propensity to know someone from group $k$
+:::
+
+::: aside
+**Details:** [Zheng, Salganik, and Gelman (2006)](https://doi.org/10.1198/016214505000001168); [Calvo and Murillo (2013)](https://doi.org/10.1177/0010414012463882)
+:::
+
+## Hierarchical model {visibility="uncounted"}
+
+- Fit with MLE in two steps `(Personal network, sensitive group network)`
+
+- Focus on standardized residuals:
+
+$$
+r_{ik} = \sqrt{y_{ik}} - \sqrt{e \alpha_i + \beta_k}
+$$
+
+ . . .
+
+- **High residual:** Higher exposure to sensitive item
+
+
+::: aside
+**Details:** [Ventura, Ley, and Cantú (2023)](https://doi.org/10.1177/00104140231169035)
+:::
+
+
+# Application

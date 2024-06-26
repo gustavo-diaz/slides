@@ -1,0 +1,703 @@
+---
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: true
+---
+
+::: {style="text-align: center"}
+## Combining List Experiments and the Network Scale Up Method {.center .smaller}
+
+::: columns
+
+::: {.column width="50%"}
+**Gustavo Díaz**  
+McMaster University  
+<diazg2@mcmaster.ca>  
+[{{< fa brands twitter >}} @gusvalo](https://twitter.com/Gusvalo)
+
+**Verónica Pérez Bentancur**  
+Universidad de la República
+<veronica.perez@cienciassociales.edu.uy>  
+[{{< fa brands twitter >}} @veroperezben](https://twitter.com/veroperezben)
+:::
+
+::: {.column width="50%"}
+**Ines Fynn**  
+Pontificia Universidad Católica de Chile  
+<ifynn@uc.cl>  
+[{{< fa brands twitter >}} @ifynn_](https://twitter.com/ifynn_)
+
+**Lucía Tiscornia**  
+University College Dublin  
+<lucia.tiscornia@ucd.ie>  
+[{{< fa brands twitter >}} @tiscornia21](https://twitter.com/tiscornia21)
+
+:::
+
+:::
+
+&nbsp;
+
+Slides: [gustavodiaz.org/talk](https://gustavodiaz.org/talk.html)
+
+:::
+
+
+
+```{r include=FALSE}
+library(knitr)
+
+opts_chunk$set(fig.pos = "center", echo = FALSE, 
+               message = FALSE, warning = FALSE)
+```
+
+```{r setup}
+# Packages
+library(tidyverse)
+library(DeclareDesign)
+library(kableExtra)
+
+
+# ggplot global options
+theme_set(theme_gray(base_size = 20))
+```
+
+## Background
+
+::: incremental
+- Social scientists care about **sensitive issues**
+
+- Asking about them directly leads to **misreporting**
+
+- **Solution:** *Indirect questioning* techniques
+
+- **List experiments** popular in political science
+:::
+
+## Example
+
+Now I am going to read you things that make people angry or upset
+
+::: aside
+Adapted from [Kuklinski, Cobb, and Gilens (1997)](https://doi.org/10.1017/S0022381600053470)
+:::
+
+## Example {visibility="uncounted"}
+
+After I read them all, tell me HOW MANY of them upset you
+
+::: aside
+Adapted from [Kuklinski, Cobb, and Gilens (1997)](https://doi.org/10.1017/S0022381600053470)
+:::
+
+## Example {visibility="uncounted"}
+
+I don't want to know which ones, just tell me HOW MANY
+
+. . .
+
+### Control group
+
+1. The federal government increasing tax on gasoline
+2. Professional athletes getting million dollar contracts
+3. Large corporations polluting the environment
+
+::: aside
+Adapted from [Kuklinski, Cobb, and Gilens (1997)](https://doi.org/10.1017/S0022381600053470)
+:::
+
+## Example {visibility="uncounted"}
+
+I don't want to know which ones, just tell me HOW MANY
+
+### Treatment group
+
+1. The federal government increasing tax on gasoline
+2. Professional athletes getting million dollar contracts
+3. Large corporations polluting the environment
+
+::: aside
+Adapted from [Kuklinski, Cobb, and Gilens (1997)](https://doi.org/10.1017/S0022381600053470)
+:::
+
+## Example {visibility="uncounted"}
+
+I don't want to know which ones, just tell me HOW MANY
+
+### Treatment group
+
+1. The federal government increasing tax on gasoline
+2. Professional athletes getting million dollar contracts
+3. Large corporations polluting the environment
+4. **A black family moving next door**
+
+::: aside
+Adapted from [Kuklinski, Cobb, and Gilens (1997)](https://doi.org/10.1017/S0022381600053470)
+:::
+
+
+## Reduce bias but increase variance
+
+```{r}
+# got this through
+# https://automeris.io/WebPlotDigitizer/
+# And by reverse engineering fig 1
+# Because replication data was not available
+# So this has some human error
+validation = data.frame(
+  technique = c("Direct question", "List experiment"),
+  estimate = c(0.396, 0.487),
+  upper = c(0.419, 0.562),
+  lower = c(0.376, 0.417)
+)
+
+actual_vote = 0.65
+
+ggplot(validation) +
+  aes(x = technique, y = estimate) +
+  geom_point(size = 4, alpha = 0) + 
+  geom_linerange(aes(x = technique, ymin = lower, ymax = upper),
+                 linewidth = 1, alpha = 0) +
+  ylim(0.2, 0.8) +
+  labs(x = "Technique", 
+       y = "Proportion voting against\ncriminalizing abortion")
+```
+
+::: aside
+Adapted from [Rosenfeld, Imai, and Shapiro (2016)](https://doi.org/10.1111/ajps.12205)
+:::
+
+## Reduce bias but increase variance {visibility="uncounted"}
+
+```{r}
+ggplot(validation) +
+  aes(x = technique, y = estimate) +
+  geom_hline(yintercept = actual_vote, 
+             linetype = "dashed",
+             linewidth = 1) +
+  geom_point(size = 4, alpha = 0) + 
+  geom_linerange(aes(x = technique, ymin = lower, ymax = upper),
+                 linewidth = 1, alpha = 0) +
+  annotate("text", x = 0.7, y = 0.7, size = 5, 
+           label = "Actual vote share") +
+  ylim(0.2, 0.8) +
+  labs(x = "Technique", 
+       y = "Proportion voting against\ncriminalizing abortion")
+```
+
+::: aside
+Adapted from [Rosenfeld, Imai, and Shapiro (2016)](https://doi.org/10.1111/ajps.12205)
+:::
+
+
+## Reduce bias but increase variance {visibility="uncounted"}
+
+```{r}
+ggplot(validation) +
+  aes(x = technique, y = estimate) +
+  geom_hline(yintercept = actual_vote, 
+             linetype = "dashed",
+             linewidth = 1) +
+  geom_point(size = 4) + 
+  geom_linerange(aes(x = technique, ymin = lower, ymax = upper),
+                 linewidth = 1, alpha = 0) +
+  annotate("text", x = 0.7, y = 0.7, size = 5, 
+           label = "Actual vote share") +
+  ylim(0.2, 0.8) +
+  labs(x = "Technique", 
+       y = "Proportion voting against\ncriminalizing abortion")
+```
+
+::: aside
+Adapted from [Rosenfeld, Imai, and Shapiro (2016)](https://doi.org/10.1111/ajps.12205)
+:::
+
+
+## Reduce bias but increase variance {visibility="uncounted"}
+
+```{r}
+ggplot(validation) +
+  aes(x = technique, y = estimate) +
+  geom_hline(yintercept = actual_vote, 
+             linetype = "dashed",
+             linewidth = 1) +
+  geom_point(size = 4) + 
+  geom_linerange(aes(x = technique, ymin = lower, ymax = upper),
+                 linewidth = 1) +
+  annotate("text", x = 0.7, y = 0.7, size = 5, 
+           label = "Actual vote share") +
+  ylim(0.2, 0.8) +
+  labs(x = "Technique", 
+       y = "Proportion voting against\ncriminalizing abortion")
+```
+
+::: aside
+Adapted from [Rosenfeld, Imai, and Shapiro (2016)](https://doi.org/10.1111/ajps.12205)
+:::
+
+## Ways to reduce variance
+
+- Negatively correlated items [(Glynn 2013)](https://doi.org/10.1093/poq/nfs070)
+
+- Covariate adjustment [(Blair and Imai 2012)](https://doi.org/10.1093/pan/mpr048)
+
+- Auxiliary information [(Chou 2020)](https://doi.org/10.1177/0049124117729711)
+
+- Double list experiments [(Diaz 2023)](https://gustavodiaz.org/files/research/dle_test.pdf)
+
+- Combine with direct questions [(Aronow et al 2015)](https://doi.org/10.1093/jssam/smu023)
+
+## Ways to reduce variance {visibility="uncounted"}
+
+- [Negatively correlated items [(Glynn 2013)](https://doi.org/10.1093/poq/nfs070)]{style="color: gray;"}
+
+- [Covariate adjustment [(Blair and Imai 2012)](https://doi.org/10.1093/pan/mpr048)]{style="color: gray;"}
+
+- [Auxiliary information [(Chou 2020)](https://doi.org/10.1177/0049124117729711)]{style="color: gray;"}
+
+- [Double list experiments [(Diaz 2023)](https://gustavodiaz.org/files/research/dle_test.pdf)]{style="color: gray;"}
+
+- **Combine with direct questions [(Aronow et al 2015)](https://doi.org/10.1093/jssam/smu023)**
+
+## Combined estimator
+
+- **Logic:** You don't need a list experiment for those who admit to the sensitive item in the direct question
+
+. . .
+
+$$
+\hat{\mu} = \overline{Y} + (1 - \overline{Y}) (\overline{V}_{1,0} - \overline{V}_{0,0})
+$$
+
+::: incremental
+- $\overline{Y}$: Proportion confess in direct question
+
+- $(\overline{V}_{1,0} - \overline{V}_{0,0})$: List experiment estimate among those not confessing
+:::
+
+::: aside
+**Source:** [Aronow et al (2015)](https://doi.org/10.1093/jssam/smu023)
+:::
+
+## Problem
+
+::: incremental
+- Can't always include direct questions
+
+- Need an indirect questioning technique that lets us **infer individual responses to sensitive item**
+
+- But most rely on anonymity
+
+- Can't combine without extra assumptions or altered designs (e.g. [Blair, Imai, and Lyall 2014](https://doi.org/10.1111/ajps.12086))
+
+:::
+
+## Network Scale-Up Method (NSUM)
+
+. . .
+
+How many people do you know,
+
+::: aside
+Adapted from [McCarty et al (2001)](https://doi.org/10.17730/humo.60.1.efx5t9gjtgmga73y). Original has 29 anchors and 3 target groups
+:::
+
+## Network Scale-Up Method (NSUM) {visibility="uncounted"}
+
+How many people do you know, **who also know you,** 
+
+
+::: aside
+Adapted from [McCarty et al (2001)](https://doi.org/10.17730/humo.60.1.efx5t9gjtgmga73y). Original has 29 anchors and 3 target groups
+:::
+
+## Network Scale-Up Method (NSUM) {visibility="uncounted"}
+
+How many people do you know, **who also know you, with whom you have interacted in the last year** 
+
+
+::: aside
+Adapted from [McCarty et al (2001)](https://doi.org/10.17730/humo.60.1.efx5t9gjtgmga73y). Original has 29 anchors and 3 target groups
+:::
+
+## Network Scale-Up Method (NSUM) {visibility="uncounted"}
+
+How many people do you know, **who also know you, with whom you have interacted in the last year** in person, by phone, or any other channel.
+
+::: incremental
+- Named Michael
+- Named Christina
+- Gave birth in the past 12 months
+- Commercial pilots
+- **Have tested positive for HIV**
+:::
+
+::: aside
+Adapted from [McCarty et al (2001)](https://doi.org/10.17730/humo.60.1.efx5t9gjtgmga73y). Original has 29 anchors and 3 target groups
+:::
+
+## Why NSUM?
+
+. . .
+
+- Can infer **individual** responses to sensitive item
+
+. . .
+
+::: {.callout-warning}
+## Assumption
+If someone knows a unusually large number of people with the sensitive item, then they are likely to hold the sensitive item too.
+:::
+
+. . .
+
+- If true, can use NSUM responses instead of direct questions
+
+. . .
+
+- **Goal:** Find individuals with large *sensitive network* relative to *personal network*
+
+## Hierarchical model
+
+
+$$
+\begin{align*} 
+y_{ik} \sim \text{negative-binomial}( & \text{mean} = e^{\alpha_i + \beta_k},\\ & \text{overdispersion} = \omega_k)
+\end{align*} 
+$$
+
+::: incremental
+
+- $y_{ik}$: Degree of group $k$ for person $i$
+
+- $\alpha_i$: Expected degree of person $i$ (logged)
+
+- $\beta_k$: Expected degrees of group $k$ (logged)
+
+- $\omega_k$: Controls variance in propensity to know someone from group $k$
+:::
+
+::: aside
+**Details:** [Zheng, Salganik, and Gelman (2006)](https://doi.org/10.1198/016214505000001168); [Calvo and Murillo (2013)](https://doi.org/10.1177/0010414012463882)
+:::
+
+## Hierarchical model {visibility="uncounted"}
+
+- Fit with MLE in two steps `(Personal network, sensitive group network)`
+
+- Focus on standardized residuals:
+
+$$
+r_{ik} = \sqrt{y_{ik}} - \sqrt{e \alpha_i + \beta_k}
+$$
+
+. . .
+
+- **High residual:** Higher exposure to sensitive item
+
+
+::: aside
+**Details:** [Ventura, Ley, and Cantú (2023)](https://doi.org/10.1177/00104140231169035)
+:::
+
+::: {style="text-align: center"}
+# Application
+:::
+
+## Criminal governance strategies in Uruguay
+
+::: incremental
+- Low crime, but embedded
+
+- Even here criminal organizations replace government
+
+- **Fieldwork:** Interactions are sensitive topic
+
+- **Goal:** Document extent of exposure to criminal governance strategies `(positive, negative)`
+:::
+
+## Survey
+
+- Facebook sample of Montevideo residents `(N = 2688)`
+
+- Four criminal governance strategies
+
+. . .
+
+::: columns
+
+::: {.column width="48%"}
+### Negative
+- Threaten neighbors
+- Evict neighbors
+:::
+
+::: {.column width="52%"}
+### Positive
+- Make donations to neighbors
+- Offer jobs to neighbors
+
+:::
+
+:::
+
+::: aside
+Treatments based on qualitative evidence from fieldwork [(Pérez Bentancur and Tiscornia 2022)](https://doi.org/10.1177/00491241221082595)
+:::
+
+## Survey {visibility="uncounted"}
+
+- Facebook sample of Montevideo residents `(N = 2688)`
+
+- Four criminal governance strategies
+
+::: columns
+
+::: {.column width="48%"}
+### Negative
+- **Threaten neighbors**
+- [Evict neighbors]{style="color: gray;"}
+:::
+
+::: {.column width="52%"}
+### Positive
+- [Make donations to neighbors]{style="color: gray;"}
+- [Offer jobs to neighbors]{style="color: gray;"}
+
+
+:::
+
+:::
+
+::: aside
+Treatments based on qualitative evidence from fieldwork [(Pérez Bentancur and Tiscornia 2022)](https://doi.org/10.1177/00491241221082595)
+:::
+
+## Direct question
+
+During the last six months, in your neighborhood, have you seen gangs...
+
+- **Threaten neighbors**
+- Evict neighbors
+- Make donations to neighbors
+- Offering jobs neighbors
+- Blackmail neighbors
+- Blackmail businesses
+- Pay a neighbor's phone or electricity bills
+
+## List experiments
+
+Things people have experienced in the last six months:
+
+```{r}
+list0 = tribble(
+  ~A, ~B,
+  "Saw people doing sports", "Saw people playing soccer",
+  "Visited friends", "Chatted with friends",
+  "Activities by feminist groups", "Activities by LGBTQ groups",
+  "Went to church", "Went to charity events",
+  "", ""
+)
+
+list0 %>% 
+  kbl(col.names = c("List A", "List B"))
+```
+
+
+## List experiments {visibility="uncounted"}
+
+Things people have experienced in the last six months:
+
+```{r}
+list1 = tribble(
+  ~A, ~B,
+  "Saw people doing sports", "Saw people playing soccer",
+  "Visited friends", "Chatted with friends",
+  "Activities by feminist groups", "Activities by LGBTQ groups",
+  "Went to church", "Went to charity events",
+  "Did not drink mate", "Gangs threatening neighbors"
+)
+
+list1 %>% 
+  kbl(col.names = c("List A", "List B")) %>% 
+  column_spec(1, italic = c(rep(F, 4), T)) %>%
+  column_spec(2, bold = c(rep(F, 4), T))
+```
+
+## List experiments {visibility="uncounted"}
+
+Things people have experienced in the last six months:
+
+```{r}
+list2 = tribble(
+  ~A, ~B,
+  "Saw people doing sports", "Saw people playing soccer",
+  "Visited friends", "Chatted with friends",
+  "Activities by feminist groups", "Activities by LGBTQ groups",
+  "Went to church", "Went to charity events",
+  "Gangs threatening neighbors", "Did not drink mate"
+)
+
+list2 %>% 
+  kbl(col.names = c("List A", "List B")) %>% 
+  column_spec(2, italic = c(rep(F, 4), T)) %>%
+  column_spec(1, bold = c(rep(F, 4), T))
+```
+
+
+## NSUM {#nsum}
+
+How many people do you know, **who also know you, with whom you have interacted in the last year** in person, by phone, or any other channel
+
+. . .
+
+- 15 reference groups + sensitive item
+
+- Choice range 0-10+
+
+- Recode as 1 if $r_{ik} > \text{mean}(r_{ik}) + 1 \text{SD}$, 0 otherwise
+
+::: aside
+See list of groups [here](#nsum-groups)
+:::
+
+## Single-question estimates
+
+```{r}
+load("prevalence_estimates.RData")
+
+plot_df = prev_estimates %>% 
+  filter(estimator != "nsum_generous" &
+           list_treatment == "amenazar") %>% 
+  mutate(
+  estimator = case_when(
+    estimator == "nsum_conservative" ~ "NSUM",
+    estimator == "List" & list == "count_a" ~ "List A",
+    estimator == "List" & list == "count_b" ~ "List B",
+    estimator == "List + NSUM" & list == "count_a" ~ "List A + NSUM",
+    estimator == "List + NSUM" & list == "count_b" ~ "List B + NSUM",
+    estimator == "List + direct" & list == "count_a" ~ "List A + direct",
+    estimator == "List + direct" & list == "count_b" ~ "List B + direct",
+    .default = estimator
+  )  
+  )
+
+# quick way would be to filter by whether estimator has +
+```
+
+```{r}
+ggplot(plot_df %>%
+         filter(!str_detect(estimator, fixed("+")))
+) +
+  aes(x = estimator, y = estimate) +
+  ylim(-0.4, 0.4) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  geom_point(size = 4, alpha = 0) +
+  geom_linerange(aes(x = estimator, ymin = conf.low, ymax = conf.high),
+                 linewidth = 1, alpha = 0) +
+  labs(x = "Question",
+       y = "Proportion saw gangs\nthreatening neighbors")
+  
+```
+
+## Single-question estimates {visibility="uncounted"}
+
+```{r}
+ggplot(plot_df %>%
+         filter(!str_detect(estimator, fixed("+")))
+) +
+  aes(x = estimator, y = estimate) +
+  ylim(-0.4, 0.4) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  geom_point(size = 4) +
+  geom_linerange(aes(x = estimator, ymin = conf.low, ymax = conf.high),
+                 linewidth = 1) +
+  labs(x = "Question",
+       y = "Proportion saw gangs\nthreatening neighbors")
+```
+
+
+## Combined estimates
+
+```{r}
+ggplot(plot_df %>%
+         filter(str_detect(estimator, fixed("+")))
+) +
+  aes(x = estimator, y = estimate) +
+  ylim(-0.4, 0.4) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  geom_point(size = 4) +
+  geom_linerange(aes(x = estimator, ymin = conf.low, ymax = conf.high),
+                 linewidth = 1) +
+  labs(x = "Question",
+       y = "Proportion saw gangs\nthreatening neighbors")
+```
+
+## Standard errors
+
+```{r}
+plot_df %>% 
+  filter(str_detect(estimator, "List")) %>% 
+  select(estimator, std.error) %>% 
+  mutate(list = ifelse(str_detect(estimator, "List A"), "A", "B"),
+         estimator = recode(estimator,
+                            "List A" = "List",
+                            "List B" = "List",
+                            "List A + NSUM" = "List + NSUM",
+                            "List B + NSUM" = "List + NSUM",
+                            "List A + direct" = "List + direct",
+                            "List B + direct" = "List + direct")) %>% 
+  pivot_wider(names_from = "list", values_from = "std.error") %>% 
+  mutate(order = c(1, 3, 2)) %>% 
+  arrange(order) %>% 
+  select(!order) %>% 
+  kbl(digits = 3, 
+      col.names = c("Estimator", "List A", "List B"))
+```
+
+
+## Conclusion
+
+- Can use NSUM to improve precision of list experiment estimates
+
+- Logic applies to other indirect questioning techniques that rely on anonymity
+
+### Questions
+
+- More principled approach to infer who holds the sensitive item from NSUM questions?
+
+- What would you like to see to be convinced that NSUM is a suitable replacement for direct questions?
+
+
+## NSUM groups {#nsum-groups visibility="uncounted"}
+
+::: columns
+
+::: {.column width="50%"}
+From *Las Piedras*  
+Male 25-29  
+Police officers  
+University students  
+Had a kid last year  
+Passed away last year  
+Married last year  
+Female 45-49
+:::
+
+::: {.column width="50%"}
+Public employees  
+Welfare card holders  
+Registered with party  
+With kids in public school  
+Did not vote in last election  
+Currently in jail  
+Recently unemployed
+**[Sensitive item]**
+:::
+
+:::
+
+::: aside
+[{{< fa rotate-left >}}](#nsum)
+:::
