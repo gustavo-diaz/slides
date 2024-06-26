@@ -63,11 +63,13 @@ theme_set(theme_gray(base_size = 20))
 ::: incremental
 - Social scientists care about **sensitive issues**
 
+- **Surveys** are the only option
+
 - Asking about them directly leads to **misreporting**
 
 - **Solution:** *Indirect questioning* techniques
 
-- **List experiments** are a popular option
+- **List experiments** are a popular alternative
 :::
 
 ## Example
@@ -352,56 +354,11 @@ How many people do you know, **who also know you, with whom you have interacted 
 Adapted from [McCarty et al (2001)](https://doi.org/10.17730/humo.60.1.efx5t9gjtgmga73y). Original has 29 anchors and 3 target groups
 :::
 
-## Why NSUM?
-
-[CONTINUE HERE MAKE MUCH SHORTER]
-
-. . .
-
-- Can infer **individual** responses to sensitive item
-
-. . .
-
-::: {.callout-warning}
-## Assumption
-If someone knows a unusually large number of people with the sensitive item, then they are likely to hold the sensitive item too.
-:::
-
-. . .
-
-- If true, can use NSUM responses instead of direct questions
-
-. . .
-
-- **Goal:** Find individuals with large *sensitive network* relative to *personal network*
-
-## Hierarchical model
-
-
-$$
-\begin{align*} 
-y_{ik} \sim \text{negative-binomial}( & \text{mean} = e^{\alpha_i + \beta_k},\\ & \text{overdispersion} = \omega_k)
-\end{align*} 
-$$
-
-::: incremental
-
-- $y_{ik}$: Degree of group $k$ for person $i$
-
-- $\alpha_i$: Expected degree of person $i$ (logged)
-
-- $\beta_k$: Expected degrees of group $k$ (logged)
-
-- $\omega_k$: Controls variance in propensity to know someone from group $k$
-:::
-
-::: aside
-**Details:** [Zheng, Salganik, and Gelman (2006)](https://doi.org/10.1198/016214505000001168); [Calvo and Murillo (2013)](https://doi.org/10.1177/0010414012463882)
-:::
-
 ## Hierarchical model {visibility="uncounted"}
 
-- Fit with MLE in two steps `(Personal network, sensitive group network)`
+- **Goal:** Find individuals with **unusually high exposure** relative to *personal network*
+
+- Fit with hierarchical model via MLE in two steps 
 
 - Focus on standardized residuals:
 
@@ -409,14 +366,295 @@ $$
 r_{ik} = \sqrt{y_{ik}} - \sqrt{e \alpha_i + \beta_k}
 $$
 
- . . .
+::: aside
+**Details:** [Zheng, Salganik, and Gelman (2006)](https://doi.org/10.1198/016214505000001168); [Calvo and Murillo (2013)](https://doi.org/10.1177/0010414012463882); [Ventura, Ley, and Cantú (2023)](https://doi.org/10.1177/00104140231169035)
+:::
 
-- **High residual:** Higher exposure to sensitive item
+## Hierarchical model {visibility="uncounted"}
+
+- **Goal:** Find individuals with **unusually high exposure** relative to *personal network*
+
+- Fit with hierarchical model via MLE in two steps 
+
+- Focus on standardized residuals:
+
+$$
+r_{ik} = \underbrace{\sqrt{y_{ik}}}_\text{Observed sensitive network size} - \underbrace{\sqrt{e \alpha_i + \beta_k}}_\text{Expected sensitive network size}
+$$
 
 
 ::: aside
-**Details:** [Ventura, Ley, and Cantú (2023)](https://doi.org/10.1177/00104140231169035)
+**Details:** [Zheng, Salganik, and Gelman (2006)](https://doi.org/10.1198/016214505000001168); [Calvo and Murillo (2013)](https://doi.org/10.1177/0010414012463882); [Ventura, Ley, and Cantú (2023)](https://doi.org/10.1177/00104140231169035)
 :::
 
 
 # Application
+
+
+## Criminal governance tools in Uruguay
+
+- Facebook sample of Montevideo residents `(N = 2688)`
+
+- **Goal:** Document extent of exposure to criminal governance strategies `(positive, negative)`
+
+. . .
+
+::: columns
+
+::: {.column width="48%"}
+### Negative
+- Threaten neighbors
+- Evict neighbors
+:::
+
+::: {.column width="52%"}
+### Positive
+- Make donations to neighbors
+- Offer jobs to neighbors
+
+:::
+
+:::
+
+::: aside
+Treatments based on qualitative evidence from fieldwork [(Pérez Bentancur and Tiscornia 2022)](https://doi.org/10.1177/00491241221082595)
+:::
+
+## Criminal governance tools in Uruguay
+
+- Facebook sample of Montevideo residents `(N = 2688)`
+
+- **Goal:** Document extent of exposure to criminal governance strategies
+
+::: columns
+
+::: {.column width="48%"}
+### Negative
+- **Threaten neighbors**
+- [Evict neighbors]{style="color: gray;"}
+:::
+
+::: {.column width="52%"}
+### Positive
+- [Make donations to neighbors]{style="color: gray;"}
+- [Offer jobs to neighbors]{style="color: gray;"}
+
+
+:::
+
+:::
+
+::: aside
+Treatments based on qualitative evidence from fieldwork [(Pérez Bentancur and Tiscornia 2022)](https://doi.org/10.1177/00491241221082595)
+:::
+
+## Direct question
+
+During the last six months, in your neighborhood, have you seen gangs...
+
+. . .
+
+- **Threaten neighbors**
+- Evict neighbors
+- Make donations to neighbors
+- Offering jobs neighbors
+- Blackmail neighbors
+- Blackmail businesses
+- Pay a neighbor's phone or electricity bills
+
+## List experiments
+
+Things people have experienced in the last six months:
+
+. . .
+
+```{r}
+list0 = tribble(
+  ~A, ~B,
+  "Saw people doing sports", "Saw people playing soccer",
+  "Visited friends", "Chatted with friends",
+  "Activities by feminist groups", "Activities by LGBTQ groups",
+  "Went to church", "Went to charity events",
+  "", ""
+)
+
+list0 %>% 
+  kbl(col.names = c("List A", "List B"))
+```
+
+
+## List experiments {visibility="uncounted"}
+
+Things people have experienced in the last six months:
+
+```{r}
+list1 = tribble(
+  ~A, ~B,
+  "Saw people doing sports", "Saw people playing soccer",
+  "Visited friends", "Chatted with friends",
+  "Activities by feminist groups", "Activities by LGBTQ groups",
+  "Went to church", "Went to charity events",
+  "Did not drink mate", "Gangs threatening neighbors"
+)
+
+list1 %>% 
+  kbl(col.names = c("List A", "List B")) %>% 
+  column_spec(1, italic = c(rep(F, 4), T)) %>%
+  column_spec(2, bold = c(rep(F, 4), T))
+```
+
+## List experiments {visibility="uncounted"}
+
+Things people have experienced in the last six months:
+
+```{r}
+list2 = tribble(
+  ~A, ~B,
+  "Saw people doing sports", "Saw people playing soccer",
+  "Visited friends", "Chatted with friends",
+  "Activities by feminist groups", "Activities by LGBTQ groups",
+  "Went to church", "Went to charity events",
+  "Gangs threatening neighbors", "Did not drink mate"
+)
+
+list2 %>% 
+  kbl(col.names = c("List A", "List B")) %>% 
+  column_spec(2, italic = c(rep(F, 4), T)) %>%
+  column_spec(1, bold = c(rep(F, 4), T))
+```
+
+
+## NSUM {#nsum}
+
+How many people do you know, **who also know you, with whom you have interacted in the last year** in person, by phone, or any other channel
+
+. . .
+
+- 15 reference groups + sensitive item
+
+- Choice range 0-10+
+
+- Recode as 1 if $r_{ik} > \text{mean}(r_{ik}) + 1 \text{SD}$, 0 otherwise
+
+::: aside
+See list of groups [here](#nsum-groups)
+:::
+
+## Single-question estimates
+
+```{r}
+load("crim_gov/prevalence_estimates.RData")
+
+plot_df = prev_estimates %>% 
+  filter(estimator != "nsum_generous" &
+           list_treatment == "amenazar") %>% 
+  mutate(
+  estimator = case_when(
+    estimator == "nsum_conservative" ~ "NSUM",
+    estimator == "List" & list == "count_a" ~ "List A",
+    estimator == "List" & list == "count_b" ~ "List B",
+    estimator == "List + NSUM" & list == "count_a" ~ "List A + NSUM",
+    estimator == "List + NSUM" & list == "count_b" ~ "List B + NSUM",
+    estimator == "List + direct" & list == "count_a" ~ "List A + direct",
+    estimator == "List + direct" & list == "count_b" ~ "List B + direct",
+    .default = estimator
+  )  
+  )
+
+# quick way would be to filter by whether estimator has +
+```
+
+```{r}
+ggplot(plot_df %>%
+         filter(!str_detect(estimator, fixed("+")))
+) +
+  aes(x = estimator, y = estimate) +
+  ylim(-0.4, 0.4) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  geom_point(size = 4, alpha = 0) +
+  geom_linerange(aes(x = estimator, ymin = conf.low, ymax = conf.high),
+                 linewidth = 1, alpha = 0) +
+  labs(x = "Question",
+       y = "Proportion saw gangs\nthreatening neighbors")
+  
+```
+
+## Single-question estimates {visibility="uncounted"}
+
+```{r}
+ggplot(plot_df %>%
+         filter(!str_detect(estimator, fixed("+")))
+) +
+  aes(x = estimator, y = estimate) +
+  ylim(-0.4, 0.4) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  geom_point(size = 4) +
+  geom_linerange(aes(x = estimator, ymin = conf.low, ymax = conf.high),
+                 linewidth = 1) +
+  labs(x = "Question",
+       y = "Proportion saw gangs\nthreatening neighbors")
+```
+
+
+## Combined estimates
+
+```{r}
+ggplot(plot_df %>%
+         filter(str_detect(estimator, fixed("+")))
+) +
+  aes(x = estimator, y = estimate) +
+  ylim(-0.4, 0.4) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  geom_point(size = 4) +
+  geom_linerange(aes(x = estimator, ymin = conf.low, ymax = conf.high),
+                 linewidth = 1) +
+  labs(x = "Question",
+       y = "Proportion saw gangs\nthreatening neighbors")
+```
+
+
+## Conclusion
+
+- Can use NSUM to improve precision of list experiment estimates
+
+- Can be combined with other precision-enhancing techniques
+
+- Logic applies to other indirect questioning techniques that rely on anonymity
+
+::: aside
+**Learn more:** [gustavodiaz.org](https://gustavodiaz.org/)
+:::
+
+
+## NSUM groups {#nsum-groups visibility="uncounted"}
+
+::: columns
+
+::: {.column width="50%"}
+From *Las Piedras*  
+Male 25-29  
+Police officers  
+University students  
+Had a kid last year  
+Passed away last year  
+Married last year  
+Female 45-49
+:::
+
+::: {.column width="50%"}
+Public employees  
+Welfare card holders  
+Registered with party  
+With kids in public school  
+Did not vote in last election  
+Currently in jail  
+Recently unemployed
+**[Sensitive item]**
+:::
+
+:::
+
+::: aside
+[{{< fa rotate-left >}}](#nsum)
+:::
+

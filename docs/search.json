@@ -2811,7 +2811,7 @@
     "href": "ispp24.html#background",
     "title": "Gustavo Diaz",
     "section": "Background",
-    "text": "Background\n\n\nSocial scientists care about sensitive issues\nAsking about them directly leads to misreporting\nSolution: Indirect questioning techniques\nList experiments are a popular option"
+    "text": "Background\n\n\nSocial scientists care about sensitive issues\nSurveys are the only option\nAsking about them directly leads to misreporting\nSolution: Indirect questioning techniques\nList experiments are a popular alternative"
   },
   {
     "objectID": "ispp24.html#example",
@@ -2993,20 +2993,111 @@
     "href": "ispp24.html#why-nsum",
     "title": "Gustavo Diaz",
     "section": "Why NSUM?",
-    "text": "Why NSUM?\n\n\nCan infer individual responses to sensitive item\n\n\n\n\n\n\n\n\n\nAssumption\n\n\nIf someone knows a unusually large number of people with the sensitive item, then they are likely to hold the sensitive item too.\n\n\n\n\n\n\nIf true, can use NSUM responses instead of direct questions\n\n\n\n\nGoal: Find individuals with large sensitive network relative to personal network"
+    "text": "Why NSUM?\n\n\n\nCan infer individual responses to sensitive item\n\n\n\n\n\n\n\n\n\nAssumption\n\n\nIf someone knows a unusually large number of people with the sensitive item, then they are likely to hold the sensitive item too.\n\n\n\n\n\n\nIf true, can use NSUM responses instead of direct questions\n\n\n\n\nGoal: Find individuals with large sensitive network relative to personal network"
   },
   {
     "objectID": "ispp24.html#hierarchical-model",
     "href": "ispp24.html#hierarchical-model",
     "title": "Gustavo Diaz",
     "section": "Hierarchical model",
-    "text": "Hierarchical model\n\\[\n\\begin{align*}\ny_{ik} \\sim \\text{negative-binomial}( & \\text{mean} = e^{\\alpha_i + \\beta_k},\\\\ & \\text{overdispersion} = \\omega_k)\n\\end{align*}\n\\]\n\n\n\\(y_{ik}\\): Degree of group \\(k\\) for person \\(i\\)\n\\(\\alpha_i\\): Expected degree of person \\(i\\) (logged)\n\\(\\beta_k\\): Expected degrees of group \\(k\\) (logged)\n\\(\\omega_k\\): Controls variance in propensity to know someone from group \\(k\\)\n\n\n\n\nDetails: Zheng, Salganik, and Gelman (2006); Calvo and Murillo (2013)"
+    "text": "Hierarchical model\n\nGoal: Find individuals with unusually high exposure relative to personal network\nFit with hierarchical model via MLE in two steps\nFocus on standardized residuals:\n\n\\[\nr_{ik} = \\sqrt{y_{ik}} - \\sqrt{e \\alpha_i + \\beta_k}\n\\]\n\n\nDetails: Zheng, Salganik, and Gelman (2006); Calvo and Murillo (2013); Ventura, Ley, and Cantú (2023)"
   },
   {
     "objectID": "ispp24.html#hierarchical-model-1",
     "href": "ispp24.html#hierarchical-model-1",
     "title": "Gustavo Diaz",
     "section": "Hierarchical model",
-    "text": "Hierarchical model\n\nFit with MLE in two steps (Personal network, sensitive group network)\nFocus on standardized residuals:\n\n\\[\nr_{ik} = \\sqrt{y_{ik}} - \\sqrt{e \\alpha_i + \\beta_k}\n\\]\n\n\nHigh residual: Higher exposure to sensitive item\n\n\n\n\nDetails: Ventura, Ley, and Cantú (2023)"
+    "text": "Hierarchical model\n\nGoal: Find individuals with unusually high exposure relative to personal network\nFit with hierarchical model via MLE in two steps\nFocus on standardized residuals:\n\n\\[\nr_{ik} = \\underbrace{\\sqrt{y_{ik}}}_\\text{Observed sensitive network size} - \\underbrace{\\sqrt{e \\alpha_i + \\beta_k}}_\\text{Expected sensitive network size}\n\\]\n\n\nDetails: Zheng, Salganik, and Gelman (2006); Calvo and Murillo (2013); Ventura, Ley, and Cantú (2023)"
+  },
+  {
+    "objectID": "ispp24.html#criminal-governance-tools-in-uruguay",
+    "href": "ispp24.html#criminal-governance-tools-in-uruguay",
+    "title": "Gustavo Diaz",
+    "section": "Criminal governance tools in Uruguay",
+    "text": "Criminal governance tools in Uruguay\n\nFacebook sample of Montevideo residents (N = 2688)\nGoal: Document extent of exposure to criminal governance strategies (positive, negative)\n\n\n\n\nNegative\n\nThreaten neighbors\nEvict neighbors\n\n\nPositive\n\nMake donations to neighbors\nOffer jobs to neighbors\n\n\n\n\n\n\nTreatments based on qualitative evidence from fieldwork (Pérez Bentancur and Tiscornia 2022)"
+  },
+  {
+    "objectID": "ispp24.html#criminal-governance-tools-in-uruguay-1",
+    "href": "ispp24.html#criminal-governance-tools-in-uruguay-1",
+    "title": "Gustavo Diaz",
+    "section": "Criminal governance tools in Uruguay",
+    "text": "Criminal governance tools in Uruguay\n\nFacebook sample of Montevideo residents (N = 2688)\nGoal: Document extent of exposure to criminal governance strategies\n\n\n\nNegative\n\nThreaten neighbors\nEvict neighbors\n\n\nPositive\n\nMake donations to neighbors\nOffer jobs to neighbors\n\n\n\n\n\nTreatments based on qualitative evidence from fieldwork (Pérez Bentancur and Tiscornia 2022)"
+  },
+  {
+    "objectID": "ispp24.html#direct-question",
+    "href": "ispp24.html#direct-question",
+    "title": "Gustavo Diaz",
+    "section": "Direct question",
+    "text": "Direct question\nDuring the last six months, in your neighborhood, have you seen gangs…\n\n\nThreaten neighbors\nEvict neighbors\nMake donations to neighbors\nOffering jobs neighbors\nBlackmail neighbors\nBlackmail businesses\nPay a neighbor’s phone or electricity bills"
+  },
+  {
+    "objectID": "ispp24.html#list-experiments",
+    "href": "ispp24.html#list-experiments",
+    "title": "Gustavo Diaz",
+    "section": "List experiments",
+    "text": "List experiments\nThings people have experienced in the last six months:\n\n\n\n\n\n\n\nList A\nList B\n\n\n\n\nSaw people doing sports\nSaw people playing soccer\n\n\nVisited friends\nChatted with friends\n\n\nActivities by feminist groups\nActivities by LGBTQ groups\n\n\nWent to church\nWent to charity events"
+  },
+  {
+    "objectID": "ispp24.html#list-experiments-1",
+    "href": "ispp24.html#list-experiments-1",
+    "title": "Gustavo Diaz",
+    "section": "List experiments",
+    "text": "List experiments\nThings people have experienced in the last six months:\n\n\n\n\n\n\nList A\nList B\n\n\n\n\nSaw people doing sports\nSaw people playing soccer\n\n\nVisited friends\nChatted with friends\n\n\nActivities by feminist groups\nActivities by LGBTQ groups\n\n\nWent to church\nWent to charity events\n\n\nDid not drink mate\nGangs threatening neighbors"
+  },
+  {
+    "objectID": "ispp24.html#list-experiments-2",
+    "href": "ispp24.html#list-experiments-2",
+    "title": "Gustavo Diaz",
+    "section": "List experiments",
+    "text": "List experiments\nThings people have experienced in the last six months:\n\n\n\n\n\n\nList A\nList B\n\n\n\n\nSaw people doing sports\nSaw people playing soccer\n\n\nVisited friends\nChatted with friends\n\n\nActivities by feminist groups\nActivities by LGBTQ groups\n\n\nWent to church\nWent to charity events\n\n\nGangs threatening neighbors\nDid not drink mate"
+  },
+  {
+    "objectID": "ispp24.html#nsum",
+    "href": "ispp24.html#nsum",
+    "title": "Gustavo Diaz",
+    "section": "NSUM",
+    "text": "NSUM\nHow many people do you know, who also know you, with whom you have interacted in the last year in person, by phone, or any other channel\n\n\n15 reference groups + sensitive item\nChoice range 0-10+\nRecode as 1 if \\(r_{ik} &gt; \\text{mean}(r_{ik}) + 1 \\text{SD}\\), 0 otherwise\n\n\n\n\nSee list of groups here"
+  },
+  {
+    "objectID": "ispp24.html#single-question-estimates",
+    "href": "ispp24.html#single-question-estimates",
+    "title": "Gustavo Diaz",
+    "section": "Single-question estimates",
+    "text": "Single-question estimates"
+  },
+  {
+    "objectID": "ispp24.html#single-question-estimates-1",
+    "href": "ispp24.html#single-question-estimates-1",
+    "title": "Gustavo Diaz",
+    "section": "Single-question estimates",
+    "text": "Single-question estimates"
+  },
+  {
+    "objectID": "ispp24.html#combined-estimates",
+    "href": "ispp24.html#combined-estimates",
+    "title": "Gustavo Diaz",
+    "section": "Combined estimates",
+    "text": "Combined estimates"
+  },
+  {
+    "objectID": "ispp24.html#standard-errors",
+    "href": "ispp24.html#standard-errors",
+    "title": "Gustavo Diaz",
+    "section": "Standard errors",
+    "text": "Standard errors\n\n\n\n\n\n\nEstimator\nList A\nList B\n\n\n\n\nList\n0.086\n0.088\n\n\nList + direct\n0.078\n0.080\n\n\nList + NSUM\n0.073\n0.078"
+  },
+  {
+    "objectID": "ispp24.html#conclusion",
+    "href": "ispp24.html#conclusion",
+    "title": "Gustavo Diaz",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nCan use NSUM to improve precision of list experiment estimates\nCan be combined with other precision-enhancing techniques\nLogic applies to other indirect questioning techniques that rely on anonymity\n\n\n\nLearn more: gustavodiaz.org"
+  },
+  {
+    "objectID": "ispp24.html#nsum-groups",
+    "href": "ispp24.html#nsum-groups",
+    "title": "Gustavo Diaz",
+    "section": "NSUM groups",
+    "text": "NSUM groups\n\n\nFrom Las Piedras\nMale 25-29\nPolice officers\nUniversity students\nHad a kid last year\nPassed away last year\nMarried last year\nFemale 45-49\n\nPublic employees\nWelfare card holders\nRegistered with party\nWith kids in public school\nDid not vote in last election\nCurrently in jail\nRecently unemployed [Sensitive item]"
   }
 ]
