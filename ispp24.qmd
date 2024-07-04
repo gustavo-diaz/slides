@@ -395,7 +395,7 @@ $$
 
 - Facebook sample of Montevideo residents `(N = 2688)`
 
-- **Goal:** Document extent of exposure to criminal governance strategies `(positive, negative)`
+- **Goal:** Document extent of exposure to criminal governance strategies
 
 . . .
 
