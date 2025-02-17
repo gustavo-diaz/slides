@@ -1,0 +1,339 @@
+---
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: false
+    progress: false
+    code-overflow: wrap
+    theme: [default, custom.scss]
+---
+
+::: {style="text-align: center"}
+##  Balancing Precision and Retention<br>in Experimental Design {.center .smaller}
+
+&nbsp;    
+
+:::: columns
+
+::: {.column width="50%"}
+**Gustavo Diaz**  
+Northwestern University  
+<gustavo.diaz@northwestern.edu>  
+[gustavodiaz.org](https://gustavodiaz.org)
+:::
+
+::: {.column width="50%"}
+**Erin Rossiter**  
+University of Notre Dame  
+<erossite@nd.edu>  
+[erossiter.com](https://erossiter.com/)
+
+:::
+
+::::
+
+&nbsp;
+
+Paper and slides: [gustavodiaz.org/talk](https://gustavodiaz.org/talk.html)
+
+:::
+
+
+
+```{r include=FALSE}
+library(knitr)
+
+opts_chunk$set(fig.pos = "center", echo = FALSE, 
+               message = FALSE, warning = FALSE)
+```
+
+```{r setup}
+# Packages
+library(tidyverse)
+library(haven)
+library(DeclareDesign)
+library(kableExtra)
+
+
+# ggplot global options
+theme_set(theme_gray(base_size = 20))
+ggdodge = position_dodge(width = 0.5)
+```
+
+## Bias-variance tradeoff as darts
+
+![](list/darts.png){fig-align="center"}
+
+## But the game of darts is more complicated
+
+:::: columns
+::: {.column width="50%"}
+![](list/darts_board.png)
+:::
+
+::: {.column width="50%"}
+![](list/darts_scoring.png){fig-align="center" width="72%" height="72%"}
+:::
+::::
+
+
+## Two types of tradeoffs
+
+::: incremental
+
+1. **Explicit:** Is some bias worth the increase in precision?
+
+2. **Implicit:** Improving precision without sacrificing unbiasedness? 
+:::
+
+## Two types of tradeoffs
+
+1. [**Explicit:** Is some bias worth the increase in precision]{style="color: gray;"}
+
+2. [**Implicit:** Improving precision without sacrificing unbiasedness?]{style="color: #4E2A84;"}
+
+. . .
+
+&nbsp;
+
+Cost has to come from somewhere else!
+
+## Improving precision in experiments
+
+. . .
+
+Standard error of **estimated ATE** in conventional experimental design [(Gerber and Green 2012, p. 57)]{style="font-size: 50%; color: gray;"}
+
+. . .
+
+$$
+SE(\widehat{ATE}) = \sqrt{\frac{\text{Var}(Y_i(0)) + \text{Var}(Y_i(1)) + 2\text{Cov}(Y_i(0), Y_i(1))}{N-1}}
+$$
+
+::: aside
+$N$: Sample size  
+$Y_i(*)$: Potential outcomes under treatment/control (1/0)
+:::
+
+## Improving precision in experiments
+
+$$
+SE(\widehat{ATE}) = \sqrt{\frac{\text{Var}(Y_i(0)) + \text{Var}(Y_i(1)) + 2\text{Cov}(Y_i(0), Y_i(1))}{N-1}}
+$$
+
+## Improving precision in experiments
+
+$$
+SE(\widehat{ATE}) = \sqrt{\frac{\color{#4E2A84}{\text{Var}(Y_i(0)) + \text{Var}(Y_i(1)) + 2\text{Cov}(Y_i(0), Y_i(1))}}{N-1}}
+$$
+
+. . .
+
+::: {style="color: #4E2A84;"}
+**Variance component**
+
+Decrease $SE(\widehat{ATE})$ with **alternative research designs**
+
+
+:::
+
+## Improving precision in experiments
+
+$$
+SE(\widehat{ATE}) = \sqrt{\frac{\color{#4E2A84}{\text{Var}(Y_i(0)) + \text{Var}(Y_i(1)) + 2\text{Cov}(Y_i(0), Y_i(1))}}{N-1}}
+$$
+
+::: {style="color: #4E2A84;"}
+**Variance component**
+
+Decrease $SE(\widehat{ATE})$ with **alternative research designs**
+
+:::: columns
+::: {.column width=30%}
+::: {style="font-size: 50%;"}
+Block-randomization
+
+Repeated measures
+
+Pre-treatment covariates
+
+Pair-matched design
+
+Online balancing
+
+Sequential blocking
+
+Rerandomization
+
+Matching
+:::
+:::
+::::
+
+:::
+
+## Improving precision in experiments
+
+$$
+SE(\widehat{ATE}) = \sqrt{\frac{\color{#4E2A84}{\text{Var}(Y_i(0)) + \text{Var}(Y_i(1)) + 2\text{Cov}(Y_i(0), Y_i(1))}}{N-1}}
+$$
+
+::: {style="color: #4E2A84;"}
+**Variance component**
+
+Decrease $SE(\widehat{ATE})$ with **alternative research designs**
+
+:::: columns
+::: {.column width=30%}
+::: {style="font-size: 50%;"}
+**Block-randomization**
+
+**Repeated measures**
+
+Pre-treatment covariates
+
+Pair-matched design
+
+Online balancing
+
+Sequential blocking
+
+Rerandomization
+
+Matching
+:::
+:::
+::::
+
+:::
+
+## Improving precision in experiments
+
+$$
+SE(\widehat{ATE}) = \sqrt{\frac{\color{#4E2A84}{\text{Var}(Y_i(0)) + \text{Var}(Y_i(1)) + 2\text{Cov}(Y_i(0), Y_i(1))}}{N-1}}
+$$
+
+::: {style="color: #4E2A84;"}
+**Variance component**
+
+Decrease $SE(\widehat{ATE})$ with **alternative research designs**
+
+:::: columns
+::: {.column width=30%}
+::: {style="font-size: 50%;"}
+**Block-randomization**
+
+**Repeated measures**
+
+Pre-treatment covariates
+
+Pair-matched design
+
+Online balancing
+
+Sequential blocking
+
+Rerandomization
+
+Matching
+:::
+:::
+
+::: {.column width=70%}
+
+All require **pre-treatment information**
+
+
+:::
+::::
+
+:::
+
+## Improving precision in experiments
+
+$$
+SE(\widehat{ATE}) = \sqrt{\frac{\color{#4E2A84}{\text{Var}(Y_i(0)) + \text{Var}(Y_i(1)) + 2\text{Cov}(Y_i(0), Y_i(1))}}{N-1}}
+$$
+
+::: {style="color: #4E2A84;"}
+**Variance component**
+
+Decrease $SE(\widehat{ATE})$ with **alternative research designs**
+
+:::: columns
+::: {.column width=30%}
+::: {style="font-size: 50%;"}
+**Block-randomization**
+
+**Repeated measures**
+
+Pre-treatment covariates
+
+Pair-matched design
+
+Online balancing
+
+Sequential blocking
+
+Rerandomization
+
+Matching
+:::
+:::
+
+::: {.column width=70%}
+
+All require **pre-treatment information**
+
+Two categories:
+
+::: incremental
+1. Reduce variance in *observed* outcomes
+
+2. Reduce variance in *potential* outcomes
+:::
+
+:::
+::::
+
+:::
+
+
+
+## Improving precision in experiments
+
+$$
+SE(\widehat{ATE}) = \sqrt{\frac{\color{#4E2A84}{\text{Var}(Y_i(0)) + \text{Var}(Y_i(1)) + 2\text{Cov}(Y_i(0), Y_i(1))}}{\color{#00843D}{N-1}}}
+$$
+
+. . .
+
+::: {style="color: #00843D;"}
+**Sample size component**
+:::
+
+## Improving precision in experiments
+
+$$
+SE(\widehat{ATE}) = \sqrt{\frac{\color{#4E2A84}{\text{Var}(Y_i(0)) + \text{Var}(Y_i(1)) + 2\text{Cov}(Y_i(0), Y_i(1))}}{\color{#00843D}{N-1}}}
+$$
+
+::: {style="color: #00843D;"}
+**Sample size component**
+
+Quadruple to halve $SE(\widehat{ATE})$
+
+
+:::
+
+. . .
+
+**Focus:** Increasing [**numerator**]{style="color: #4E2A84;"} may come at the cost of decreasing [**denominator**]{style="color: #00843D;"}
+
+. . .
+
+[Precision gains from **alternative designs**]{style="color: #4E2A84;"} may be [offset by **sample loss**]{style="color: #00843D;"}
+
+## Sample loss
+
+<!-- Explicit and implicit with examples -->
