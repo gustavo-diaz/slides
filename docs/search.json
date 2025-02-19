@@ -3140,14 +3140,14 @@
     "href": "texmeth25.html#two-types-of-tradeoffs",
     "title": "Gustavo Diaz",
     "section": "Two types of tradeoffs",
-    "text": "Two types of tradeoffs\n\n\nExplicit: Is some bias worth the increase in precision?\nImplicit: Improving precision without sacrificing unbiasedness?"
+    "text": "Two types of tradeoffs\n\n\nImprove precision at the expense of unbiasedness\nImproving precision without sacrificing unbiasedness?"
   },
   {
     "objectID": "texmeth25.html#two-types-of-tradeoffs-1",
     "href": "texmeth25.html#two-types-of-tradeoffs-1",
     "title": "Gustavo Diaz",
     "section": "Two types of tradeoffs",
-    "text": "Two types of tradeoffs\n\nExplicit: Is some bias worth the increase in precision\nImplicit: Improving precision without sacrificing unbiasedness?\n\n\n \nCost has to come from somewhere else!"
+    "text": "Two types of tradeoffs\n\nImprove precision at the expense of unbiasedness\nImproving precision without sacrificing unbiasedness?\n\n\n \nCost has to come from somewhere else!"
   },
   {
     "objectID": "texmeth25.html#improving-precision-in-experiments",
@@ -3211,5 +3211,117 @@
     "title": "Gustavo Diaz",
     "section": "Improving precision in experiments",
     "text": "Improving precision in experiments\n\\[\nSE(\\widehat{ATE}) = \\sqrt{\\frac{\\color{#4E2A84}{\\text{Var}(Y_i(0)) + \\text{Var}(Y_i(1)) + 2\\text{Cov}(Y_i(0), Y_i(1))}}{\\color{#00843D}{N-1}}}\n\\]\n\nSample size component\nQuadruple to halve \\(SE(\\widehat{ATE})\\)\n\n\nFocus: Increasing numerator may come at the cost of decreasing denominator\n\n\nPrecision gains from alternative designs may be offset by sample loss"
+  },
+  {
+    "objectID": "texmeth25.html#sample-loss",
+    "href": "texmeth25.html#sample-loss",
+    "title": "Gustavo Diaz",
+    "section": "Sample loss",
+    "text": "Sample loss\n\n\nExplicit\n\n\nMore pre-treatment questions \\(\\rightarrow\\) more attrition/inattention\nBlock-randomization \\(\\rightarrow\\) discard units\n\n\nImplicit\n\n\nAdding a baseline survey \\(\\rightarrow\\) half sample size\nFour more survey questions (2 min.) \\(\\rightarrow\\) 72% sample size\n\n\n\n\nConcerns about prevent widespread implementation"
+  },
+  {
+    "objectID": "texmeth25.html#use-of-alternative-designs-to-increase-precision",
+    "href": "texmeth25.html#use-of-alternative-designs-to-increase-precision",
+    "title": "Gustavo Diaz",
+    "section": "Use of alternative designs to increase precision",
+    "text": "Use of alternative designs to increase precision\n\n\n\n\n    \n\n    \n    \n      \n        \n        \n              \n                 \n                N\n                %\n              \n        \n        \n        \n                \n                  Pre-post\n                   10\n                  5% \n                \n                \n                  Blocking\n                   16\n                  7% \n                \n                \n                  Both    \n                    6\n                  3% \n                \n                \n                  Neither \n                  184\n                  85%\n                \n        \n      \n    \n\n\n\n\n\nBased on articles published in 2022-23 by APSR, AJPS, JOP, PB, CPS, JEPS"
+  },
+  {
+    "objectID": "texmeth25.html#use-of-alternative-designs-to-increase-precision-1",
+    "href": "texmeth25.html#use-of-alternative-designs-to-increase-precision-1",
+    "title": "Gustavo Diaz",
+    "section": "Use of alternative designs to increase precision",
+    "text": "Use of alternative designs to increase precision\n\n\n\n\n    \n\n    \n    \n      \n        \n        \n              \n                 \n                N\n                %\n              \n        \n        \n        \n                \n                  Pre-post          \n                   10\n                  5% \n                \n                \n                  Blocking          \n                   16\n                  7% \n                \n                \n                  Both              \n                    6\n                  3% \n                \n                \n                  Mention covariates\n                  169\n                  78%\n                \n                \n                  Nothing           \n                   15\n                  7% \n                \n        \n      \n    \n\n\n\n\n\nBased on articles published in 2022-23 by APSR, AJPS, JOP, PB, CPS, JEPS"
+  },
+  {
+    "objectID": "texmeth25.html#use-of-alternative-designs-to-increase-precision-2",
+    "href": "texmeth25.html#use-of-alternative-designs-to-increase-precision-2",
+    "title": "Gustavo Diaz",
+    "section": "Use of alternative designs to increase precision",
+    "text": "Use of alternative designs to increase precision\n\n\n\n\n    \n\n    \n    \n      \n        \n        \n              \n                 \n                N\n                %\n              \n        \n        \n        \n                \n                  Pre-post          \n                   10\n                  5% \n                \n                \n                  Blocking          \n                   16\n                  7% \n                \n                \n                  Both              \n                    6\n                  3% \n                \n                \n                  Mention covariates\n                  169\n                  78%\n                \n                \n                  Nothing           \n                   15\n                  7% \n                \n        \n      \n    \n\n\n\n\n\nBased on articles published in 2022-23 by APSR, AJPS, JOP, PB, CPS, JEPS"
+  },
+  {
+    "objectID": "texmeth25.html#goal",
+    "href": "texmeth25.html#goal",
+    "title": "Gustavo Diaz",
+    "section": "Goal",
+    "text": "Goal\nShow that precision gains offset sample loss\n\nPaper:\n\nReplication of selected studies\nSimulation on randomly sampled studies\nSimulations/code/advice for pre-analysis stage"
+  },
+  {
+    "objectID": "texmeth25.html#goal-1",
+    "href": "texmeth25.html#goal-1",
+    "title": "Gustavo Diaz",
+    "section": "Goal",
+    "text": "Goal\nShow that precision gains offset sample loss\nPaper:\n\nReplication of selected studies\nSimulation on randomly sampled studies\nSimulations/code/advice for pre-analysis stage"
+  },
+  {
+    "objectID": "texmeth25.html#replication-studies",
+    "href": "texmeth25.html#replication-studies",
+    "title": "Gustavo Diaz",
+    "section": "Replication studies",
+    "text": "Replication studies\n\n\n\n\n    \n\n    \n    \n      \n        \n        \n              \n                \n                Dietrich and Hayes (2023)\n                Bayram and Graham (2022)\n                Tappin and Hewitt (2023)\n              \n        \n        \n        \n                \n                  Study\n                  1 (DH)\n                  2 (BG)\n                  3 (TH)\n                \n                \n                  Subfield\n                  AP\n                  IR\n                  AP\n                \n                \n                  Topic\n                  Race and issue-based symbolism\n                  Support for IO foreign aid\n                  Party cues and policy opinions\n                \n                \n                  Arms\n                  8\n                  5\n                  2\n                \n                \n                  Obs.\n                  515\n                  1000\n                  775\n                \n                \n                  Waves\n                  1\n                  1\n                  3\n                \n                \n                  Concern\n                  Hard to reach population\n                  More precision\n                  Effect persistence"
+  },
+  {
+    "objectID": "texmeth25.html#replication-studies-1",
+    "href": "texmeth25.html#replication-studies-1",
+    "title": "Gustavo Diaz",
+    "section": "Replication studies",
+    "text": "Replication studies\n\n\n\n\n    \n\n    \n    \n      \n        \n        \n              \n                \n                Dietrich and Hayes (2023)\n                Bayram and Graham (2022)\n                Tappin and Hewitt (2023)\n              \n        \n        \n        \n                \n                  Study\n                  1 (DH)\n                  2 (BG)\n                  3 (TH)\n                \n                \n                  Subfield\n                  AP\n                  IR\n                  AP\n                \n                \n                  Topic\n                  Race and issue-based symbolism\n                  Support for IO foreign aid\n                  Party cues and policy opinions\n                \n                \n                  Arms\n                  8\n                  5\n                  2\n                \n                \n                  Obs.\n                  515\n                  1000\n                  775\n                \n                \n                  Waves\n                  1\n                  1\n                  3\n                \n                \n                  Concern\n                  Hard to reach population\n                  More precision\n                  Effect persistence"
+  },
+  {
+    "objectID": "texmeth25.html#replication-studies-2",
+    "href": "texmeth25.html#replication-studies-2",
+    "title": "Gustavo Diaz",
+    "section": "Replication studies",
+    "text": "Replication studies\n\n\n\n\n    \n\n    \n    \n      \n        \n        \n              \n                \n                Dietrich and Hayes (2023)\n                Bayram and Graham (2022)\n                Tappin and Hewitt (2023)\n              \n        \n        \n        \n                \n                  Study\n                  1 (DH)\n                  2 (BG)\n                  3 (TH)\n                \n                \n                  Subfield\n                  AP\n                  IR\n                  AP\n                \n                \n                  Topic\n                  Race and issue-based symbolism\n                  Support for IO foreign aid\n                  Party cues and policy opinions\n                \n                \n                  Arms\n                  8\n                  5\n                  2\n                \n                \n                  Obs.\n                  515\n                  1000\n                  775\n                \n                \n                  Waves\n                  1\n                  1\n                  3\n                \n                \n                  Concern\n                  Hard to reach population\n                  More precision\n                  Effect persistence"
+  },
+  {
+    "objectID": "texmeth25.html#replication-studies-3",
+    "href": "texmeth25.html#replication-studies-3",
+    "title": "Gustavo Diaz",
+    "section": "Replication studies",
+    "text": "Replication studies\n\n\n\n\n    \n\n    \n    \n      \n        \n        \n              \n                \n                Dietrich and Hayes (2023)\n                Bayram and Graham (2022)\n                Tappin and Hewitt (2023)\n              \n        \n        \n        \n                \n                  Study\n                  1 (DH)\n                  2 (BG)\n                  3 (TH)\n                \n                \n                  Subfield\n                  AP\n                  IR\n                  AP\n                \n                \n                  Topic\n                  Race and issue-based symbolism\n                  Support for IO foreign aid\n                  Party cues and policy opinions\n                \n                \n                  Arms\n                  8\n                  5\n                  2\n                \n                \n                  Obs.\n                  515\n                  1000\n                  775\n                \n                \n                  Waves\n                  1\n                  1\n                  3\n                \n                \n                  Concern\n                  Hard to reach population\n                  More precision\n                  Effect persistence"
+  },
+  {
+    "objectID": "texmeth25.html#experimental-conditions",
+    "href": "texmeth25.html#experimental-conditions",
+    "title": "Gustavo Diaz",
+    "section": "Experimental conditions",
+    "text": "Experimental conditions\n\n\n\n\n    \n\n    \n    \n      \n        \n        \n              \n                Condition\n                Outcomes\n                Randomization\n              \n        \n        \n        \n                \n                  Design 1\n                  Post only\n                  Complete\n                \n                \n                  Design 2\n                  Pre-post \n                  Complete\n                \n                \n                  Design 3\n                  Pre-post \n                  Blocking"
+  },
+  {
+    "objectID": "texmeth25.html#cond",
+    "href": "texmeth25.html#cond",
+    "title": "Gustavo Diaz",
+    "section": "Experimental conditions",
+    "text": "Experimental conditions\n\n\n\n\n    \n\n    \n    \n      \n        \n        \n              \n                Condition\n                Outcomes\n                Randomization\n              \n        \n        \n        \n                \n                  Design 1\n                  Post only\n                  Complete\n                \n                \n                  Design 2\n                  Pre-post \n                  Complete\n                \n                \n                  Design 3\n                  Pre-post \n                  Blocking\n                \n        \n      \n    \n\n\n\n\n\nSample size same as original\nIncreased length (DH: 43%, BG: 50%, TH: 110%)\n\n\n\nCompare to evaluate consequences of explicit/implicit sample loss\n\n\n\nSee more here"
+  },
+  {
+    "objectID": "texmeth25.html#imp",
+    "href": "texmeth25.html#imp",
+    "title": "Gustavo Diaz",
+    "section": "Implementation details",
+    "text": "Implementation details\n\n\n\n\n\n\n\n\n\nBack"
+  },
+  {
+    "objectID": "texmeth25.html#explicit-sample-loss",
+    "href": "texmeth25.html#explicit-sample-loss",
+    "title": "Gustavo Diaz",
+    "section": "Explicit sample loss",
+    "text": "Explicit sample loss"
+  },
+  {
+    "objectID": "texmeth25.html#changing-treatment-effects",
+    "href": "texmeth25.html#changing-treatment-effects",
+    "title": "Gustavo Diaz",
+    "section": "Changing treatment effects?",
+    "text": "Changing treatment effects?"
+  },
+  {
+    "objectID": "texmeth25.html#explicit-sample-loss-1",
+    "href": "texmeth25.html#explicit-sample-loss-1",
+    "title": "Gustavo Diaz",
+    "section": "Explicit sample loss",
+    "text": "Explicit sample loss\n\n\n\nNo evidence against null of equal proportions!"
   }
 ]

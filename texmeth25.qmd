@@ -52,7 +52,7 @@ opts_chunk$set(fig.pos = "center", echo = FALSE,
 library(tidyverse)
 library(haven)
 library(DeclareDesign)
-library(kableExtra)
+library(tinytable)
 
 
 # ggplot global options
@@ -81,16 +81,16 @@ ggdodge = position_dodge(width = 0.5)
 
 ::: incremental
 
-1. **Explicit:** Is some bias worth the increase in precision?
+1. Improve precision at the expense of unbiasedness
 
-2. **Implicit:** Improving precision without sacrificing unbiasedness? 
+2. Improving precision without sacrificing unbiasedness? 
 :::
 
 ## Two types of tradeoffs
 
-1. [**Explicit:** Is some bias worth the increase in precision]{style="color: gray;"}
+1. [Improve precision at the expense of unbiasedness]{style="color: gray;"}
 
-2. [**Implicit:** Improving precision without sacrificing unbiasedness?]{style="color: #4E2A84;"}
+2. [**Improving precision without sacrificing unbiasedness?**]{style="color: #4E2A84;"}
 
 . . .
 
@@ -337,3 +337,264 @@ Quadruple to halve $SE(\widehat{ATE})$
 ## Sample loss
 
 <!-- Explicit and implicit with examples -->
+
+. . .
+
+**Explicit**
+
+::: incremental
+
+- More pre-treatment questions $\rightarrow$ more attrition/inattention
+
+- Block-randomization $\rightarrow$ discard units
+
+:::
+
+
+
+**Implicit**
+
+::: incremental
+- Adding a baseline survey $\rightarrow$ half sample size
+
+- Four more survey questions (2 min.) $\rightarrow$ 72% sample size
+:::
+
+. . .
+
+*Concerns about prevent widespread implementation*
+
+## Use of alternative designs to increase precision
+
+```{r}
+journals = tribble(
+  ~` `, ~N, ~`%`,
+  "Pre-post", 10, "5%",
+  "Blocking", 16, "7%",
+  "Both", 6, "3%",
+  "Neither", 184, "85%"
+)
+
+journals %>% tt() %>% style_tt(fontsize = 0.9)
+```
+
+
+::: aside
+Based on articles published in 2022-23 by APSR, AJPS, JOP, PB, CPS, JEPS
+:::
+
+## Use of alternative designs to increase precision
+
+```{r}
+journals2 = tribble(
+  ~` `, ~N, ~`%`,
+  "Pre-post", 10, "5%",
+  "Blocking", 16, "7%",
+  "Both", 6, "3%",
+  "Mention covariates", 169, "78%",
+  "Nothing", 15, "7%" 
+)
+
+journals2 %>% 
+  tt() %>% 
+  group_tt(i = list(
+    "Neither" = 4
+  )) %>% 
+  style_tt(
+    i = 5:6,
+    color = "#00000000"
+  ) %>% 
+  style_tt(fontsize = 0.9)
+
+```
+
+
+::: aside
+Based on articles published in 2022-23 by APSR, AJPS, JOP, PB, CPS, JEPS
+:::
+
+## Use of alternative designs to increase precision
+
+```{r}
+journals2 = tribble(
+  ~` `, ~N, ~`%`,
+  "Pre-post", 10, "5%",
+  "Blocking", 16, "7%",
+  "Both", 6, "3%",
+  "Mention covariates", 169, "78%",
+  "Nothing", 15, "7%" 
+)
+
+journals2 %>% 
+  tt() %>% 
+  group_tt(i = list(
+    "Neither" = 4
+  )) %>% 
+  style_tt(fontsize = 0.9)
+
+```
+
+
+::: aside
+Based on articles published in 2022-23 by APSR, AJPS, JOP, PB, CPS, JEPS
+:::
+
+## Goal
+
+Show that precision gains *offset* sample loss
+
+. . .
+
+**Paper:**
+
+1. Replication of selected studies
+
+2. Simulation on randomly sampled studies
+
+3. Simulations/code/advice for pre-analysis stage
+
+## Goal
+
+Show that precision gains *offset* sample loss
+
+
+**Paper:**
+
+1. [**Replication of selected studies**]{style="color: #4E2A84;"}
+
+2. [Simulation on randomly sampled studies]{style="color: gray;"}
+
+3. [Simulations/code/advice for pre-analysis stage]{style="color: gray;"}
+
+## Replication studies
+
+```{r}
+reps = tribble(
+  ~` `, ~`[Dietrich and Hayes (2023)](https://doi.org/10.1086/7239661)`, 
+  ~`[Bayram and Graham (2022)](https://doi.org/10.1086/719414)`,
+  ~`[Tappin and Hewitt (2023)](https://doi.org/10.1017/XPS.2021.22)`,
+  "Study", "1 (DH)", "2 (BG)", "3 (TH)",
+  "Subfield", "AP", "IR", "AP",
+  "Topic", "Race and issue-based symbolism", "Support for IO foreign aid", "Party cues and policy opinions",
+  "Arms", "8", "5", "2",
+  "Obs.", "515", "1000", "775",
+  "Waves", "1", "1", "3",
+  "Concern", "Hard to reach population", "More precision", "Effect persistence"
+)
+
+reps %>% tt() %>% 
+  format_tt(markdown = TRUE) %>% 
+  style_tt(fontsize = 0.8) %>% 
+  style_tt(j = 2:4,
+           color = "#00000000")
+```
+
+## Replication studies
+
+```{r}
+reps %>% tt() %>% 
+  format_tt(markdown = TRUE) %>% 
+  style_tt(fontsize = 0.8) %>% 
+  style_tt(j = 3:4,
+           color = "#00000000")
+```
+
+
+## Replication studies
+
+```{r}
+reps %>% tt() %>% 
+  format_tt(markdown = TRUE) %>% 
+  style_tt(fontsize = 0.8) %>% 
+  style_tt(j = 4,
+           color = "#00000000")
+```
+
+## Replication studies
+
+```{r}
+reps %>% tt() %>% 
+  format_tt(markdown = TRUE) %>% 
+  style_tt(fontsize = 0.8)
+```
+
+## Experimental conditions {#cond}
+
+```{r}
+conditions = tribble(
+  ~Condition, ~Outcomes, ~Randomization,
+  "Design 1", "Post only", "Complete",
+  "Design 2", "Pre-post", "Complete",
+  "Design 3", "Pre-post", "Blocking"
+)
+
+conditions %>% tt()
+```
+
+::: incremental
+- Sample size same as original
+- Increased length (DH: 43%, BG: 50%, TH: 110%)
+:::
+
+. . . 
+
+Compare to evaluate consequences of explicit/implicit sample loss
+
+::: aside
+
+See more [here](#imp)
+
+:::
+
+## Explicit sample loss
+
+```{r}
+exp_loss = data.frame(
+  Study = c(rep("DH", 3), rep("BG", 3), rep("TH", 3)),
+  Design = rep(c("Standard", "Pre-post", "Pre-post + blocking"), 3),
+  Kept = c(99.05, 99.03, 99.03, 
+           99.05, 99.05, 99.03,
+           87, 85.8, 79.3)
+)
+
+exp_loss$Study = fct_relevel(exp_loss$Study,
+                             "DH", "BG", "TH")
+
+exp_loss$Design = fct_relevel(exp_loss$Design,
+                              "Standard", "Pre-post",
+                              "Pre-post + blocking")
+ggplot(exp_loss) +
+  aes(x = Study, y = Kept, fill = Design) +
+  geom_col(width = 0.5, position = "dodge", alpha = 0) + 
+  scale_fill_viridis_d() +
+  labs(y = "% Sample kept")
+```
+
+## Explicit sample loss
+
+```{r}
+ggplot(exp_loss) +
+  aes(x = Study, y = Kept, fill = Design) +
+  geom_col(width = 0.5, position = "dodge") + 
+  scale_fill_viridis_d() +
+  labs(y = "% Sample kept")
+```
+
+::: aside
+No evidence against null of equal proportions
+:::
+
+## Implicit sample loss
+
+[Redo figure 1 in paper]
+
+
+## Implementation details {#imp}
+
+![](precision_retention/rep_details.png)
+
+::: aside
+[Back](#cond)
+:::
+
+## Changing treatment effects?
