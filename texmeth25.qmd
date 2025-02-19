@@ -597,4 +597,3 @@ No evidence against null of equal proportions
 [Back](#cond)
 :::
 
-## Changing treatment effects?
