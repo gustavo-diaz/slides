@@ -256,6 +256,8 @@ sim_summary <- sim_iters_all %>%
 
 
 
+# Save for direct plotting in slides
+saveRDS(sim_summary, "precision_retention/implicit_loss.rds")
 
 
 implicit_loss_pctchange <- ggplot(sim_summary, aes(x = pct_loss,
@@ -263,13 +265,13 @@ implicit_loss_pctchange <- ggplot(sim_summary, aes(x = pct_loss,
                                                color = factor(design),
                                                shape = factor(design))) +
   facet_wrap(~exp, scales = "fixed", nrow = 1) +
-  geom_pointrange(aes(ymin = pct_change_025, ymax = pct_change_975), size = 0.3,
+  geom_pointrange(aes(ymin = pct_change_025, ymax = pct_change_975), size = 0.5,
                   position = position_dodge2(width = 0.03)) +
   # Horizontal line at 0
   geom_hline(aes(yintercept = 0),
              linetype = "dashed",
              color = "black") +
-  theme_minimal() +
+  theme_gray() +
   theme(
     panel.border = element_rect(color = "black", fill = NA),
     panel.grid.minor.x = element_blank(),
@@ -283,7 +285,7 @@ implicit_loss_pctchange <- ggplot(sim_summary, aes(x = pct_loss,
   labs(x = "Implicit Sample Loss",
        y = "Percentage Change in Standard Error\nRelative to Standard Design",
        color = "Design") + 
-  scale_color_manual(values = c("grey50", "grey20")) +
+  scale_color_viridis_d(begin = 0, end = 0.8) +
   scale_shape_manual(values = c(16,17)) + 
   guides(color = guide_legend(title = "Design", override.aes = list(shape = c(16,17)),
                               ncol = 2),
@@ -296,71 +298,20 @@ implicit_loss_pctchange <- ggplot(sim_summary, aes(x = pct_loss,
 
 
 implicit_loss_pctchange
-ggsave("3_plot_implicit_loss_pctchange.pdf", implicit_loss_pctchange, width = 10, height = 4)
+
+ggsave("precision_retention/3_plot_implicit_loss_pctchange.png", implicit_loss_pctchange, width = 10, height = 4)
 
 
-
-
-implicit_loss_rawSE <- ggplot(sim_summary, aes(x = pct_loss,
-                                         y = se_mean,
-                                         color = factor(design),
-                                         shape = factor(design))) +
-  facet_wrap(~exp, scales = "fixed", nrow = 1) +
-  geom_pointrange(aes(ymin = se_025, ymax = se_975), size = 0.3,
-                  position = position_dodge2(width = 0.03)) +
-  geom_hline(data = subset(sim_summary, exp == "Dietrich & Hayes"),
-             aes(yintercept = standard_summary$se_mean[standard_summary$exp == "dh"]),
-             linetype = "dashed",
-             color = "black") +
-  geom_hline(data = subset(sim_summary, exp == "Bayram & Graham"),
-             aes(yintercept = standard_summary$se_mean[standard_summary$exp == "bg"]),
-             linetype = "dashed",
-             color = "black") +
-  geom_hline(data = subset(sim_summary, exp == "Tappin & Hewitt"),
-             aes(yintercept = standard_summary$se_mean[standard_summary$exp == "th"]),
-             linetype = "dashed",
-             color = "black") +
-  geom_text(data = sim_summary %>% filter(exp == "Dietrich & Hayes") %>% head(1),
-            aes(x = 0, y = standard_summary$se_mean[standard_summary$exp == "dh"]),
-            vjust = 1,
-            hjust = 0,
-            nudge_y = -.002,
-            nudge_x = -.02,
-            color = "black",
-            label = "Standard Design SE") +
-  theme_minimal() +
-  theme(
-    panel.border = element_rect(color = "black", fill = NA),
-    panel.grid.minor.x = element_blank(),
-    text = element_text(size = 12),
-    axis.title = element_text(size = 12),
-    legend.title = element_text(size = 12),
-    legend.text = element_text(size = 12),
-    strip.text = element_text(size = 12),
-    legend.position = "bottom"
-  ) +
-  labs(x = "Implicit Sample Loss",
-       y = "Standard Error",
-       color = "Design") + 
-  scale_color_manual(values = c("grey50", "grey20")) +
-  scale_shape_manual(values = c(16,17)) + 
-  guides(color = guide_legend(title = "Design", override.aes = list(shape = c(16,17)),
-                              ncol = 2),
-         shape = FALSE)  +
-  scale_x_continuous(breaks = seq(0, .50, by = .10),
-                     labels = paste0(seq(0, 50, by = 10), "%"))
-
-ggsave("3_plot_implicit_loss_rawSE.pdf", implicit_loss_rawSE, width = 10, height = 4)
 
 ## Transparent plot
-implicit_loss_pctchange_0 <- ggplot(sim_summary, aes(x = pct_loss,
+
+implicit_loss_pctchange0 <- ggplot(sim_summary, aes(x = pct_loss,
                                                    y = pct_change,
                                                    color = factor(design),
                                                    shape = factor(design))) +
   facet_wrap(~exp, scales = "fixed", nrow = 1) +
-  geom_pointrange(aes(ymin = pct_change_025, ymax = pct_change_975), size = 0.3,
-                  position = position_dodge2(width = 0.03),
-                  alpha = 0) +
+  geom_pointrange(aes(ymin = pct_change_025, ymax = pct_change_975), size = 0.5,
+                  position = position_dodge2(width = 0.03), alpha = 0) +
   # Horizontal line at 0
   geom_hline(aes(yintercept = 0),
              linetype = "dashed",
@@ -379,7 +330,7 @@ implicit_loss_pctchange_0 <- ggplot(sim_summary, aes(x = pct_loss,
   labs(x = "Implicit Sample Loss",
        y = "Percentage Change in Standard Error\nRelative to Standard Design",
        color = "Design") + 
-  scale_color_viridis_d(begin = 0, end = 0.8) +
+  scale_color_manual(values = c("grey50", "grey20")) +
   scale_shape_manual(values = c(16,17)) + 
   guides(color = guide_legend(title = "Design", override.aes = list(shape = c(16,17)),
                               ncol = 2),
@@ -391,67 +342,8 @@ implicit_loss_pctchange_0 <- ggplot(sim_summary, aes(x = pct_loss,
                      labels = paste0(seq(0, 50, by = 10), "%"))
 
 
-implicit_loss_pctchange
-ggsave("precision_retention/3_plot_implicit_loss_pctchange.pdf", implicit_loss_pctchange, width = 10, height = 4)
+implicit_loss_pctchange0
 
-
-
-
-implicit_loss_rawSE <- ggplot(sim_summary, aes(x = pct_loss,
-                                               y = se_mean,
-                                               color = factor(design),
-                                               shape = factor(design))) +
-  facet_wrap(~exp, scales = "fixed", nrow = 1) +
-  geom_pointrange(aes(ymin = se_025, ymax = se_975), size = 0.3,
-                  position = position_dodge2(width = 0.03)) +
-  geom_hline(data = subset(sim_summary, exp == "Dietrich & Hayes"),
-             aes(yintercept = standard_summary$se_mean[standard_summary$exp == "dh"]),
-             linetype = "dashed",
-             color = "black") +
-  geom_hline(data = subset(sim_summary, exp == "Bayram & Graham"),
-             aes(yintercept = standard_summary$se_mean[standard_summary$exp == "bg"]),
-             linetype = "dashed",
-             color = "black") +
-  geom_hline(data = subset(sim_summary, exp == "Tappin & Hewitt"),
-             aes(yintercept = standard_summary$se_mean[standard_summary$exp == "th"]),
-             linetype = "dashed",
-             color = "black") +
-  geom_text(data = sim_summary %>% filter(exp == "Dietrich & Hayes") %>% head(1),
-            aes(x = 0, y = standard_summary$se_mean[standard_summary$exp == "dh"]),
-            vjust = 1,
-            hjust = 0,
-            nudge_y = -.002,
-            nudge_x = -.02,
-            color = "black",
-            label = "Standard Design SE") +
-  theme_gray() +
-  theme(
-    panel.border = element_rect(color = "black", fill = NA),
-    panel.grid.minor.x = element_blank(),
-    text = element_text(size = 12),
-    axis.title = element_text(size = 12),
-    legend.title = element_text(size = 12),
-    legend.text = element_text(size = 12),
-    strip.text = element_text(size = 12),
-    legend.position = "bottom"
-  ) +
-  labs(x = "Implicit Sample Loss",
-       y = "Standard Error",
-       color = "Design") + 
-  scale_color_viridis_d(begin = 0, end = 0.8) +
-  scale_shape_manual(values = c(16,17)) + 
-  guides(color = guide_legend(title = "Design", override.aes = list(shape = c(16,17)),
-                              ncol = 2),
-         shape = FALSE)  +
-  scale_x_continuous(breaks = seq(0, .50, by = .10),
-                     labels = paste0(seq(0, 50, by = 10), "%"))
-
-ggsave("precision_retention/3_plot_implicit_loss_rawSE0.pdf", implicit_loss_rawSE0, width = 10, height = 4)
-
-
-
-
-
-
+ggsave("precision_retention/3_plot_implicit_loss_pctchange0.png", implicit_loss_pctchange0, width = 10, height = 4)
 
 

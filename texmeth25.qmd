@@ -538,7 +538,7 @@ conditions %>% tt()
 
 . . . 
 
-Compare to evaluate consequences of explicit/implicit sample loss
+Evaluate extent of explicit/implicit sample loss
 
 ::: aside
 
@@ -580,14 +580,157 @@ ggplot(exp_loss) +
   labs(y = "% Sample kept")
 ```
 
-::: aside
-No evidence against null of equal proportions
-:::
+
 
 ## Implicit sample loss
 
-[Redo figure 1 in paper]
+```{r}
+sim_summary = readRDS("precision_retention/implicit_loss.rds")
 
+sim_summary = sim_summary %>% 
+  mutate(design = ifelse(design == "Pre-post",
+                         "Pre-post",
+                         "Block randomization"))
+
+sim_summary$design = fct_rev(sim_summary$design)
+
+ggplot(sim_summary, aes(x = pct_loss,
+                                                   y = pct_change,
+                                                   color = factor(design),
+                                                   shape = factor(design))) +
+  facet_wrap(~exp, scales = "fixed", nrow = 1) +
+  geom_pointrange(aes(ymin = pct_change_025, ymax = pct_change_975), size = 0.5,
+                  position = position_dodge2(width = 0.03), alpha = 0) +
+  # Horizontal line at 0
+  geom_hline(aes(yintercept = 0),
+             linetype = "dashed",
+             color = "black") +
+  theme_gray() +
+  theme(
+    panel.border = element_rect(color = "black", fill = NA),
+    panel.grid.minor.x = element_blank(),
+    text = element_text(size = 12),
+    axis.title = element_text(size = 12),
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 12),
+    strip.text = element_text(size = 12),
+    legend.position = "bottom"
+  ) +
+  labs(x = "Implicit Sample Loss",
+       y = "Percentage Change in Standard Error\nRelative to Standard Design",
+       color = "Design") + 
+  scale_color_manual(values = c("grey50", "grey20")) +
+  scale_shape_manual(values = c(16,17)) + 
+  guides(color = guide_legend(title = "Design", override.aes = list(shape = c(16,17)),
+                              ncol = 2),
+         shape = FALSE) +
+  scale_y_continuous(limits = c(-50, 90),
+                     breaks = seq(-50, 90, by = 25),
+                     labels = paste0(seq(-50, 90, by = 25), "%")) +
+  scale_x_continuous(breaks = seq(0, .50, by = .10),
+                     labels = paste0(seq(0, 50, by = 10), "%"))
+
+```
+
+## Implicit sample loss
+
+```{r}
+p0 = ggplot(sim_summary, aes(x = pct_loss,
+                                               y = pct_change,
+                                               color = factor(design),
+                                               shape = factor(design))) +
+  facet_wrap(~exp, scales = "fixed", nrow = 1) +
+  geom_pointrange(aes(ymin = pct_change_025, ymax = pct_change_975), size = 0.5,
+                  position = position_dodge2(width = 0.03)) +
+  # Horizontal line at 0
+  geom_hline(aes(yintercept = 0),
+             linetype = "dashed",
+             color = "black") +
+  theme_gray() +
+  theme(
+    panel.border = element_rect(color = "black", fill = NA),
+    panel.grid.minor.x = element_blank(),
+    text = element_text(size = 12),
+    axis.title = element_text(size = 12),
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 12),
+    strip.text = element_text(size = 12),
+    legend.position = "bottom"
+  ) +
+  labs(x = "Implicit Sample Loss",
+       y = "Percentage Change in Standard Error\nRelative to Standard Design",
+       color = "Design") + 
+  scale_color_viridis_d(begin = 0, end = 0.8) +
+  scale_shape_manual(values = c(16,17)) + 
+  guides(color = guide_legend(title = "Design", override.aes = list(shape = c(16,17)),
+                              ncol = 2),
+         shape = FALSE) +
+  scale_y_continuous(limits = c(-50, 90),
+                         breaks = seq(-50, 90, by = 25),
+                         labels = paste0(seq(-50, 90, by = 25), "%")) +
+  scale_x_continuous(breaks = seq(0, .50, by = .10),
+                     labels = paste0(seq(0, 50, by = 10), "%"))
+
+p0
+
+```
+
+## Implicit sample loss
+
+```{r}
+# annotations
+
+text = data.frame(
+  label = c("Sample too small +\n bad proxy outcome", 
+            "Ideal case", 
+            "Continuous blocking"),
+  pct_loss = c(0.2, 0.2, 0.2),
+  pct_change = c(-25, 25, 35),
+  exp = c("Dietrich & Hayes",
+          "Bayram & Graham",
+          "Tappin & Hewitt"),
+  design = c("Pre-post", "Pre-post", "Block randomization" )
+)
+
+text$exp = fct_relevel(text$exp,
+                      "Dietrich & Hayes",
+          "Bayram & Graham",
+          "Tappin & Hewitt" )
+p0 +
+  geom_text(
+    data = text,
+    mapping = aes(x = pct_loss, y = pct_change,
+                  label = label),
+    size = 5
+  )
+```
+
+
+## Also in the paper
+
+::: incremental
+- No evidence of sample loss altering treatment effects
+- No evidence of alternative designs changing *sample composition*
+- Simulated replications point in the same direction
+- Ideas to navigate choice at pre-analysis stage
+:::
+
+## Summary
+
+- **Puzzle:** Alternative designs rare
+
+- **Argument:** Concerns about explicit/implicit sample loss offsetting precision gains
+
+- **Findings:** Alternative designs withstand sample loss
+
+- **Wrinkle:** Alternative designs require more attention!
+
+- **Takeaway:** Try alternative designs!
+
+
+::: aside
+**Paper and slides:** [gustavodiaz.org/talk](https://gustavodiaz.org/talk.html)
+:::
 
 ## Implementation details {#imp}
 

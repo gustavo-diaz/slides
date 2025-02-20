@@ -3294,7 +3294,7 @@
     "href": "texmeth25.html#cond",
     "title": "Gustavo Diaz",
     "section": "Experimental conditions",
-    "text": "Experimental conditions\n\n\n\n\n    \n\n    \n    \n      \n        \n        \n              \n                Condition\n                Outcomes\n                Randomization\n              \n        \n        \n        \n                \n                  Design 1\n                  Post only\n                  Complete\n                \n                \n                  Design 2\n                  Pre-post \n                  Complete\n                \n                \n                  Design 3\n                  Pre-post \n                  Blocking\n                \n        \n      \n    \n\n\n\n\n\nSample size same as original\nIncreased length (DH: 43%, BG: 50%, TH: 110%)\n\n\n\nCompare to evaluate consequences of explicit/implicit sample loss\n\n\n\nSee more here"
+    "text": "Experimental conditions\n\n\n\n\n    \n\n    \n    \n      \n        \n        \n              \n                Condition\n                Outcomes\n                Randomization\n              \n        \n        \n        \n                \n                  Design 1\n                  Post only\n                  Complete\n                \n                \n                  Design 2\n                  Pre-post \n                  Complete\n                \n                \n                  Design 3\n                  Pre-post \n                  Blocking\n                \n        \n      \n    \n\n\n\n\n\nSample size same as original\nIncreased length (DH: 43%, BG: 50%, TH: 110%)\n\n\n\nEvaluate extent of explicit/implicit sample loss\n\n\n\nSee more here"
   },
   {
     "objectID": "texmeth25.html#imp",
@@ -3322,6 +3322,48 @@
     "href": "texmeth25.html#explicit-sample-loss-1",
     "title": "Gustavo Diaz",
     "section": "Explicit sample loss",
-    "text": "Explicit sample loss\n\n\n\nNo evidence against null of equal proportions!"
+    "text": "Explicit sample loss"
+  },
+  {
+    "objectID": "texmeth25.html#implicit-sample-loss",
+    "href": "texmeth25.html#implicit-sample-loss",
+    "title": "Gustavo Diaz",
+    "section": "Implicit sample loss",
+    "text": "Implicit sample loss"
+  },
+  {
+    "objectID": "texmeth25.html#also-in-the-paper",
+    "href": "texmeth25.html#also-in-the-paper",
+    "title": "Gustavo Diaz",
+    "section": "Also in the paper",
+    "text": "Also in the paper\n\n\nNo evidence of sample loss altering treatment effects\nNo evidence of alternative designs changing sample composition\nSimulated replications point in the same direction\nIdeas to navigate choice at pre-analysis stage"
+  },
+  {
+    "objectID": "texmeth25.html#implicit-sample-loss-1",
+    "href": "texmeth25.html#implicit-sample-loss-1",
+    "title": "Gustavo Diaz",
+    "section": "Implicit sample loss",
+    "text": "Implicit sample loss"
+  },
+  {
+    "objectID": "texmeth25.html#implicit-sample-loss-2",
+    "href": "texmeth25.html#implicit-sample-loss-2",
+    "title": "Gustavo Diaz",
+    "section": "Implicit sample loss",
+    "text": "Implicit sample loss"
+  },
+  {
+    "objectID": "texmeth25.html#conclusion",
+    "href": "texmeth25.html#conclusion",
+    "title": "Gustavo Diaz",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nReservations about implementing alternative designs\nConcern about explicit/implicit sample loss offsetting precision gains\nNo evidence for this in general\nBut alternative designs require more attention!\nTakeaway: Try alternative designs!\n\n\n\nPaper and slides: gustavodiaz.org/talk"
+  },
+  {
+    "objectID": "texmeth25.html#summary",
+    "href": "texmeth25.html#summary",
+    "title": "Gustavo Diaz",
+    "section": "Summary",
+    "text": "Summary\n\nPuzzle: Alternative designs rare\nArgument: Concerns about explicit/implicit sample loss offsetting precision gains\nFindings: Alternative designs withstand sample loss\nWrinkle: Alternative designs require more attention!\nTakeaway: Try alternative designs!\n\n\n\nPaper and slides: gustavodiaz.org/talk"
   }
 ]
