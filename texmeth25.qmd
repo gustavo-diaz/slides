@@ -478,7 +478,7 @@ reps = tribble(
   "Topic", "Race and issue-based symbolism", "Support for IO foreign aid", "Party cues and policy opinions",
   "Arms", "8", "5", "2",
   "Obs.", "515", "1000", "775",
-  "Waves", "1", "1", "3",
+  "Waves", "1", "1", "2",
   "Concern", "Hard to reach population", "More precision", "Effect persistence"
 )
 
