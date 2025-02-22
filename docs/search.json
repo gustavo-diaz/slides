@@ -3365,5 +3365,40 @@
     "title": "Gustavo Diaz",
     "section": "Summary",
     "text": "Summary\n\nPuzzle: Alternative designs rare\nArgument: Concerns about explicit/implicit sample loss offsetting precision gains\nFindings: Alternative designs withstand sample loss\nWrinkle: Alternative designs require more attention!\nTakeaway: Try alternative designs!\n\n\n\nPaper and slides: gustavodiaz.org/talk"
+  },
+  {
+    "objectID": "texmeth25_discussion.html#obrochta-and-parikh",
+    "href": "texmeth25_discussion.html#obrochta-and-parikh",
+    "title": "Gustavo Diaz",
+    "section": "O’Brochta and Parikh",
+    "text": "O’Brochta and Parikh\nWhy you should care:\n\n\nTricky coding because candidates use/ignore caste depending on many contextual factors\nMore complicated than your usual classification task\n\n\nThings I like:\n\n\nLots of domain knowledge in every step!\nDealing with electorally relevant [caste] identity"
+  },
+  {
+    "objectID": "texmeth25_discussion.html#questions",
+    "href": "texmeth25_discussion.html#questions",
+    "title": "Gustavo Diaz",
+    "section": "Questions",
+    "text": "Questions\n\n\nScaling up while preserving nuance?\nHow many more to code this way to train a model?\nWhy not just crowdsource everything? Or something word embedding style?\nHow consequential is this for downstream inferential tasks?\nStandards for this kind of multi-layered coding?\nCampaigns = time in office?"
+  },
+  {
+    "objectID": "texmeth25_discussion.html#atsusaka-and-landsman",
+    "href": "texmeth25_discussion.html#atsusaka-and-landsman",
+    "title": "Gustavo Diaz",
+    "section": "Atsusaka and Landsman",
+    "text": "Atsusaka and Landsman\nWhy you should care:\n\n\nUnified modeling of voting behavior across electoral systems\nVery concrete ideas about implementing RCV\n\n\nThings I like:"
+  },
+  {
+    "objectID": "texmeth25_discussion.html#questions-1",
+    "href": "texmeth25_discussion.html#questions-1",
+    "title": "Gustavo Diaz",
+    "section": "Questions",
+    "text": "Questions\n\n\nWhy is this about ethnic polarization?\nCan we observe/estimate quantities of interest?\nLab games?\nModel is static but simulation sequential?\nFour papers in one? Which comes first?"
+  },
+  {
+    "objectID": "texmeth25_discussion.html#atsusaka-and-landsman-1",
+    "href": "texmeth25_discussion.html#atsusaka-and-landsman-1",
+    "title": "Gustavo Diaz",
+    "section": "Atsusaka and Landsman",
+    "text": "Atsusaka and Landsman\nWhy you should care:\n\nUnified modeling of voting behavior across electoral systems\nVery concrete ideas about implementing RCV\n\nThings I like:\n\n\nModeling candidates and voters together\nThinking of computational modeling as Bayesian inference"
   }
 ]

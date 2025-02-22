@@ -1,0 +1,110 @@
+---
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: false
+    progress: false
+    code-overflow: wrap
+    theme: [default, custom.scss]
+---
+
+- O'Brochta and Parikh. "Determining Politicians' Electorally-Relevant Caste Membership"
+
+- Atsusaka and Landsman. "When Does Ranked-Choice Voting Reduce Polarization?"
+
+. . .
+
+Sounds very different
+
+. . .
+
+Both about: _**~~identity~~** matters for **electoral competition**_
+
+. . .
+
+Sounds like studying ***~~identity~~*** is very important
+
+## O'Brochta and Parikh
+
+
+**Why you should care:**
+
+::: incremental
+- Tricky coding because candidates use/ignore caste depending on many contextual factors
+
+- More complicated than your usual classification task
+:::
+
+
+**Things I like:**
+
+::: incremental
+- Lots of domain knowledge in every step!
+
+- Dealing with **electorally relevant** [caste] identity
+
+:::
+
+## Questions
+
+::: incremental
+
+- Scaling up while preserving nuance? 
+
+- How many more to code this way to train a model?
+
+- Why not just crowdsource everything? Or something word embedding style?
+
+- How consequential is this for downstream inferential tasks?
+
+- Standards for this kind of multi-layered coding?
+
+- Campaigns = time in office?
+
+:::
+
+## Atsusaka and Landsman
+
+**Why you should care:**
+
+::: incremental
+- Unified modeling of voting behavior across electoral systems
+- Very concrete ideas about implementing RCV
+:::
+
+**Things I like:**
+
+---
+
+![](temp/yuki_rcv.png){fig-align="center"}
+
+## Atsusaka and Landsman
+
+**Why you should care:**
+
+- Unified modeling of voting behavior across electoral systems
+- Very concrete ideas about implementing RCV
+
+
+**Things I like:**
+
+::: incremental
+- Modeling candidates and voters together
+- Thinking of computational modeling as Bayesian inference
+:::
+
+## Questions
+
+::: incremental
+
+- Why is this about *ethnic* polarization?
+
+- Can we observe/estimate quantities of interest?
+
+- Lab games?
+
+- Model is static but simulation sequential?
+
+- Four papers in one? Which comes first?
+:::
+
